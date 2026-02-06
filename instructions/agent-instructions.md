@@ -13,3 +13,4 @@ Additional rules and guidelines for creating OGraf graphics:
 * OGraf graphics should never paint any pixels before the first call to the playAction method.
 * Graphics should have nice in- and out animations
 * The schema definitions in the manifest file should use the GDD definitions as much as possible. The GDD definitions can be found at instructions\specification\json-schemas\gdd\README.md
+* Positions and sizes of elements and text should be defined in relative units (percentages) rather than absolute pixels, to ensure that the graphics can scale properly on different screen sizes and resolutions.
