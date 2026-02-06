@@ -18,22 +18,22 @@
       "title": {
         "type": "string",
         "title": "Title",
-        "default": "Live Event"
+        "default": "Charlie the Pug"
       },
       "subtitle": {
         "type": "string",
         "title": "Subtitle",
-        "default": "Now Broadcasting"
+        "default": "Streaming Live Now"
       },
       "particleColor": {
         "type": "string",
         "title": "Particle Color",
-        "default": "#00d4ff"
+        "default": "#ff8c00"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ff006e"
+        "default": "#ffd700"
       }
     },
     "required": ["title"]

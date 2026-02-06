@@ -18,7 +18,7 @@
       "mainTitle": {
         "type": "string",
         "description": "Main text",
-        "default": "Name"
+        "default": "Biscuit"
       },
       "mainTitleColor": {
         "type": "string",
@@ -28,7 +28,7 @@
       "subtitle": {
         "type": "string",
         "description": "Text2",
-        "default": "Title"
+        "default": "Skateboard Pup"
       },
       "subtitleColor": {
         "type": "string",
@@ -38,7 +38,7 @@
       "tertiaryText": {
         "type": "string",
         "description": "Optional text for block 3",
-        "default": ""
+        "default": "Dog News"
       },
       "tertiaryColor": {
         "type": "string",
@@ -48,7 +48,7 @@
       "accentColor": {
         "type": "string",
         "description": "Primary accent color for blocks (hex format)",
-        "default": "#00D4FF"
+        "default": "#ff8c00"
       },
       "backgroundColor": {
         "type": "string",

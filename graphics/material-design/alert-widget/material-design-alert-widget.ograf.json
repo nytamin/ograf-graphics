@@ -24,12 +24,12 @@
       "userName": {
         "type": "string",
         "title": "User Name",
-        "default": "StreamUser"
+        "default": "DogLoverMax"
       },
       "message": {
         "type": "string",
         "title": "Alert Message",
-        "default": "followed the channel!"
+        "default": "just followed the pack! 🐾"
       },
       "displayDuration": {
         "type": "number",
@@ -39,12 +39,12 @@
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#1976d2"
+        "default": "#ff8c00"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ffa726"
+        "default": "#ffd700"
       }
     }
   }

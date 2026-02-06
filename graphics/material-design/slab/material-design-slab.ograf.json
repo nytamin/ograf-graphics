@@ -18,7 +18,7 @@
       "title": {
         "type": "string",
         "title": "Title",
-        "default": "Top Stories"
+        "default": "Top Pup Stories"
       },
       "items": {
         "type": "array",
@@ -32,9 +32,9 @@
           "required": ["label"]
         },
         "default": [
-          { "label": "Breaking News", "value": "Market reaches new high" },
-          { "label": "Technology", "value": "Innovation in AI" },
-          { "label": "Sports", "value": "Championship results" }
+          { "label": "Corgi Win", "value": "Skateboard Championship trophy" },
+          { "label": "Dachshund News", "value": "Great escape adventure ongoing" },
+          { "label": "Johan's Update", "value": "Next stream this Saturday" }
         ]
       },
       "position": {
@@ -46,7 +46,7 @@
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#1976d2"
+        "default": "#ff8c00"
       },
       "surfaceColor": {
         "type": "string",

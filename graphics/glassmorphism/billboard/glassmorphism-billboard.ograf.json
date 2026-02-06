@@ -18,17 +18,17 @@
       "title": {
         "type": "string",
         "title": "Title",
-        "default": "Presented By"
+        "default": "Sponsor Alert"
       },
       "sponsor": {
         "type": "string",
         "title": "Sponsor Name",
-        "default": "Sponsor Name"
+        "default": "Puppy Power Treats"
       },
       "tagline": {
         "type": "string",
         "title": "Tagline",
-        "default": "Official Partner"
+        "default": "Official Snack of Dog News"
       },
       "showTitle": {
         "type": "boolean",
@@ -38,7 +38,7 @@
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#3498db"
+        "default": "#ff8c00"
       }
     },
     "required": ["sponsor"]

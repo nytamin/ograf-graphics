@@ -18,22 +18,22 @@
       "header": {
         "type": "string",
         "title": "Header",
-        "default": "DID YOU KNOW?"
+        "default": "PUP TRIVIA!"
       },
       "fact": {
         "type": "string",
         "title": "Fact",
-        "default": "This is an interesting fact about the topic"
+        "default": "Dogs can understand around 250 words and can count up to 5!"
       },
       "source": {
         "type": "string",
         "title": "Source",
-        "default": ""
+        "default": "Dog News Dog Facts"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#f39c12"
+        "default": "#ff8c00"
       }
     },
     "required": ["fact"]

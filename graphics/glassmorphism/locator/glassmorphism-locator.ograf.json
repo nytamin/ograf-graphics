@@ -18,12 +18,12 @@
       "location": {
         "type": "string",
         "title": "Location",
-        "default": "London"
+        "default": "Dog Park"
       },
       "sublocation": {
         "type": "string",
         "title": "Sublocation",
-        "default": "United Kingdom"
+        "default": "Stockholm, Sweden"
       },
       "isLive": {
         "type": "boolean",
@@ -39,7 +39,7 @@
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#e74c3c"
+        "default": "#ff8c00"
       }
     },
     "required": ["location"]

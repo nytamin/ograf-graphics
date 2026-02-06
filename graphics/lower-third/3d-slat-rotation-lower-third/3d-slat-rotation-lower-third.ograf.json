@@ -18,22 +18,22 @@
       "name": {
         "type": "string",
         "title": "Name",
-        "default": "Marcus Williams"
+        "default": "Johan Nyman"
       },
       "title": {
         "type": "string",
         "title": "Title",
-        "default": "Political Analyst"
+        "default": "Dog News Host"
       },
       "primaryColor": {
         "type": "string",
         "title": "Primary Color (Name Slat)",
-        "default": "#2a3a5c"
+        "default": "#1a1a1a"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color (Title Slat)",
-        "default": "#e0a040"
+        "default": "#ff8c00"
       }
     },
     "required": ["name", "title"]

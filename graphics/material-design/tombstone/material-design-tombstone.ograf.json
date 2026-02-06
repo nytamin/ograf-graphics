@@ -23,12 +23,12 @@
       "fact": {
         "type": "string",
         "title": "Fact Text",
-        "default": "Material Design was introduced by Google in 2014"
+        "default": "Dogs have a sense of time and can remember past events!"
       },
       "category": {
         "type": "string",
         "title": "Category",
-        "default": "Technology"
+        "default": "Dog Facts"
       },
       "showCategory": {
         "type": "boolean",
@@ -38,7 +38,7 @@
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#1976d2"
+        "default": "#ff8c00"
       },
       "surfaceColor": {
         "type": "string",

@@ -30,9 +30,9 @@
           }
         },
         "default": [
-          { "name": "TechCorp", "duration": 5 },
-          { "name": "StreamTools Pro", "duration": 5 },
-          { "name": "EliteGear", "duration": 5 }
+          { "name": "Puppy Power Treats", "duration": 5 },
+          { "name": "Bark & Stream Co", "duration": 5 },
+          { "name": "Johan's Dog Gear", "duration": 5 }
         ]
       },
       "position": {
@@ -44,12 +44,12 @@
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#1976d2"
+        "default": "#ff8c00"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ffa726"
+        "default": "#1a1a1a"
       }
     }
   }

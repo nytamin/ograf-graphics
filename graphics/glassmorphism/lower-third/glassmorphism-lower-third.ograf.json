@@ -18,17 +18,17 @@
       "name": {
         "type": "string",
         "title": "Name",
-        "default": "Alex Morgan"
+        "default": "Johan Nyman"
       },
       "title": {
         "type": "string",
         "title": "Title",
-        "default": "Chief Analyst"
+        "default": "Channel Host"
       },
       "location": {
         "type": "string",
         "title": "Location",
-        "default": "New York"
+        "default": "Dog News HQ"
       },
       "showLocation": {
         "type": "boolean",
@@ -38,12 +38,12 @@
       "isLive": {
         "type": "boolean",
         "title": "Show LIVE Bug",
-        "default": false
+        "default": true
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#6cc7ff"
+        "default": "#ff8c00"
       }
     },
     "required": ["name", "title"]

@@ -18,17 +18,17 @@
       "title": {
         "type": "string",
         "title": "Title",
-        "default": "Be Right Back"
+        "default": "Be Right Back!"
       },
       "subtitle": {
         "type": "string",
         "title": "Subtitle",
-        "default": "Quick break - stay tuned"
+        "default": "Fetching more pup content..."
       },
       "scheduleTitle": {
         "type": "string",
         "title": "Schedule Title",
-        "default": "Up Next"
+        "default": "What's Next?"
       },
       "scheduleItems": {
         "type": "array",
@@ -36,7 +36,7 @@
         "items": {
           "type": "string"
         },
-        "default": ["Q&A Segment", "Ranked Match", "Community Games"]
+        "default": ["Puppy Training Fails", "Skateboard Tricks", "Q&A with Johan"]
       },
       "socials": {
         "type": "array",
@@ -44,17 +44,17 @@
         "items": {
           "type": "string"
         },
-        "default": ["@streamer", "discord.gg/streamer", "tiktok.com/@streamer"]
+        "default": ["@DogNews", "discord.gg/dognews", "twitch.tv/johan_nyman"]
       },
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#1976d2"
+        "default": "#ff8c00"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ffa726"
+        "default": "#1a1a1a"
       }
     }
   }

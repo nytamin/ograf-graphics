@@ -18,17 +18,17 @@
       "headline": {
         "type": "string",
         "title": "Headline",
-        "default": "Championship Finals"
+        "default": "Dachshund's Great Escape!"
       },
       "subheadline": {
         "type": "string",
         "title": "Subheadline",
-        "default": "Live Coverage Starts Soon"
+        "default": "Local pup goes on unexpected adventure"
       },
       "sponsor": {
         "type": "string",
         "title": "Sponsor Text",
-        "default": "Presented by TechCorp"
+        "default": "Brought to you by Dog News"
       },
       "showSponsor": {
         "type": "boolean",
@@ -38,12 +38,12 @@
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#1976d2"
+        "default": "#ff8c00"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ffa726"
+        "default": "#1a1a1a"
       },
       "scrimOpacity": {
         "type": "number",

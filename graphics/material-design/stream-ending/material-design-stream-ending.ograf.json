@@ -18,17 +18,17 @@
       "title": {
         "type": "string",
         "title": "Title",
-        "default": "Thanks for Watching"
+        "default": "Pawsitively Amazing!"
       },
       "subtitle": {
         "type": "string",
         "title": "Subtitle",
-        "default": "See you on the next stream"
+        "default": "Thanks for hanging with the pack, Johan's signing off!"
       },
       "raidTarget": {
         "type": "string",
         "title": "Raid Target",
-        "default": "Raiding @coolstreamer"
+        "default": "Raiding @DogGamers now!"
       },
       "credits": {
         "type": "array",
@@ -36,17 +36,17 @@
         "items": {
           "type": "string"
         },
-        "default": ["Mods: Alex, Priya", "Music: Chillhop", "Art: Studio Nine"]
+        "default": ["Mods: Biscuit's Crew", "Music: Bark Beats", "Dogs: All amazing pups!"]
       },
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#1976d2"
+        "default": "#ff8c00"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#4caf50"
+        "default": "#ffd700"
       }
     }
   }

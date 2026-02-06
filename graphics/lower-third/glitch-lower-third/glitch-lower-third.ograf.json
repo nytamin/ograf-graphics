@@ -18,17 +18,17 @@
       "title": {
         "type": "string",
         "title": "Title",
-        "default": "Breaking News"
+        "default": "Luna the Retriever"
       },
       "subtitle": {
         "type": "string",
         "title": "Subtitle",
-        "default": "Live from the field"
+        "default": "Live from Dog News"
       },
       "glitchColor1": {
         "type": "string",
         "title": "Glitch Color 1 (Red Channel)",
-        "default": "#ff0055"
+        "default": "#ff8c00"
       },
       "glitchColor2": {
         "type": "string",

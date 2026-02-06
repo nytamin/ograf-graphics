@@ -18,22 +18,22 @@
       "title": {
         "type": "string",
         "title": "Title",
-        "default": "CYBER CITY"
+        "default": "NEON PUPS"
       },
       "subtitle": {
         "type": "string",
         "title": "Subtitle",
-        "default": "neon.broadcast.live"
+        "default": "dognews.tv/dog-kingdom"
       },
       "neonColor": {
         "type": "string",
         "title": "Neon Color",
-        "default": "#00ff41"
+        "default": "#ff8c00"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ff00ff"
+        "default": "#ffd700"
       }
     },
     "required": ["title"]

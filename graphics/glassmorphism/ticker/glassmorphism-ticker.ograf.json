@@ -22,20 +22,20 @@
           "type": "string"
         },
         "default": [
-          "Breaking: Major technology announcement expected today",
-          "Markets close higher for third consecutive day",
-          "Weather alert: Storm system moving through region"
+          "🐾 Puppy breakthrough: Corgi solves skateboard mystery",
+          "🐾 Golden Retriever sets new speed record on the snow",
+          "🐾 Beagle's treat-stealing skills recognized worldwide!"
         ]
       },
       "category": {
         "type": "string",
         "title": "Category Label",
-        "default": "Breaking News"
+        "default": "Pup Stories"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ff6b6b"
+        "default": "#ff8c00"
       },
       "scrollSpeed": {
         "type": "number",

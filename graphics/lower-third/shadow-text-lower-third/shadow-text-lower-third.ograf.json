@@ -18,12 +18,12 @@
       "title": {
         "type": "string",
         "title": "Title",
-        "default": "John Smith"
+        "default": "Bella the Golden Retriever"
       },
       "subtitle": {
         "type": "string",
         "title": "Subtitle",
-        "default": "Chief Technology Officer"
+        "default": "Dog News Sensation"
       },
       "textColor": {
         "type": "string",
@@ -33,12 +33,12 @@
       "shadowColor": {
         "type": "string",
         "title": "Shadow Color",
-        "default": "#000000"
+        "default": "#1a1a1a"
       },
       "shadowIntensity": {
         "type": "number",
         "title": "Shadow Intensity",
-        "default": 0.8,
+        "default": 0.9,
         "minimum": 0,
         "maximum": 1
       }

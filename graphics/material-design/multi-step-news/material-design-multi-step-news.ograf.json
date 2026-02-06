@@ -18,17 +18,17 @@
       "step1Headline": {
         "type": "string",
         "title": "Step 1: Headline",
-        "default": "BREAKING NEWS"
+        "default": "🐕 BREAKING PAWS"
       },
       "step1Title": {
         "type": "string",
         "title": "Step 1: Title",
-        "default": "Major Climate Report Released"
+        "default": "Corgi Wins Golden Skateboard Championship"
       },
       "step2Title": {
         "type": "string",
         "title": "Step 2: Story Title",
-        "default": "Key Findings"
+        "default": "The Details"
       },
       "step2Details": {
         "type": "array",
@@ -37,45 +37,45 @@
           "type": "string"
         },
         "default": [
-          "Global temperatures rose 1.1°C since pre-industrial era",
-          "Arctic ice declining at accelerating rate",
-          "100+ species face extinction risk"
+          "A fearless Corgi named Biscuit conquered 5 trick obstacles",
+          "Defeated 47 other pups in tail-blazing stunts",
+          "Crowd went absolutely bonkers! 🎉"
         ]
       },
       "step3Title": {
         "type": "string",
         "title": "Step 3: Expert Title",
-        "default": "Expert Analysis"
+        "default": "Johan's Take"
       },
       "step3Quote": {
         "type": "string",
         "title": "Step 3: Quote",
-        "default": "\"This is a critical moment for global action. The science is clear and the time to act is now.\""
+        "default": "\"I've never seen a dog move like that! Biscuit is pure legend on four wheels!\""
       },
       "step3Expert": {
         "type": "string",
         "title": "Step 3: Expert Name",
-        "default": "Dr. Jane Science, Climate Research Institute"
+        "default": "Johan Nyman, Dog News"
       },
       "step4Title": {
         "type": "string",
         "title": "Step 4: CTA Title",
-        "default": "What You Can Do"
+        "default": "Watch It Live"
       },
       "step4Text": {
         "type": "string",
         "title": "Step 4: CTA Text",
-        "default": "Learn more about climate action and how you can make a difference. Visit our climate hub for resources and initiatives."
+        "default": "Tune in next week at twitch.tv/johan_nyman for more epic dog shenanigans. Follow @DogNews for daily pup updates!"
       },
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#1976d2"
+        "default": "#ff8c00"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#d32f2f"
+        "default": "#ffd700"
       },
       "step1Icon": {
         "type": "string",

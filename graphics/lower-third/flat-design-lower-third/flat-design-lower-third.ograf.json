@@ -18,17 +18,17 @@
       "name": {
         "type": "string",
         "title": "Name",
-        "default": "Alex Morgan"
+        "default": "Max the Corgi"
       },
       "title": {
         "type": "string",
         "title": "Title",
-        "default": "Chief Analyst"
+        "default": "Skateboard Champion"
       },
       "location": {
         "type": "string",
         "title": "Location",
-        "default": "New York"
+        "default": "Dog Park, Stockholm"
       },
       "showLocation": {
         "type": "boolean",
@@ -38,17 +38,17 @@
       "isLive": {
         "type": "boolean",
         "title": "Show LIVE Bug",
-        "default": false
+        "default": true
       },
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#3498db"
+        "default": "#ff8c00"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#e74c3c"
+        "default": "#ffd700"
       }
     },
     "required": ["name", "title"]

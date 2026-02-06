@@ -18,17 +18,17 @@
       "showTitle": {
         "type": "string",
         "title": "Show Title",
-        "default": "Starting Soon"
+        "default": "Dog News - Dog Edition"
       },
       "countdownTarget": {
         "type": "number",
         "title": "Countdown Target (Unix Timestamp)",
-        "default": 1893456000
+        "default": 1739799600
       },
       "subtitle": {
         "type": "string",
         "title": "Subtitle",
-        "default": "Grab a drink, we will be live shortly"
+        "default": "Hosted by Johan Nyman - Pups, laughs & live chaos incoming!"
       },
       "socials": {
         "type": "array",
@@ -36,17 +36,17 @@
         "items": {
           "type": "string"
         },
-        "default": ["@streamer", "discord.gg/streamer", "youtube.com/streamer"]
+        "default": ["@DogNews", "discord.gg/dognews", "twitch.tv/johan_nyman"]
       },
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#1976d2"
+        "default": "#ff8c00"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ffa726"
+        "default": "#1a1a1a"
       }
     }
   }

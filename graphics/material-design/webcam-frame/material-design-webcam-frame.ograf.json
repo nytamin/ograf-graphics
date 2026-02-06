@@ -18,12 +18,12 @@
       "streamerName": {
         "type": "string",
         "title": "Streamer Name",
-        "default": "Streamer Name"
+        "default": "Johan Nyman"
       },
       "status": {
         "type": "string",
         "title": "Status Text",
-        "default": "LIVE"
+        "default": "LIVE WITH BISCUIT"
       },
       "showStatus": {
         "type": "boolean",
@@ -49,12 +49,12 @@
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#1976d2"
+        "default": "#ff8c00"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ffa726"
+        "default": "#1a1a1a"
       }
     }
   }

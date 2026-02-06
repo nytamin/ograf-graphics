@@ -18,22 +18,22 @@
       "channelName": {
         "type": "string",
         "title": "Channel Name",
-        "default": "StreamChannel"
+        "default": "Dog News"
       },
       "offlineText": {
         "type": "string",
         "title": "Offline Message",
-        "default": "Stream is Currently Offline"
+        "default": "Johan's Pups Are Napping"
       },
       "nextStreamTime": {
         "type": "string",
         "title": "Next Stream Time",
-        "default": "Next Stream: Tomorrow at 7:00 PM"
+        "default": "Next stream: Saturday 7 PM GMT with bonus doggo clips!"
       },
       "callToAction": {
         "type": "string",
         "title": "Call to Action",
-        "default": "Follow to get notified when we go live!"
+        "default": "Hit that follow button to get notified when the pups wake up!"
       },
       "socialLinks": {
         "type": "array",
@@ -41,17 +41,17 @@
         "items": {
           "type": "string"
         },
-        "default": ["Twitter", "Discord", "YouTube"]
+        "default": ["@DogNews", "discord.gg/dognews", "twitch.tv/johan_nyman"]
       },
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#1976d2"
+        "default": "#ff8c00"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ffa726"
+        "default": "#1a1a1a"
       }
     }
   }

@@ -18,12 +18,12 @@
       "location": {
         "type": "string",
         "title": "Location Name",
-        "default": "London, UK"
+        "default": "Dog Park, Stockholm"
       },
       "sublocation": {
         "type": "string",
         "title": "Sub-location",
-        "default": "Westminster"
+        "default": "Norrmälm District"
       },
       "status": {
         "type": "string",
@@ -45,12 +45,12 @@
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#1976d2"
+        "default": "#ff8c00"
       },
       "statusColor": {
         "type": "string",
         "title": "Status Badge Color",
-        "default": "#d32f2f"
+        "default": "#ffd700"
       }
     },
     "required": ["location"]

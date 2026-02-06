@@ -19,9 +19,9 @@
         "type": "object",
         "title": "Home Team",
         "properties": {
-          "name": { "type": "string", "default": "HOME" },
-          "abbreviation": { "type": "string", "default": "HOM" },
-          "score": { "type": "number", "default": 0 }
+          "name": { "type": "string", "default": "Team Biscuit" },
+          "abbreviation": { "type": "string", "default": "BIS" },
+          "score": { "type": "number", "default": 3 }
         },
         "required": ["name", "score"]
       },
@@ -29,21 +29,21 @@
         "type": "object",
         "title": "Away Team",
         "properties": {
-          "name": { "type": "string", "default": "AWAY" },
-          "abbreviation": { "type": "string", "default": "AWY" },
-          "score": { "type": "number", "default": 0 }
+          "name": { "type": "string", "default": "Team Retriever" },
+          "abbreviation": { "type": "string", "default": "RET" },
+          "score": { "type": "number", "default": 4 }
         },
         "required": ["name", "score"]
       },
       "clock": {
         "type": "string",
         "title": "Game Clock",
-        "default": "00:00"
+        "default": "01:15"
       },
       "period": {
         "type": "string",
         "title": "Period/Quarter",
-        "default": "1st"
+        "default": "1st Bark"
       },
       "showClock": {
         "type": "boolean",
@@ -53,7 +53,7 @@
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#4ecdc4"
+        "default": "#ff8c00"
       }
     },
     "required": ["homeTeam", "awayTeam"]

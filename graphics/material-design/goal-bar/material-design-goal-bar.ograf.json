@@ -18,22 +18,22 @@
       "goalTitle": {
         "type": "string",
         "title": "Goal Title",
-        "default": "Sub Goal"
+        "default": "Dog Treats Goal"
       },
       "currentProgress": {
         "type": "number",
         "title": "Current Progress",
-        "default": 45
+        "default": 238
       },
       "maxProgress": {
         "type": "number",
         "title": "Goal Target",
-        "default": 100
+        "default": 500
       },
       "unit": {
         "type": "string",
         "title": "Progress Unit",
-        "default": "subs"
+        "default": "treats"
       },
       "position": {
         "type": "string",
@@ -44,12 +44,12 @@
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#1976d2"
+        "default": "#ff8c00"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#4caf50"
+        "default": "#ffd700"
       }
     }
   }

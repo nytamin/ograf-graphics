@@ -18,22 +18,22 @@
       "name": {
         "type": "string",
         "title": "Name",
-        "default": "Jordan Hayes"
+        "default": "Bailey the Dachshund"
       },
       "title": {
         "type": "string",
         "title": "Title",
-        "default": "Senior Correspondent"
+        "default": "Adventure Master"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ffb800"
+        "default": "#ff8c00"
       },
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#1a2a4e"
+        "default": "#1a1a1a"
       }
     },
     "required": ["name", "title"]

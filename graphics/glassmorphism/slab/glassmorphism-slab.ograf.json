@@ -18,12 +18,12 @@
       "title": {
         "type": "string",
         "title": "Title",
-        "default": "Starting Lineup"
+        "default": "Pack Members"
       },
       "subtitle": {
         "type": "string",
         "title": "Subtitle",
-        "default": ""
+        "default": "Dog News Crew"
       },
       "items": {
         "type": "array",
@@ -36,11 +36,11 @@
           }
         },
         "default": [
-          { "label": "1", "value": "John Smith" },
-          { "label": "2", "value": "Sarah Johnson" },
-          { "label": "3", "value": "Mike Davis" },
-          { "label": "4", "value": "Emily Wilson" },
-          { "label": "5", "value": "Chris Brown" }
+          { "label": "Johan", "value": "Stream Master" },
+          { "label": "Biscuit", "value": "Skateboard Pup" },
+          { "label": "Max", "value": "Corgi Champion" },
+          { "label": "Luna", "value": "Retriever Star" },
+          { "label": "Bailey", "value": "Pug Legend" }
         ]
       },
       "position": {
@@ -52,7 +52,7 @@
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#9b59b6"
+        "default": "#ff8c00"
       }
     },
     "required": ["title", "items"]

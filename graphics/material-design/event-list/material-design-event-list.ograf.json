@@ -18,7 +18,7 @@
       "title": {
         "type": "string",
         "title": "Title",
-        "default": "Recent Events"
+        "default": "Pack Activity"
       },
       "events": {
         "type": "array",
@@ -32,10 +32,10 @@
           }
         },
         "default": [
-          { "type": "Follow", "user": "PixelHero", "detail": "just followed" },
-          { "type": "Sub", "user": "NovaFan", "detail": "subscribed for 3 months" },
-          { "type": "Tip", "user": "Riven", "detail": "$10 tip" },
-          { "type": "Raid", "user": "StreamerX", "detail": "raided with 45" }
+          { "type": "Follow", "user": "PuppyLover99", "detail": "just joined the pack" },
+          { "type": "Sub", "user": "BiscuitFan", "detail": "subscribed for 6 months" },
+          { "type": "Tip", "user": "DogDad", "detail": "donated €25 for treats" },
+          { "type": "Raid", "user": "CorgiBoss", "detail": "raided with 123 friends" }
         ]
       },
       "position": {
@@ -47,12 +47,12 @@
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#1976d2"
+        "default": "#ff8c00"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ffa726"
+        "default": "#1a1a1a"
       }
     }
   }
