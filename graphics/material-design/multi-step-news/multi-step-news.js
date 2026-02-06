@@ -59,20 +59,29 @@ const STYLE_TEXT = `
   z-index: 1;
   width: 90%;
   max-width: 1200px;
+  min-height: 520px;
   transform: translateY(20px);
   opacity: 0;
   will-change: transform, opacity;
 }
 
 .step-content {
-  display: none;
-}
-
-.step-content.active {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 32px;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.step-content.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .step-header {
@@ -234,6 +243,7 @@ class MaterialDesignMultiStepNews extends HTMLElement {
     this._currentStep = undefined;
     this._isVisible = false;
     this._contentAnimation = null;
+    this._stepAnimation = null;
 
     const root = this.attachShadow({ mode: "open" });
     const style = document.createElement("style");
@@ -312,6 +322,7 @@ class MaterialDesignMultiStepNews extends HTMLElement {
   async playAction(params) {
     const targetStep = this._resolveTargetStep(params);
     const skipAnimation = params?.skipAnimation === true;
+    const previousStep = this._currentStep;
 
     if (targetStep === undefined) {
       // Beyond last step - trigger stopAction behavior
@@ -320,7 +331,7 @@ class MaterialDesignMultiStepNews extends HTMLElement {
     } else {
       await this._animateTo(true, skipAnimation);
       this._currentStep = targetStep;
-      this._updateStepDisplay();
+      await this._transitionSteps(previousStep, targetStep, skipAnimation);
     }
 
     return {
@@ -332,6 +343,7 @@ class MaterialDesignMultiStepNews extends HTMLElement {
   async stopAction(params) {
     const skipAnimation = params?.skipAnimation === true;
     await this._animateTo(false, skipAnimation);
+    this._resetStepVisibility();
     this._currentStep = undefined;
     return { statusCode: 200 };
   }
@@ -356,8 +368,9 @@ class MaterialDesignMultiStepNews extends HTMLElement {
     const targetStep = Math.min(Math.floor(time / stepDuration), 3);
 
     if (targetStep !== this._currentStep) {
+      const previousStep = this._currentStep;
       this._currentStep = targetStep;
-      this._updateStepDisplay();
+      await this._transitionSteps(previousStep, targetStep, true);
     }
 
     return { statusCode: 200, currentStep: this._currentStep };
@@ -491,6 +504,85 @@ class MaterialDesignMultiStepNews extends HTMLElement {
       steps[this._currentStep].classList.add("active");
       indicatorDots[this._currentStep].classList.add("active");
     }
+  }
+
+  _transitionSteps(previousStep, nextStep, skipAnimation) {
+    const { steps, indicatorDots } = this._elements;
+
+    if (this._stepAnimation) {
+      this._stepAnimation.cancel();
+      this._stepAnimation = null;
+    }
+
+    steps.forEach((step) => {
+      step.classList.remove("active");
+      step.style.opacity = "";
+      step.style.transform = "";
+    });
+    indicatorDots.forEach((dot) => dot.classList.remove("active"));
+
+    const previousElement = typeof previousStep === "number" ? steps[previousStep] : null;
+    const nextElement = typeof nextStep === "number" ? steps[nextStep] : null;
+
+    if (nextElement) {
+      nextElement.classList.add("active");
+      indicatorDots[nextStep]?.classList.add("active");
+    }
+
+    if (skipAnimation || !previousElement || !nextElement || previousElement === nextElement) {
+      return Promise.resolve();
+    }
+
+    previousElement.classList.add("active");
+
+    const outgoing = previousElement.animate(
+      [
+        { opacity: 1, transform: "translateY(0)" },
+        { opacity: 0, transform: "translateY(-16px)" },
+      ],
+      {
+        duration: 260,
+        easing: "cubic-bezier(0.4, 0.0, 0.2, 1)",
+        fill: "forwards",
+      }
+    );
+
+    const incoming = nextElement.animate(
+      [
+        { opacity: 0, transform: "translateY(16px)" },
+        { opacity: 1, transform: "translateY(0)" },
+      ],
+      {
+        duration: 320,
+        easing: "cubic-bezier(0.4, 0.0, 0.2, 1)",
+        fill: "forwards",
+      }
+    );
+
+    this._stepAnimation = incoming;
+
+    return Promise.all([outgoing.finished, incoming.finished])
+      .catch(() => undefined)
+      .finally(() => {
+        previousElement.classList.remove("active");
+        previousElement.style.opacity = "";
+        previousElement.style.transform = "";
+        nextElement.style.opacity = "";
+        nextElement.style.transform = "";
+        if (this._stepAnimation === incoming) {
+          this._stepAnimation = null;
+        }
+      });
+  }
+
+  _resetStepVisibility() {
+    const { steps, indicatorDots } = this._elements;
+    steps.forEach((step) => {
+      step.classList.remove("active");
+      step.style.opacity = "";
+      step.style.transform = "";
+    });
+    indicatorDots.forEach((dot) => dot.classList.remove("active"));
   }
 
   _resolveTargetStep(params) {
