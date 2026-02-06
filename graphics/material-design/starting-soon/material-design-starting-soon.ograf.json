@@ -1,0 +1,53 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "starting-soon-material-design",
+  "version": "1.0.0",
+  "name": "Material Design Starting Soon",
+  "description": "A starting soon screen with countdown and social rotator styling based on Material Design.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "starting-soon.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "showTitle": {
+        "type": "string",
+        "title": "Show Title",
+        "default": "Starting Soon"
+      },
+      "countdownTarget": {
+        "type": "number",
+        "title": "Countdown Target (Unix Timestamp)",
+        "default": 1893456000
+      },
+      "subtitle": {
+        "type": "string",
+        "title": "Subtitle",
+        "default": "Grab a drink, we will be live shortly"
+      },
+      "socials": {
+        "type": "array",
+        "title": "Social Handles",
+        "items": {
+          "type": "string"
+        },
+        "default": ["@streamer", "discord.gg/streamer", "youtube.com/streamer"]
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color",
+        "default": "#1976d2"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#ffa726"
+      }
+    }
+  }
+}

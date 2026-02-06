@@ -1,0 +1,51 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "alert-widget-material-design",
+  "version": "1.0.0",
+  "name": "Material Design Alert Widget",
+  "description": "An animated alert widget using Material Design. Triggered by follows, subscriptions, donations, and raids with customizable messages and animations.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "alert-widget.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "alertType": {
+        "type": "string",
+        "title": "Alert Type",
+        "default": "follow",
+        "enum": ["follow", "subscribe", "bits", "raid"]
+      },
+      "userName": {
+        "type": "string",
+        "title": "User Name",
+        "default": "StreamUser"
+      },
+      "message": {
+        "type": "string",
+        "title": "Alert Message",
+        "default": "followed the channel!"
+      },
+      "displayDuration": {
+        "type": "number",
+        "title": "Display Duration (seconds)",
+        "default": 5
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color",
+        "default": "#1976d2"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#ffa726"
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "sponsor-bug-material-design",
+  "version": "1.0.0",
+  "name": "Material Design Sponsor Bug",
+  "description": "A rotating sponsor logo display using Material Design. Displays sponsor branding in a corner of the screen with smooth transitions between sponsors.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "sponsor-bug.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "sponsors": {
+        "type": "array",
+        "title": "Sponsor List",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "duration": {
+              "type": "number"
+            }
+          }
+        },
+        "default": [
+          { "name": "TechCorp", "duration": 5 },
+          { "name": "StreamTools Pro", "duration": 5 },
+          { "name": "EliteGear", "duration": 5 }
+        ]
+      },
+      "position": {
+        "type": "string",
+        "title": "Position",
+        "default": "bottom-right",
+        "enum": ["top-left", "top-right", "bottom-left", "bottom-right"]
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color",
+        "default": "#1976d2"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#ffa726"
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "goal-bar-material-design",
+  "version": "1.0.0",
+  "name": "Material Design Goal Bar",
+  "description": "A progress bar for tracking subscription and donation goals using Material Design. Displays current progress with animated fills and milestone celebrations.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "goal-bar.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "goalTitle": {
+        "type": "string",
+        "title": "Goal Title",
+        "default": "Sub Goal"
+      },
+      "currentProgress": {
+        "type": "number",
+        "title": "Current Progress",
+        "default": 45
+      },
+      "maxProgress": {
+        "type": "number",
+        "title": "Goal Target",
+        "default": 100
+      },
+      "unit": {
+        "type": "string",
+        "title": "Progress Unit",
+        "default": "subs"
+      },
+      "position": {
+        "type": "string",
+        "title": "Position",
+        "default": "top",
+        "enum": ["top", "bottom"]
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color",
+        "default": "#1976d2"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#4caf50"
+      }
+    }
+  }
+}

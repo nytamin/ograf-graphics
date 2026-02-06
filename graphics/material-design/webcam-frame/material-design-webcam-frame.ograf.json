@@ -1,0 +1,61 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "webcam-frame-material-design",
+  "version": "1.0.0",
+  "name": "Material Design Webcam Frame",
+  "description": "A decorative webcam frame overlay using Material Design. Provides an elevated border and optional label overlay for the streamer camera.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "webcam-frame.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "streamerName": {
+        "type": "string",
+        "title": "Streamer Name",
+        "default": "Streamer Name"
+      },
+      "status": {
+        "type": "string",
+        "title": "Status Text",
+        "default": "LIVE"
+      },
+      "showStatus": {
+        "type": "boolean",
+        "title": "Show Status",
+        "default": true
+      },
+      "frameWidth": {
+        "type": "number",
+        "title": "Frame Width (pixels)",
+        "default": 400
+      },
+      "frameHeight": {
+        "type": "number",
+        "title": "Frame Height (pixels)",
+        "default": 300
+      },
+      "aspectRatio": {
+        "type": "string",
+        "title": "Aspect Ratio",
+        "default": "4:3",
+        "enum": ["16:9", "4:3", "1:1"]
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color",
+        "default": "#1976d2"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#ffa726"
+      }
+    }
+  }
+}

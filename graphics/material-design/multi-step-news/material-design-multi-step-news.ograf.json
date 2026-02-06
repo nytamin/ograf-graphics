@@ -1,0 +1,106 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "multi-step-news-material-design",
+  "version": "1.0.0",
+  "name": "Material Design Multi-Step News",
+  "description": "A multi-step news graphic using Material Design principles. Displays a breaking news story with headline, story details, expert commentary, and call to action across 4 sequential steps.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "multi-step-news.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": true,
+  "stepCount": 4,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "step1Headline": {
+        "type": "string",
+        "title": "Step 1: Headline",
+        "default": "BREAKING NEWS"
+      },
+      "step1Title": {
+        "type": "string",
+        "title": "Step 1: Title",
+        "default": "Major Climate Report Released"
+      },
+      "step2Title": {
+        "type": "string",
+        "title": "Step 2: Story Title",
+        "default": "Key Findings"
+      },
+      "step2Details": {
+        "type": "array",
+        "title": "Step 2: Details",
+        "items": {
+          "type": "string"
+        },
+        "default": [
+          "Global temperatures rose 1.1°C since pre-industrial era",
+          "Arctic ice declining at accelerating rate",
+          "100+ species face extinction risk"
+        ]
+      },
+      "step3Title": {
+        "type": "string",
+        "title": "Step 3: Expert Title",
+        "default": "Expert Analysis"
+      },
+      "step3Quote": {
+        "type": "string",
+        "title": "Step 3: Quote",
+        "default": "\"This is a critical moment for global action. The science is clear and the time to act is now.\""
+      },
+      "step3Expert": {
+        "type": "string",
+        "title": "Step 3: Expert Name",
+        "default": "Dr. Jane Science, Climate Research Institute"
+      },
+      "step4Title": {
+        "type": "string",
+        "title": "Step 4: CTA Title",
+        "default": "What You Can Do"
+      },
+      "step4Text": {
+        "type": "string",
+        "title": "Step 4: CTA Text",
+        "default": "Learn more about climate action and how you can make a difference. Visit our climate hub for resources and initiatives."
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color",
+        "default": "#1976d2"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#d32f2f"
+      },
+      "step1Icon": {
+        "type": "string",
+        "title": "Step 1: Icon Type",
+        "default": "alert",
+        "enum": ["alert", "chart", "globe"]
+      },
+      "step2Icon": {
+        "type": "string",
+        "title": "Step 2: Icon Type",
+        "default": "chart",
+        "enum": ["alert", "chart", "globe"]
+      },
+      "step3Icon": {
+        "type": "string",
+        "title": "Step 3: Icon Type",
+        "default": "globe",
+        "enum": ["alert", "chart", "globe"]
+      },
+      "step4Icon": {
+        "type": "string",
+        "title": "Step 4: Icon Type",
+        "default": "check",
+        "enum": ["check", "link", "people"]
+      }
+    }
+  }
+}

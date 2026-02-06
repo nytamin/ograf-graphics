@@ -1,0 +1,58 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "offline-screen-material-design",
+  "version": "1.0.0",
+  "name": "Material Design Offline Screen",
+  "description": "A full-screen offline graphic using Material Design. Displays when the stream is not live, featuring countdown to next stream, recent highlights, and social media links.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "offline-screen.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "channelName": {
+        "type": "string",
+        "title": "Channel Name",
+        "default": "StreamChannel"
+      },
+      "offlineText": {
+        "type": "string",
+        "title": "Offline Message",
+        "default": "Stream is Currently Offline"
+      },
+      "nextStreamTime": {
+        "type": "string",
+        "title": "Next Stream Time",
+        "default": "Next Stream: Tomorrow at 7:00 PM"
+      },
+      "callToAction": {
+        "type": "string",
+        "title": "Call to Action",
+        "default": "Follow to get notified when we go live!"
+      },
+      "socialLinks": {
+        "type": "array",
+        "title": "Social Media Links",
+        "items": {
+          "type": "string"
+        },
+        "default": ["Twitter", "Discord", "YouTube"]
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color",
+        "default": "#1976d2"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#ffa726"
+      }
+    }
+  }
+}

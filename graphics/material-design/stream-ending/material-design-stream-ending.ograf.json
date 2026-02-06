@@ -1,0 +1,53 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "stream-ending-material-design",
+  "version": "1.0.0",
+  "name": "Material Design Stream Ending",
+  "description": "A stream ending slate with thank you message, credits, and raid target.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "stream-ending.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Title",
+        "default": "Thanks for Watching"
+      },
+      "subtitle": {
+        "type": "string",
+        "title": "Subtitle",
+        "default": "See you on the next stream"
+      },
+      "raidTarget": {
+        "type": "string",
+        "title": "Raid Target",
+        "default": "Raiding @coolstreamer"
+      },
+      "credits": {
+        "type": "array",
+        "title": "Credits",
+        "items": {
+          "type": "string"
+        },
+        "default": ["Mods: Alex, Priya", "Music: Chillhop", "Art: Studio Nine"]
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color",
+        "default": "#1976d2"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#4caf50"
+      }
+    }
+  }
+}

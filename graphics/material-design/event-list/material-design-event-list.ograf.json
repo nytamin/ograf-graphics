@@ -1,0 +1,59 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "event-list-material-design",
+  "version": "1.0.0",
+  "name": "Material Design Event List",
+  "description": "A compact list of recent stream events such as follows, subs, and tips.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "event-list.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Title",
+        "default": "Recent Events"
+      },
+      "events": {
+        "type": "array",
+        "title": "Events",
+        "items": {
+          "type": "object",
+          "properties": {
+            "type": { "type": "string" },
+            "user": { "type": "string" },
+            "detail": { "type": "string" }
+          }
+        },
+        "default": [
+          { "type": "Follow", "user": "PixelHero", "detail": "just followed" },
+          { "type": "Sub", "user": "NovaFan", "detail": "subscribed for 3 months" },
+          { "type": "Tip", "user": "Riven", "detail": "$10 tip" },
+          { "type": "Raid", "user": "StreamerX", "detail": "raided with 45" }
+        ]
+      },
+      "position": {
+        "type": "string",
+        "title": "Position",
+        "default": "top-left",
+        "enum": ["top-left", "top-right", "bottom-left", "bottom-right"]
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color",
+        "default": "#1976d2"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#ffa726"
+      }
+    }
+  }
+}

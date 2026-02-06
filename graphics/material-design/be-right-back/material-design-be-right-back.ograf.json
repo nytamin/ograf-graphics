@@ -1,0 +1,61 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "be-right-back-material-design",
+  "version": "1.0.0",
+  "name": "Material Design Be Right Back",
+  "description": "A be-right-back slate with schedule and social links.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "be-right-back.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Title",
+        "default": "Be Right Back"
+      },
+      "subtitle": {
+        "type": "string",
+        "title": "Subtitle",
+        "default": "Quick break - stay tuned"
+      },
+      "scheduleTitle": {
+        "type": "string",
+        "title": "Schedule Title",
+        "default": "Up Next"
+      },
+      "scheduleItems": {
+        "type": "array",
+        "title": "Schedule Items",
+        "items": {
+          "type": "string"
+        },
+        "default": ["Q&A Segment", "Ranked Match", "Community Games"]
+      },
+      "socials": {
+        "type": "array",
+        "title": "Social Handles",
+        "items": {
+          "type": "string"
+        },
+        "default": ["@streamer", "discord.gg/streamer", "tiktok.com/@streamer"]
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Color",
+        "default": "#1976d2"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#ffa726"
+      }
+    }
+  }
+}
