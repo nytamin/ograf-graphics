@@ -1,0 +1,74 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-scorebug",
+    "version": "1.0.0",
+    "name": "Sports Scorebug",
+    "description": "Premium scorebug with time, period, and team branding.",
+    "author": {
+        "name": "OGraf Templates"
+    },
+    "main": "scorebug.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": true,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "homeTeam": {
+                "type": "string",
+                "title": "Home Team",
+                "default": "HOME"
+            },
+            "awayTeam": {
+                "type": "string",
+                "title": "Away Team",
+                "default": "AWAY"
+            },
+            "homeScore": {
+                "type": "number",
+                "title": "Home Score",
+                "default": 0
+            },
+            "awayScore": {
+                "type": "number",
+                "title": "Away Score",
+                "default": 0
+            },
+            "period": {
+                "type": "string",
+                "title": "Period",
+                "default": "1st"
+            },
+            "time": {
+                "type": "string",
+                "title": "Time",
+                "default": "12:00"
+            },
+            "homeColor": {
+                "type": "string",
+                "title": "Home Color",
+                "default": "#1a237e"
+            },
+            "awayColor": {
+                "type": "string",
+                "title": "Away Color",
+                "default": "#b71c1c"
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ]
+}

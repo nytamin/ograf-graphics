@@ -1,0 +1,60 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "lower-third-statistic-counter",
+  "version": "1.0.0",
+  "name": "Statistic Counter Lower Third",
+  "description": "Lower-third that displays a single-number statistic and animates from 0 to the target value on in-animation.",
+  "author": { "name": "OGraf Templates" },
+  "main": "lower-third.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "label": {
+        "type": "string",
+        "title": "Label",
+        "default": "Bridge Fasteners"
+      },
+      "value": {
+        "type": "number",
+        "title": "Value",
+        "default": 13240
+      },
+      "unit": {
+        "type": "string",
+        "title": "Unit",
+        "default": "nails"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#ff1b6d"
+      },
+      "backgroundOpacity": {
+        "type": "number",
+        "title": "Background Opacity",
+        "default": 0.2,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "durationMs": {
+        "type": "number",
+        "title": "Count-up Duration (ms)",
+        "default": 1200,
+        "minimum": 200,
+        "maximum": 10000
+      }
+    },
+    "required": ["value"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": { "width": { "ideal": 1920 }, "height": { "ideal": 1080 } },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

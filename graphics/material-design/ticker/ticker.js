@@ -250,36 +250,49 @@ class MaterialDesignTicker extends HTMLElement {
   }
 
   _startScrolling() {
-    const scrollContent = this._elements.scrollContent;
-    const speed = this._state.scrollSpeed || 60;
-    const contentWidth = scrollContent.scrollWidth;
-    const duration = (contentWidth / speed) * 1000;
+    if (this._isScrolling) return;
+    this._isScrolling = true;
+    this._lastFrameTime = performance.now();
+    this._scrollPos = 0;
 
-    const scroll = () => {
-      if (this._scrollAnimation) {
-        this._scrollAnimation.cancel();
+    // Ensure we have content width
+    const scrollContent = this._elements.scrollContent;
+    this._contentWidth = scrollContent.scrollWidth;
+
+    // Clone content for seamless looping if needed
+    // For this simple version, we'll just scroll and loop back
+
+    this._scrollLoop = (currentTime) => {
+      if (!this._isScrolling) return;
+
+      const deltaTime = currentTime - this._lastFrameTime;
+      this._lastFrameTime = currentTime;
+
+      const speed = this._state.scrollSpeed || 60; // pixels per second
+      const pixelsPerFrame = (speed * deltaTime) / 1000;
+
+      this._scrollPos += pixelsPerFrame;
+
+      // Reset if we've scrolled past the content
+      // Note: In a real seamless ticker we'd have duplicate content.
+      // Here we just loop back for simplicity as per original design.
+      if (this._scrollPos >= this._contentWidth) {
+        this._scrollPos = -this._elements.container.offsetWidth;
       }
 
-      this._scrollAnimation = scrollContent.animate(
-        [
-          { transform: "translate3d(0, 0, 0)" },
-          { transform: `translate3d(-${contentWidth}px, 0, 0)` },
-        ],
-        {
-          duration: duration,
-          easing: "linear",
-          iterations: Infinity,
-        }
-      );
+      scrollContent.style.transform = `translate3d(${-this._scrollPos}px, 0, 0)`;
+
+      this._rafId = requestAnimationFrame(this._scrollLoop);
     };
 
-    requestAnimationFrame(scroll);
+    this._rafId = requestAnimationFrame(this._scrollLoop);
   }
 
   _stopScrolling() {
-    if (this._scrollAnimation) {
-      this._scrollAnimation.cancel();
-      this._scrollAnimation = null;
+    this._isScrolling = false;
+    if (this._rafId) {
+      cancelAnimationFrame(this._rafId);
+      this._rafId = null;
     }
   }
 

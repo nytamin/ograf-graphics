@@ -1,0 +1,45 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "modern-breaking-news",
+  "version": "1.0.0",
+  "name": "Breaking News Alert",
+  "description": "High-impact breaking news graphic with pulsing alert and dual text lines.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "breaking-news.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "headline": {
+        "type": "string",
+        "title": "Headline",
+        "default": "BREAKING NEWS"
+      },
+      "subheadline": {
+        "type": "string",
+        "title": "Subheadline",
+        "default": "Developing story: Details emerging from the capital"
+      },
+      "themeColor": {
+        "type": "string",
+        "title": "Theme Color",
+        "default": "#d32f2f"
+      }
+    },
+    "required": ["headline"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 60 }
+    }
+  ]
+}

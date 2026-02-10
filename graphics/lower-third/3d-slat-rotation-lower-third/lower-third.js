@@ -91,7 +91,7 @@ const STYLE_TEXT = `
   position: absolute;
   top: 0;
   bottom: 0;
-  left: -100%;
+  left: 0;
   width: 80px;
   background: linear-gradient(
     90deg,
@@ -99,9 +99,10 @@ const STYLE_TEXT = `
     rgba(255, 255, 255, 0.4) 50%,
     transparent 100%
   );
-  opacity: 0;
+  opacity: var(--flare-opacity, 0);
+  transform: translateX(var(--flare-pos, -100%));
   pointer-events: none;
-  will-change: left, opacity;
+  will-change: transform, opacity;
 }
 
 .title-slat .slat-face {
@@ -407,31 +408,27 @@ class ThreeDSlatRotationLowerThird extends HTMLElement {
   }
 
   _animateFlare(element) {
-    const style = element.querySelector("style") || document.createElement("style");
-    if (!element.querySelector("style")) {
-      element.appendChild(style);
-    }
-
     let progress = 0;
     const duration = 800;
     const startTime = performance.now();
 
     const animate = (currentTime) => {
+      if (!this._isVisible) return;
+
       const elapsed = currentTime - startTime;
       progress = Math.min(elapsed / duration, 1);
 
-      const position = -100 + progress * 200; // -100% to 100%
+      const positionPercentage = -100 + progress * 200; // -100% to 100%
       const opacity = progress < 0.5 ? progress * 2 : (1 - progress) * 2;
 
-      style.textContent = `
-        .slat-face::after {
-          left: ${position}% !important;
-          opacity: ${opacity} !important;
-        }
-      `;
+      element.style.setProperty("--flare-pos", `${positionPercentage}%`);
+      element.style.setProperty("--flare-opacity", opacity);
 
       if (progress < 1) {
         requestAnimationFrame(animate);
+      } else {
+        element.style.removeProperty("--flare-pos");
+        element.style.removeProperty("--flare-opacity");
       }
     };
 

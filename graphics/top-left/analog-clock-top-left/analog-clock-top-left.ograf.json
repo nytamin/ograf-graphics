@@ -1,0 +1,47 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "top-left-analog-clock",
+  "version": "1.0.0",
+  "name": "Analog Clock Top-Left",
+  "description": "Top-left graphic that displays the current time as an analog clock.",
+  "author": { "name": "OGraf Templates" },
+  "main": "top-left.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "ringColor": {
+        "type": "string",
+        "title": "Ring Color",
+        "default": "#ffffff"
+      },
+      "handColor": {
+        "type": "string",
+        "title": "Hand Color",
+        "default": "#00d9ff"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#ff1b6d"
+      },
+      "size": {
+        "type": "number",
+        "title": "Clock Size (px)",
+        "default": 88,
+        "minimum": 56,
+        "maximum": 160
+      }
+    }
+  },
+  "renderRequirements": [
+    {
+      "resolution": { "width": { "ideal": 1920 }, "height": { "ideal": 1080 } },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

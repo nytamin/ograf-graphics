@@ -1,0 +1,49 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "lower-third-countdown",
+  "version": "1.0.0",
+  "name": "Countdown Lower Third",
+  "description": "Lower-third that counts down to a target Unix time (seconds or milliseconds).",
+  "author": { "name": "OGraf Templates" },
+  "main": "lower-third.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "label": {
+        "type": "string",
+        "title": "Label",
+        "default": "Time Remaining"
+      },
+      "unixTime": {
+        "type": "number",
+        "title": "Unix Time",
+        "description": "Target Unix time in seconds or milliseconds.",
+        "default": 1738723200
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#00d9ff"
+      },
+      "backgroundOpacity": {
+        "type": "number",
+        "title": "Background Opacity",
+        "default": 0.18,
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    "required": ["unixTime"]
+  },
+  "renderRequirements": [
+    {
+      "resolution": { "width": { "ideal": 1920 }, "height": { "ideal": 1080 } },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}

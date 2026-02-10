@@ -1,0 +1,40 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "top-left-digital-clock",
+  "version": "1.0.0",
+  "name": "Digital Clock Top-Left",
+  "description": "Top-left graphic that displays the current time as HH:MM:SS.",
+  "author": { "name": "OGraf Templates" },
+  "main": "top-left.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "label": {
+        "type": "string",
+        "title": "Label",
+        "default": "LIVE"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "default": "#00ffb2"
+      },
+      "showLabel": {
+        "type": "boolean",
+        "title": "Show Label",
+        "default": true
+      }
+    }
+  },
+  "renderRequirements": [
+    {
+      "resolution": { "width": { "ideal": 1920 }, "height": { "ideal": 1080 } },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ]
+}
