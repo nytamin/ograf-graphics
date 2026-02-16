@@ -7,7 +7,7 @@ This repository contains a collection of (mostly AI-generated) [OGraf](https://o
 
 Tip: To view the graphics in this repository, you can use the [OGraf Devtool by SuperFly.tv](https://ograf-devtool.superfly.tv):
 
-* [Download the graphics as a ZIP file](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fnytamin%2Fograf-templates).
+* [Download the graphics as a ZIP file](https://github.com/nytamin/ograf-graphics/archive/refs/heads/main.zip).
 * Unzip the downloaded file to a local directory on your computer.
 * Go to the [OGraf Devtool](https://ograf-devtool.superfly.tv) and pick your local directory to load the graphics.
 
