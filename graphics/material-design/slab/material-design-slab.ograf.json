@@ -26,44 +26,84 @@
         "items": {
           "type": "object",
           "properties": {
-            "label": { "type": "string" },
-            "value": { "type": "string" }
+            "label": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
           },
-          "required": ["label"]
+          "required": [
+            "label"
+          ]
         },
         "default": [
-          { "label": "Corgi Win", "value": "Skateboard Championship trophy" },
-          { "label": "Dachshund News", "value": "Great escape adventure ongoing" },
-          { "label": "Johan's Update", "value": "Next stream this Saturday" }
+          {
+            "label": "Corgi Win",
+            "value": "Skateboard Championship trophy"
+          },
+          {
+            "label": "Dachshund News",
+            "value": "Great escape adventure ongoing"
+          },
+          {
+            "label": "Johan's Update",
+            "value": "Next stream this Saturday"
+          }
         ]
       },
       "position": {
         "type": "string",
         "title": "Position",
-        "enum": ["left", "right"],
+        "enum": [
+          "left",
+          "right"
+        ],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "left": "Left",
+            "right": "Right"
+          }
+        },
         "default": "left"
       },
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#ff8c00"
+        "default": "#ff8c00",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "surfaceColor": {
         "type": "string",
         "title": "Surface Color",
-        "default": "#ffffff"
+        "default": "#ffffff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       }
     },
-    "required": ["title", "items"]
+    "required": [
+      "title",
+      "items"
+    ]
   },
   "renderRequirements": [
     {
       "resolution": {
-        "width": { "ideal": 1920 },
-        "height": { "ideal": 1080 }
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
       },
-      "frameRate": { "ideal": 50 },
-      "accessToPublicInternet": { "ideal": false }
+      "frameRate": {
+        "ideal": 50
+      },
+      "accessToPublicInternet": {
+        "ideal": false
+      }
     }
   ]
 }

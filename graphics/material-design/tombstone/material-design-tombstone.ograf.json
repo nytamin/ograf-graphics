@@ -38,24 +38,38 @@
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#ff8c00"
+        "default": "#ff8c00",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "surfaceColor": {
         "type": "string",
         "title": "Surface Color",
-        "default": "#ffffff"
+        "default": "#ffffff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       }
     },
-    "required": ["fact"]
+    "required": [
+      "fact"
+    ]
   },
   "renderRequirements": [
     {
       "resolution": {
-        "width": { "ideal": 1920 },
-        "height": { "ideal": 1080 }
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
       },
-      "frameRate": { "ideal": 50 },
-      "accessToPublicInternet": { "ideal": false }
+      "frameRate": {
+        "ideal": 50
+      },
+      "accessToPublicInternet": {
+        "ideal": false
+      }
     }
   ]
 }

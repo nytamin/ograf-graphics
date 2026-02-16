@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "name": "Digital Clock Top-Left",
   "description": "Top-left graphic that displays the current time as HH:MM:SS.",
-  "author": { "name": "OGraf Templates" },
+  "author": {
+    "name": "OGraf Templates"
+  },
   "main": "top-left.js",
   "supportsRealTime": true,
   "supportsNonRealTime": false,
@@ -21,7 +23,9 @@
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#00ffb2"
+        "default": "#00ffb2",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "showLabel": {
         "type": "boolean",
@@ -32,9 +36,20 @@
   },
   "renderRequirements": [
     {
-      "resolution": { "width": { "ideal": 1920 }, "height": { "ideal": 1080 } },
-      "frameRate": { "ideal": 50 },
-      "accessToPublicInternet": { "ideal": false }
+      "resolution": {
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
+      },
+      "frameRate": {
+        "ideal": 50
+      },
+      "accessToPublicInternet": {
+        "ideal": false
+      }
     }
   ]
 }

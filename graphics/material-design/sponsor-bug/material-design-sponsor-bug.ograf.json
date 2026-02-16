@@ -30,26 +30,53 @@
           }
         },
         "default": [
-          { "name": "Puppy Power Treats", "duration": 5 },
-          { "name": "Bark & Stream Co", "duration": 5 },
-          { "name": "Johan's Dog Gear", "duration": 5 }
+          {
+            "name": "Puppy Power Treats",
+            "duration": 5
+          },
+          {
+            "name": "Bark & Stream Co",
+            "duration": 5
+          },
+          {
+            "name": "Johan's Dog Gear",
+            "duration": 5
+          }
         ]
       },
       "position": {
         "type": "string",
         "title": "Position",
         "default": "bottom-right",
-        "enum": ["top-left", "top-right", "bottom-left", "bottom-right"]
+        "enum": [
+          "top-left",
+          "top-right",
+          "bottom-left",
+          "bottom-right"
+        ],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "top-left": "Top Left",
+            "top-right": "Top Right",
+            "bottom-left": "Bottom Left",
+            "bottom-right": "Bottom Right"
+          }
+        }
       },
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#ff8c00"
+        "default": "#ff8c00",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#1a1a1a"
+        "default": "#1a1a1a",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       }
     }
   }

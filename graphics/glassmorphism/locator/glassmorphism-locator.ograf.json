@@ -33,25 +33,49 @@
       "position": {
         "type": "string",
         "title": "Position",
-        "enum": ["top-left", "top-right"],
-        "default": "top-left"
+        "enum": [
+          "top-left",
+          "top-right"
+        ],
+        "default": "top-left",
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "top-left": "Top Left",
+            "top-right": "Top Right",
+            "bottom-left": "Bottom Left",
+            "bottom-right": "Bottom Right"
+          }
+        }
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ff8c00"
+        "default": "#ff8c00",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       }
     },
-    "required": ["location"]
+    "required": [
+      "location"
+    ]
   },
   "renderRequirements": [
     {
       "resolution": {
-        "width": { "ideal": 1920 },
-        "height": { "ideal": 1080 }
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
       },
-      "frameRate": { "ideal": 50 },
-      "accessToPublicInternet": { "ideal": false }
+      "frameRate": {
+        "ideal": 50
+      },
+      "accessToPublicInternet": {
+        "ideal": false
+      }
     }
   ]
 }

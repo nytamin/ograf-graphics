@@ -28,31 +28,46 @@
       "textColor": {
         "type": "string",
         "title": "Text Color",
-        "default": "#ffffff"
+        "default": "#ffffff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "shadowColor": {
         "type": "string",
         "title": "Shadow Color",
-        "default": "#1a1a1a"
+        "default": "#1a1a1a",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "shadowIntensity": {
         "type": "number",
         "title": "Shadow Intensity",
         "default": 0.9,
+        "gddType": "percentage",
         "minimum": 0,
         "maximum": 1
       }
     },
-    "required": ["title"]
+    "required": [
+      "title"
+    ]
   },
   "renderRequirements": [
     {
       "resolution": {
-        "width": { "ideal": 1920 },
-        "height": { "ideal": 1080 }
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
       },
-      "frameRate": { "ideal": 50 },
-      "accessToPublicInternet": { "ideal": false }
+      "frameRate": {
+        "ideal": 50
+      },
+      "accessToPublicInternet": {
+        "ideal": false
+      }
     }
   ]
 }

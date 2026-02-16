@@ -31,40 +31,82 @@
         "items": {
           "type": "object",
           "properties": {
-            "label": { "type": "string" },
-            "value": { "type": "string" }
+            "label": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
           }
         },
         "default": [
-          { "label": "Johan", "value": "Stream Master" },
-          { "label": "Biscuit", "value": "Skateboard Pup" },
-          { "label": "Max", "value": "Corgi Champion" },
-          { "label": "Luna", "value": "Retriever Star" },
-          { "label": "Bailey", "value": "Pug Legend" }
+          {
+            "label": "Johan",
+            "value": "Stream Master"
+          },
+          {
+            "label": "Biscuit",
+            "value": "Skateboard Pup"
+          },
+          {
+            "label": "Max",
+            "value": "Corgi Champion"
+          },
+          {
+            "label": "Luna",
+            "value": "Retriever Star"
+          },
+          {
+            "label": "Bailey",
+            "value": "Pug Legend"
+          }
         ]
       },
       "position": {
         "type": "string",
         "title": "Position",
-        "enum": ["left", "right"],
-        "default": "right"
+        "enum": [
+          "left",
+          "right"
+        ],
+        "default": "right",
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "left": "Left",
+            "right": "Right"
+          }
+        }
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ff8c00"
+        "default": "#ff8c00",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       }
     },
-    "required": ["title", "items"]
+    "required": [
+      "title",
+      "items"
+    ]
   },
   "renderRequirements": [
     {
       "resolution": {
-        "width": { "ideal": 1920 },
-        "height": { "ideal": 1080 }
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
       },
-      "frameRate": { "ideal": 50 },
-      "accessToPublicInternet": { "ideal": false }
+      "frameRate": {
+        "ideal": 50
+      },
+      "accessToPublicInternet": {
+        "ideal": false
+      }
     }
   ]
 }

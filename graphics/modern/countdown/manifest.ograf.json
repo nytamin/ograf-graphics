@@ -1,0 +1,92 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "modern-countdown",
+    "version": "1.0.0",
+    "name": "Pre-Show Countdown",
+    "description": "Full-screen countdown graphic for pre-show segments.",
+    "author": {
+        "name": "OGraf Templates"
+    },
+    "main": "countdown.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": true,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "mode": {
+                "type": "string",
+                "title": "Mode",
+                "enum": [
+                    "timestamp",
+                    "clock",
+                    "duration"
+                ],
+                "gddType": "select",
+                "gddOptions": {
+                    "labels": {
+                        "timestamp": "Timestamp",
+                        "clock": "Clock",
+                        "duration": "Duration"
+                    }
+                },
+                "default": "duration"
+            },
+            "targetTime": {
+                "type": "integer",
+                "title": "Target Unix Timestamp (ms)",
+                "description": "Used when mode is 'timestamp'"
+            },
+            "duration": {
+                "type": "integer",
+                "title": "Duration (seconds)",
+                "description": "Used when mode is 'duration'",
+                "default": 60
+            },
+            "countdownLabel": {
+                "type": "string",
+                "title": "Countdown Label",
+                "default": "STARTS IN"
+            },
+            "openUpUponZero": {
+                "type": "boolean",
+                "title": "Open Up Upon Zero",
+                "description": "If true, the graphic will open up a hole when the countdown reaches zero.",
+                "default": false
+            },
+            "themeColor": {
+                "title": "Theme Color",
+                "type": "string",
+                "pattern": "^#[0-9a-f]{6}$",
+                "gddType": "color-rrggbb",
+                "default": "#d32f2f"
+            },
+            "textColor": {
+                "title": "Text Color",
+                "type": "string",
+                "pattern": "^#[0-9a-f]{6}$",
+                "gddType": "color-rrggbb",
+                "default": "#ffffff"
+            }
+        },
+        "required": [
+            "mode"
+        ]
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ]
+}

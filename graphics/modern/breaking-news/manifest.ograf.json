@@ -26,20 +26,30 @@
         "default": "Developing story: Details emerging from the capital"
       },
       "themeColor": {
-        "type": "string",
         "title": "Theme Color",
+        "type": "string",
+        "pattern": "^#[0-9a-f]{6}$",
+        "gddType": "color-rrggbb",
         "default": "#d32f2f"
       }
     },
-    "required": ["headline"]
+    "required": [
+      "headline"
+    ]
   },
   "renderRequirements": [
     {
       "resolution": {
-        "width": { "ideal": 1920 },
-        "height": { "ideal": 1080 }
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
       },
-      "frameRate": { "ideal": 60 }
+      "frameRate": {
+        "ideal": 60
+      }
     }
   ]
 }

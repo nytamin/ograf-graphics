@@ -44,17 +44,33 @@
         "type": "string",
         "title": "Aspect Ratio",
         "default": "4:3",
-        "enum": ["16:9", "4:3", "1:1"]
+        "enum": [
+          "16:9",
+          "4:3",
+          "1:1"
+        ],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "16:9": "16:9",
+            "4:3": "4:3",
+            "1:1": "1:1"
+          }
+        }
       },
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#ff8c00"
+        "default": "#ff8c00",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#1a1a1a"
+        "default": "#1a1a1a",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       }
     }
   }

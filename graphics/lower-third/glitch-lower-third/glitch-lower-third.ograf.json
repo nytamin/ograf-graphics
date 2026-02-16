@@ -28,29 +28,45 @@
       "glitchColor1": {
         "type": "string",
         "title": "Glitch Color 1 (Red Channel)",
-        "default": "#ff8c00"
+        "default": "#ff8c00",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "glitchColor2": {
         "type": "string",
         "title": "Glitch Color 2 (Cyan Channel)",
-        "default": "#00ffff"
+        "default": "#00ffff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "textColor": {
         "type": "string",
         "title": "Text Color",
-        "default": "#ffffff"
+        "default": "#ffffff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       }
     },
-    "required": ["title"]
+    "required": [
+      "title"
+    ]
   },
   "renderRequirements": [
     {
       "resolution": {
-        "width": { "ideal": 1920 },
-        "height": { "ideal": 1080 }
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
       },
-      "frameRate": { "ideal": 50 },
-      "accessToPublicInternet": { "ideal": false }
+      "frameRate": {
+        "ideal": 50
+      },
+      "accessToPublicInternet": {
+        "ideal": false
+      }
     }
   ]
 }

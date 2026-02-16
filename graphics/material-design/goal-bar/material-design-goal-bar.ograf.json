@@ -39,17 +39,31 @@
         "type": "string",
         "title": "Position",
         "default": "top",
-        "enum": ["top", "bottom"]
+        "enum": [
+          "top",
+          "bottom"
+        ],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "top": "Top",
+            "bottom": "Bottom"
+          }
+        }
       },
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#ff8c00"
+        "default": "#ff8c00",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ffd700"
+        "default": "#ffd700",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-fA-F]{6}$"
       }
     }
   }

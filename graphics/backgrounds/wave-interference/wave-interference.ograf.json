@@ -1,0 +1,73 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "background-wave-interference",
+    "version": "1.0.0",
+    "name": "Wave Interference Background",
+    "description": "Abstract geometric waves moving across the screen, creating interference patterns.",
+    "author": {
+        "name": "OGraf Templates"
+    },
+    "main": "wave-interference.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": true,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "colorStart": {
+                "type": "string",
+                "title": "Gradient Start Color",
+                "default": "#4b0082",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "colorEnd": {
+                "type": "string",
+                "title": "Gradient End Color",
+                "default": "#0000ff",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "speed": {
+                "type": "number",
+                "title": "Wave Speed",
+                "default": 1.0,
+                "minimum": 0.1,
+                "maximum": 5.0
+            },
+            "complexity": {
+                "type": "integer",
+                "title": "Wave Complexity",
+                "default": 5,
+                "minimum": 1,
+                "maximum": 20
+            },
+            "amplitude": {
+                "type": "number",
+                "title": "Wave Amplitude",
+                "default": 100,
+                "minimum": 10,
+                "maximum": 500
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            },
+            "accessToPublicInternet": {
+                "ideal": false
+            }
+        }
+    ]
+}

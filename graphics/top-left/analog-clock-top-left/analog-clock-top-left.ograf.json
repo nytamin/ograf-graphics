@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "name": "Analog Clock Top-Left",
   "description": "Top-left graphic that displays the current time as an analog clock.",
-  "author": { "name": "OGraf Templates" },
+  "author": {
+    "name": "OGraf Templates"
+  },
   "main": "top-left.js",
   "supportsRealTime": true,
   "supportsNonRealTime": false,
@@ -16,17 +18,23 @@
       "ringColor": {
         "type": "string",
         "title": "Ring Color",
-        "default": "#ffffff"
+        "default": "#ffffff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "handColor": {
         "type": "string",
         "title": "Hand Color",
-        "default": "#00d9ff"
+        "default": "#00d9ff",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ff1b6d"
+        "default": "#ff1b6d",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "size": {
         "type": "number",
@@ -39,9 +47,20 @@
   },
   "renderRequirements": [
     {
-      "resolution": { "width": { "ideal": 1920 }, "height": { "ideal": 1080 } },
-      "frameRate": { "ideal": 50 },
-      "accessToPublicInternet": { "ideal": false }
+      "resolution": {
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
+      },
+      "frameRate": {
+        "ideal": 50
+      },
+      "accessToPublicInternet": {
+        "ideal": false
+      }
     }
   ]
 }

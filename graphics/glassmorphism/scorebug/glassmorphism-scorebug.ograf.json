@@ -19,21 +19,45 @@
         "type": "object",
         "title": "Home Team",
         "properties": {
-          "name": { "type": "string", "default": "Team Biscuit" },
-          "abbreviation": { "type": "string", "default": "BIS" },
-          "score": { "type": "number", "default": 3 }
+          "name": {
+            "type": "string",
+            "default": "Team Biscuit"
+          },
+          "abbreviation": {
+            "type": "string",
+            "default": "BIS"
+          },
+          "score": {
+            "type": "number",
+            "default": 3
+          }
         },
-        "required": ["name", "score"]
+        "required": [
+          "name",
+          "score"
+        ]
       },
       "awayTeam": {
         "type": "object",
         "title": "Away Team",
         "properties": {
-          "name": { "type": "string", "default": "Team Retriever" },
-          "abbreviation": { "type": "string", "default": "RET" },
-          "score": { "type": "number", "default": 4 }
+          "name": {
+            "type": "string",
+            "default": "Team Retriever"
+          },
+          "abbreviation": {
+            "type": "string",
+            "default": "RET"
+          },
+          "score": {
+            "type": "number",
+            "default": 4
+          }
         },
-        "required": ["name", "score"]
+        "required": [
+          "name",
+          "score"
+        ]
       },
       "clock": {
         "type": "string",
@@ -53,19 +77,32 @@
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ff8c00"
+        "default": "#ff8c00",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       }
     },
-    "required": ["homeTeam", "awayTeam"]
+    "required": [
+      "homeTeam",
+      "awayTeam"
+    ]
   },
   "renderRequirements": [
     {
       "resolution": {
-        "width": { "ideal": 1920 },
-        "height": { "ideal": 1080 }
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
       },
-      "frameRate": { "ideal": 50 },
-      "accessToPublicInternet": { "ideal": false }
+      "frameRate": {
+        "ideal": 50
+      },
+      "accessToPublicInternet": {
+        "ideal": false
+      }
     }
   ]
 }

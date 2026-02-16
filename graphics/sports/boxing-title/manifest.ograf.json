@@ -1,0 +1,63 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-boxing-title",
+    "version": "1.0.0",
+    "name": "Boxing Title",
+    "description": "High energy boxing title screen for fighter introductions.",
+    "author": {
+        "name": "OGraf Templates"
+    },
+    "main": "boxing-title.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": true,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "fighterA": {
+                "type": "string",
+                "title": "Fighter A Name",
+                "default": "ROCKY"
+            },
+            "fighterB": {
+                "type": "string",
+                "title": "Fighter B Name",
+                "default": "APOLLO"
+            },
+            "matchTitle": {
+                "type": "string",
+                "title": "Match Title",
+                "default": "HEAVYWEIGHT CHAMPIONSHIP"
+            },
+            "fighterAColor": {
+                "type": "string",
+                "title": "Fighter A Color",
+                "default": "#d32f2f",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "fighterBColor": {
+                "type": "string",
+                "title": "Fighter B Color",
+                "default": "#1976d2",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ]
+}

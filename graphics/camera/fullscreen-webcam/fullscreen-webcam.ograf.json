@@ -1,0 +1,74 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "camera-fullscreen-webcam",
+    "version": "1.0.0",
+    "name": "Fullscreen Webcam",
+    "description": "Displays a webcam input in full screen.",
+    "author": {
+        "name": "Antigravity"
+    },
+    "main": "fullscreen-webcam.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "deviceIndex": {
+                "type": "integer",
+                "title": "Camera Device Index",
+                "default": 0,
+                "minimum": 0,
+                "description": "Index of the video input device to use. Set to 0 to list available devices on screen. (1-based index)"
+            },
+            "width": {
+                "type": "integer",
+                "title": "Width",
+                "default": 1920,
+                "minimum": 1
+            },
+            "height": {
+                "type": "integer",
+                "title": "Height",
+                "default": 1080,
+                "minimum": 1
+            },
+            "frameRate": {
+                "type": "integer",
+                "title": "Frame Rate",
+                "default": 30,
+                "minimum": 1
+            },
+            "objectFit": {
+                "type": "string",
+                "title": "Object Fit",
+                "default": "cover",
+                "enum": [
+                    "contain",
+                    "cover",
+                    "fill"
+                ],
+                "description": "How the video should fit the container."
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            },
+            "accessToPublicInternet": {
+                "ideal": false
+            }
+        }
+    ]
+}

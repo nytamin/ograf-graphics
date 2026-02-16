@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "name": "Statistic Counter Lower Third",
   "description": "Lower-third that displays a single-number statistic and animates from 0 to the target value on in-animation.",
-  "author": { "name": "OGraf Templates" },
+  "author": {
+    "name": "OGraf Templates"
+  },
   "main": "lower-third.js",
   "supportsRealTime": true,
   "supportsNonRealTime": false,
@@ -31,30 +33,47 @@
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ff1b6d"
+        "default": "#00C2FF",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "backgroundOpacity": {
         "type": "number",
         "title": "Background Opacity",
         "default": 0.2,
+        "gddType": "percentage",
         "minimum": 0,
         "maximum": 1
       },
       "durationMs": {
-        "type": "number",
+        "type": "integer",
         "title": "Count-up Duration (ms)",
         "default": 1200,
+        "gddType": "duration-ms",
         "minimum": 200,
         "maximum": 10000
       }
     },
-    "required": ["value"]
+    "required": [
+      "value"
+    ]
   },
   "renderRequirements": [
     {
-      "resolution": { "width": { "ideal": 1920 }, "height": { "ideal": 1080 } },
-      "frameRate": { "ideal": 50 },
-      "accessToPublicInternet": { "ideal": false }
+      "resolution": {
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
+      },
+      "frameRate": {
+        "ideal": 50
+      },
+      "accessToPublicInternet": {
+        "ideal": false
+      }
     }
   ]
 }

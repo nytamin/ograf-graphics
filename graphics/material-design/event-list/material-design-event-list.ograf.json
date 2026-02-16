@@ -26,33 +26,73 @@
         "items": {
           "type": "object",
           "properties": {
-            "type": { "type": "string" },
-            "user": { "type": "string" },
-            "detail": { "type": "string" }
+            "type": {
+              "type": "string"
+            },
+            "user": {
+              "type": "string"
+            },
+            "detail": {
+              "type": "string"
+            }
           }
         },
         "default": [
-          { "type": "Follow", "user": "PuppyLover99", "detail": "just joined the pack" },
-          { "type": "Sub", "user": "BiscuitFan", "detail": "subscribed for 6 months" },
-          { "type": "Tip", "user": "DogDad", "detail": "donated €25 for treats" },
-          { "type": "Raid", "user": "CorgiBoss", "detail": "raided with 123 friends" }
+          {
+            "type": "Follow",
+            "user": "PuppyLover99",
+            "detail": "just joined the pack"
+          },
+          {
+            "type": "Sub",
+            "user": "BiscuitFan",
+            "detail": "subscribed for 6 months"
+          },
+          {
+            "type": "Tip",
+            "user": "DogDad",
+            "detail": "donated €25 for treats"
+          },
+          {
+            "type": "Raid",
+            "user": "CorgiBoss",
+            "detail": "raided with 123 friends"
+          }
         ]
       },
       "position": {
         "type": "string",
         "title": "Position",
         "default": "top-left",
-        "enum": ["top-left", "top-right", "bottom-left", "bottom-right"]
+        "enum": [
+          "top-left",
+          "top-right",
+          "bottom-left",
+          "bottom-right"
+        ],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "top-left": "Top Left",
+            "top-right": "Top Right",
+            "bottom-left": "Bottom Left",
+            "bottom-right": "Bottom Right"
+          }
+        }
       },
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#ff8c00"
+        "default": "#ff8c00",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#1a1a1a"
+        "default": "#1a1a1a",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       }
     }
   }

@@ -7,7 +7,7 @@ const DEFAULT_STATE = {
   label: "Bridge Fasteners",
   value: 13240,
   unit: "nails",
-  accentColor: "#ff1b6d",
+  accentColor: "#00C2FF",
   backgroundOpacity: 0.2,
   durationMs: 1200,
 };
@@ -20,7 +20,8 @@ const STYLE_TEXT = `
   pointer-events: none;
   font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   color: rgba(255, 255, 255, 0.98);
-  --accent-color: #ff1b6d;
+  --accent-color: #00C2FF;
+  --accent-rgb: 0, 0, 0;
   --bg-opacity: 0.2;
 }
 
@@ -38,10 +39,10 @@ const STYLE_TEXT = `
   padding: 26px 40px 22px;
   min-width: 320px;
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(255, 27, 109, var(--bg-opacity)), rgba(0, 0, 0, 0.35));
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(135deg, rgba(var(--accent-rgb), var(--bg-opacity)), rgba(0, 0, 0, 0.6));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
   opacity: 0;
   transform: translateY(18px);
   will-change: opacity, transform;
@@ -51,8 +52,10 @@ const STYLE_TEXT = `
   font-size: clamp(16px, 1.1vw, 20px);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 6px;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .value {
@@ -60,13 +63,14 @@ const STYLE_TEXT = `
   font-weight: 800;
   letter-spacing: 0.02em;
   color: var(--accent-color);
-  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 0 20px rgba(var(--accent-rgb), 0.4);
 }
 
 .unit {
   font-size: clamp(18px, 1.2vw, 22px);
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   margin-left: 12px;
+  font-weight: 500;
 }
 
 .value-row {
@@ -194,6 +198,13 @@ class StatisticCounterLowerThird extends HTMLElement {
 
     if (accentColor) {
       this.style.setProperty("--accent-color", accentColor);
+      // Convert hex to rgb for background opacity support
+      const r = parseInt(accentColor.slice(1, 3), 16);
+      const g = parseInt(accentColor.slice(3, 5), 16);
+      const b = parseInt(accentColor.slice(5, 7), 16);
+      if (!isNaN(r) && !isNaN(g) && !isNaN(b)) {
+        this.style.setProperty("--accent-rgb", `${r}, ${g}, ${b}`);
+      }
     }
     if (typeof backgroundOpacity === "number") {
       this.style.setProperty("--bg-opacity", String(backgroundOpacity));

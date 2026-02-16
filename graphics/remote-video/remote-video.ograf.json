@@ -1,0 +1,57 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "remote-video",
+    "version": "1.0.0",
+    "name": "Remote Video Player",
+    "description": "Plays a YouTube or Vimeo video in full screen.",
+    "author": {
+        "name": "Antigravity"
+    },
+    "main": "remote-video.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "url": {
+                "type": "string",
+                "title": "Video URL",
+                "description": "The full URL of the YouTube or Vimeo video.",
+                "format": "uri"
+            },
+            "volume": {
+                "type": "integer",
+                "title": "Volume",
+                "default": 100,
+                "minimum": 0,
+                "maximum": 100
+            },
+            "loop": {
+                "type": "boolean",
+                "title": "Loop Video",
+                "default": false
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            },
+            "accessToPublicInternet": {
+                "ideal": true,
+                "required": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "background-flow-field",
+    "version": "1.0.0",
+    "name": "Flow Field Background",
+    "description": "A mesmerising, continuous flow field animation with configurable colors and speed.",
+    "author": {
+        "name": "OGraf Templates"
+    },
+    "main": "flow-field.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": true,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "color1": {
+                "type": "string",
+                "title": "Particle Color 1",
+                "default": "#00ffff",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "color2": {
+                "type": "string",
+                "title": "Particle Color 2",
+                "default": "#ff00ff",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "backgroundColor": {
+                "type": "string",
+                "title": "Background Color",
+                "default": "#050510",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "speed": {
+                "type": "number",
+                "title": "Flow Speed",
+                "default": 1.0,
+                "minimum": 0.1,
+                "maximum": 5.0
+            },
+            "scale": {
+                "type": "number",
+                "title": "Noise Scale",
+                "default": 0.01,
+                "minimum": 0.001,
+                "maximum": 0.1
+            },
+            "particleCount": {
+                "type": "integer",
+                "title": "Particle Count",
+                "default": 1000,
+                "minimum": 100,
+                "maximum": 5000
+            },
+            "showParticles": {
+                "type": "boolean",
+                "title": "Show Particles",
+                "default": true
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            },
+            "accessToPublicInternet": {
+                "ideal": false
+            }
+        }
+    ]
+}

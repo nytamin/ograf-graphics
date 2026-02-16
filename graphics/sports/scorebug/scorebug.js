@@ -116,6 +116,7 @@ class SportsScorebug extends HTMLElement {
     this._state = { ...DEFAULT_STATE };
     this._isVisible = false;
     this._currentStep = undefined;
+    this._animations = [];
 
     const root = this.attachShadow({ mode: "open" });
     const style = document.createElement("style");
@@ -179,8 +180,29 @@ class SportsScorebug extends HTMLElement {
   }
 
   async dispose() {
+    this._cancelAnimations();
     this._elements.scene.remove();
     return { statusCode: 200 };
+  }
+
+  async customAction(id, payload) {
+      return { statusCode: 200 };
+  }
+
+  async setActionsSchedule(schedule) {
+      return { statusCode: 200 };
+  }
+
+  async goToTime(time) {
+      this._animations.forEach(anim => {
+          anim.currentTime = time;
+      });
+      return { statusCode: 200 };
+  }
+
+  _cancelAnimations() {
+       this._animations.forEach(a => a.cancel());
+       this._animations = [];
   }
 
   async playAction(params) {
@@ -231,15 +253,18 @@ class SportsScorebug extends HTMLElement {
           return;
       }
 
+      this._cancelAnimations();
       scene.style.opacity = "1";
-      await scorebug.animate([
+      const anim = scorebug.animate([
           { transform: "translateY(-100px)", opacity: 0 },
           { transform: "translateY(0)", opacity: 1 }
       ], {
           duration: 400,
           easing: "cubic-bezier(0.2, 0.8, 0.2, 1)",
           fill: "forwards"
-      }).finished;
+      });
+      this._animations.push(anim);
+      await anim.finished;
   }
 
   async _animateOut(skip) {
@@ -253,14 +278,16 @@ class SportsScorebug extends HTMLElement {
           return;
       }
 
-      await scorebug.animate([
+      const anim = scorebug.animate([
           { transform: "translateY(0)", opacity: 1 },
           { transform: "translateY(-100px)", opacity: 0 }
       ], {
           duration: 300,
           easing: "cubic-bezier(0.4, 0, 1, 1)",
           fill: "forwards"
-      }).finished;
+      });
+      this._animations.push(anim);
+      await anim.finished;
 
       scene.style.opacity = "0";
   }

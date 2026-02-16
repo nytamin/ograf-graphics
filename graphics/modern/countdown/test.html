@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Graphic Test</title>
+    <style>
+        body { margin: 0; background: #333; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        #container { width: 1920px; height: 1080px; position: relative; background: url('https://picsum.photos/1920/1080') no-repeat center/cover; transform: scale(0.5); transform-origin: center; border: 2px solid #fff; }
+        .controls { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.8); padding: 10px; color: white; display: flex; flex-direction: column; gap: 5px; z-index: 1000; }
+        button { cursor: pointer; padding: 5px 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="controls">
+        <button onclick="load()">Load</button>
+        <button onclick="play()">Play</button>
+        <button onclick="stop()">Stop</button>
+        <hr>
+        <button onclick="setMode('duration')">Mode: Duration (60s)</button>
+        <button onclick="setMode('timestamp')">Mode: Timestamp (+60s)</button>
+        <button onclick="setMode('clock')">Mode: Clock</button>
+        <button onclick="toggleOpenUp()">Toggle Open Up (Current: <span id="openUpState">false</span>)</button>
+    </div>
+
+    <div id="container"></div>
+
+    <script type="module">
+        import CountdownGraphic from './countdown.js';
+        customElements.define('modern-countdown', CountdownGraphic);
+
+        const container = document.getElementById('container');
+        let graphic = document.createElement('modern-countdown');
+        container.appendChild(graphic);
+
+        let openUpState = false;
+
+        window.load = () => {
+            graphic.load({
+                data: {
+                    mode: "duration",
+                    duration: 60,
+                    headline: "IGNORED",
+                    themeColor: "#d32f2f",
+                    openUpUponZero: openUpState
+                }
+            });
+        };
+
+        window.play = () => graphic.playAction();
+        window.stop = () => graphic.stopAction();
+
+        window.setMode = (mode) => {
+            let data = { mode, openUpUponZero: openUpState };
+            if (mode === 'duration') {
+                data.duration = 5; // Short Duration for testing open up
+            } else if (mode === 'timestamp') {
+                data.targetTime = Date.now() + 60000;
+            }
+            graphic.updateAction({ data });
+        };
+
+        window.toggleOpenUp = () => {
+            openUpState = !openUpState;
+            document.getElementById('openUpState').textContent = openUpState;
+            graphic.updateAction({ data: { openUpUponZero: openUpState } });
+        };
+    </script>
+</body>
+</html>

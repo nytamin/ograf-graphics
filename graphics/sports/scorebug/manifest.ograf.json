@@ -47,12 +47,16 @@
             "homeColor": {
                 "type": "string",
                 "title": "Home Color",
-                "default": "#1a237e"
+                "default": "#1a237e",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
             },
             "awayColor": {
                 "type": "string",
                 "title": "Away Color",
-                "default": "#b71c1c"
+                "default": "#b71c1c",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
             }
         }
     },

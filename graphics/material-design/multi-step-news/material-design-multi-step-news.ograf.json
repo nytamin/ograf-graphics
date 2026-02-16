@@ -70,36 +70,88 @@
       "primaryColor": {
         "type": "string",
         "title": "Primary Color",
-        "default": "#ff8c00"
+        "default": "#ff8c00",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#ffd700"
+        "default": "#ffd700",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
       },
       "step1Icon": {
         "type": "string",
         "title": "Step 1: Icon Type",
         "default": "alert",
-        "enum": ["alert", "chart", "globe"]
+        "enum": [
+          "alert",
+          "chart",
+          "globe"
+        ],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "alert": "Alert",
+            "chart": "Chart",
+            "globe": "Globe"
+          }
+        }
       },
       "step2Icon": {
         "type": "string",
         "title": "Step 2: Icon Type",
         "default": "chart",
-        "enum": ["alert", "chart", "globe"]
+        "enum": [
+          "alert",
+          "chart",
+          "globe"
+        ],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "alert": "Alert",
+            "chart": "Chart",
+            "globe": "Globe"
+          }
+        }
       },
       "step3Icon": {
         "type": "string",
         "title": "Step 3: Icon Type",
         "default": "globe",
-        "enum": ["alert", "chart", "globe"]
+        "enum": [
+          "alert",
+          "chart",
+          "globe"
+        ],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "alert": "Alert",
+            "chart": "Chart",
+            "globe": "Globe"
+          }
+        }
       },
       "step4Icon": {
         "type": "string",
         "title": "Step 4: Icon Type",
         "default": "check",
-        "enum": ["check", "link", "people"]
+        "enum": [
+          "check",
+          "link",
+          "people"
+        ],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "check": "Check",
+            "link": "Link",
+            "people": "People"
+          }
+        }
       }
     }
   }

@@ -1,0 +1,73 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "background-digital-circuit",
+    "version": "1.0.0",
+    "name": "Digital Circuit Background",
+    "description": "A high-tech grid animation with digital signals traveling along circuit paths.",
+    "author": {
+        "name": "OGraf Templates"
+    },
+    "main": "digital-circuit.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": true,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "gridColor": {
+                "type": "string",
+                "title": "Grid Color (Dim)",
+                "default": "#1a1a2e",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "signalColor": {
+                "type": "string",
+                "title": "Signal Tracer Color",
+                "default": "#00d2ff",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "backgroundColor": {
+                "type": "string",
+                "title": "Background Fill Color",
+                "default": "#050510",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "speed": {
+                "type": "number",
+                "title": "Signal Speed",
+                "default": 1.0,
+                "minimum": 0.1,
+                "maximum": 5.0
+            },
+            "gridDensity": {
+                "type": "integer",
+                "title": "Grid Density",
+                "default": 40,
+                "minimum": 10,
+                "maximum": 100
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            },
+            "accessToPublicInternet": {
+                "ideal": false
+            }
+        }
+    ]
+}
