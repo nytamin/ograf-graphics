@@ -20,4 +20,4 @@ If you'd like to contribute to this repository, please feel free to submit a Pul
 
 ## Contents
 
-![image](docs/graphics.png)
+![image](docs/graphics.gif)
