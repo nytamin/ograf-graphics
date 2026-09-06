@@ -1,0 +1,52 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "ograf-presentation-looping-background",
+    "version": "1.0.0",
+    "name": "OGraf Looping Background",
+    "description": "A subtle, toned-down looping background of gray OGraf logos arranged on 30-degree straps, moving in opposing directions.",
+    "author": {
+        "name": "OGraf Templates"
+    },
+    "main": "looping-background.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "backgroundColor": {
+                "type": "string",
+                "title": "Background Color",
+                "default": "#f3f3f4",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "speed": {
+                "type": "number",
+                "title": "Scroll Speed",
+                "default": 1.0,
+                "minimum": 0.1,
+                "maximum": 3.0
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            },
+            "accessToPublicInternet": {
+                "ideal": false
+            }
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "ograf-presentation-stinger",
+    "version": "1.0.0",
+    "name": "OGraf Stinger",
+    "description": "A transparent stinger/bumper. On Play, a live SVG mask made of vertical panels wipes left to right to reveal a white plate with the OGraf logo, then wipes back out to transparent immediately.",
+    "author": {
+        "name": "OGraf Templates"
+    },
+    "main": "stinger.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "plateColor": {
+                "type": "string",
+                "title": "Reveal Plate Color",
+                "default": "#ffffff",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "panelCount": {
+                "type": "integer",
+                "title": "Wipe Panel Count",
+                "default": 20,
+                "minimum": 2,
+                "maximum": 60
+            },
+            "debug": {
+                "type": "boolean",
+                "title": "Debug: show mask SVG directly",
+                "default": false
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            },
+            "accessToPublicInternet": {
+                "ideal": false
+            }
+        }
+    ]
+}

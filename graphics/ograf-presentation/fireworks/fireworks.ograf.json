@@ -1,0 +1,52 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "ograf-presentation-fireworks",
+    "version": "1.0.0",
+    "name": "OGraf Fireworks",
+    "description": "A transparent-background fireworks show. Realistic rockets launch from the bottom and explode into colorful, physically-simulated sparks.",
+    "author": {
+        "name": "OGraf Templates"
+    },
+    "main": "fireworks.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "intensity": {
+                "type": "number",
+                "title": "Intensity (launch rate & particle count)",
+                "default": 1.0,
+                "minimum": 0.3,
+                "maximum": 2.5
+            },
+            "size": {
+                "type": "number",
+                "title": "Size (rockets & particles)",
+                "default": 1.0,
+                "minimum": 0.3,
+                "maximum": 30.0
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            },
+            "accessToPublicInternet": {
+                "ideal": false
+            }
+        }
+    ]
+}

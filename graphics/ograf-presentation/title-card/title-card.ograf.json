@@ -1,0 +1,46 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "ograf-presentation-title-card",
+    "version": "1.0.0",
+    "name": "OGraf Title Card",
+    "description": "A big OGraf logo floating gently in the middle of the screen with a drop shadow and a custom sub-title.",
+    "author": {
+        "name": "OGraf Templates"
+    },
+    "main": "title-card.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "title": {
+                "type": "string",
+                "title": "Sub-title",
+                "default": "The Open Graphics Format"
+            }
+        },
+        "required": [
+            "title"
+        ]
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            },
+            "accessToPublicInternet": {
+                "ideal": false
+            }
+        }
+    ]
+}
