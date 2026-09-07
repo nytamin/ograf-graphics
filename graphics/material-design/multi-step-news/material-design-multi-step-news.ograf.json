@@ -5,7 +5,7 @@
   "name": "Material Design Multi-Step News",
   "description": "A multi-step news graphic using Material Design principles. Displays a breaking news story with headline, story details, expert commentary, and call to action across 4 sequential steps.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "multi-step-news.js",
   "supportsRealTime": true,

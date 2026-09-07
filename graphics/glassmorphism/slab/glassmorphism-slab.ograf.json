@@ -5,7 +5,7 @@
   "name": "Glassmorphism Slab",
   "description": "A glassmorphism-style side panel for displaying vertical lists and rosters.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "slab.js",
   "supportsRealTime": true,

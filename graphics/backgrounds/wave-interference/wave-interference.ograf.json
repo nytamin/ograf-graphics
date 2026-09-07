@@ -5,7 +5,7 @@
     "name": "Wave Interference Background",
     "description": "Abstract geometric waves moving across the screen, creating interference patterns.",
     "author": {
-        "name": "OGraf Templates"
+        "name": "Johans graphics stash"
     },
     "main": "wave-interference.js",
     "supportsRealTime": true,

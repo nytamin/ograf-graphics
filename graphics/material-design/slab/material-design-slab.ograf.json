@@ -5,7 +5,7 @@
   "name": "Material Design Slab",
   "description": "A Material Design side panel with card elevation for displaying vertical lists of information.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "slab.js",
   "supportsRealTime": true,

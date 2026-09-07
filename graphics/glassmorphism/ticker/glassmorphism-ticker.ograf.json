@@ -5,7 +5,7 @@
   "name": "Glassmorphism Ticker",
   "description": "A glassmorphism-style horizontal scrolling ticker for breaking news and headlines.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "ticker.js",
   "supportsRealTime": true,

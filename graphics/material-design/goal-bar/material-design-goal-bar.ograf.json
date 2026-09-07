@@ -5,7 +5,7 @@
   "name": "Material Design Goal Bar",
   "description": "A progress bar for tracking subscription and donation goals using Material Design. Displays current progress with animated fills and milestone celebrations.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "goal-bar.js",
   "supportsRealTime": true,

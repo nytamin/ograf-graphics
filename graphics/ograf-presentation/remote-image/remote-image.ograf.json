@@ -1,13 +1,13 @@
 {
     "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
-    "id": "ograf-presentation-title-card",
+    "id": "remote-image",
     "version": "1.0.0",
-    "name": "OGraf Title Card",
-    "description": "A big OGraf logo floating gently in the middle of the screen with a drop shadow and a custom sub-title.",
+    "name": "Remote Image",
+    "description": "Displays an image loaded from a URL, centered on a transparent background with a soft border and rounded corners.",
     "author": {
         "name": "Johans graphics stash"
     },
-    "main": "title-card.js",
+    "main": "remote-image.js",
     "supportsRealTime": true,
     "supportsNonRealTime": false,
     "stepCount": 1,
@@ -15,14 +15,21 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-            "title": {
+            "url": {
                 "type": "string",
-                "title": "Sub-title",
-                "default": "The Open Graphics Format"
+                "title": "Image URL",
+                "description": "The full URL of the image to display.",
+                "format": "uri"
+            },
+            "showBackground": {
+                "type": "boolean",
+                "title": "Show White Background & Border",
+                "description": "When off, the frame's white background and border are both hidden, leaving only the image.",
+                "default": true
             }
         },
         "required": [
-            "title"
+            "url"
         ]
     },
     "renderRequirements": [
@@ -39,7 +46,8 @@
                 "ideal": 60
             },
             "accessToPublicInternet": {
-                "ideal": false
+                "ideal": true,
+                "required": true
             }
         }
     ]

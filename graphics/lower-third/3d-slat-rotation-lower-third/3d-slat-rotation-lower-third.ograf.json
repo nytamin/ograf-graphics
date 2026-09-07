@@ -5,7 +5,7 @@
   "name": "3D Slat Rotation Lower Third",
   "description": "Modern network identity lower-third with 3D rotating rectangular slats. Features thick physical slabs with shaded edges, matte and glossy finishes, and traveling light flare effects.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "lower-third.js",
   "supportsRealTime": true,

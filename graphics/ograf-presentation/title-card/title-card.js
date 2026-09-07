@@ -114,7 +114,7 @@ const STYLE_TEXT = `
 
 @keyframes float {
   0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-1.4vh) rotate(0.6deg); }
+  50% { transform: translateY(-3vh) rotate(1deg); }
   100% { transform: translateY(0) rotate(0deg); }
 }
 

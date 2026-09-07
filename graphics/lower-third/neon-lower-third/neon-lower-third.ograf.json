@@ -5,7 +5,7 @@
   "name": "Neon Lower Third",
   "description": "A neon-glowing lower third with vibrant colors, animated glow pulse, and cyberpunk aesthetic.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "lower-third.js",
   "supportsRealTime": true,

@@ -5,7 +5,7 @@
   "name": "Material Design Lower Third",
   "description": "A Material Design lower-third with elevation, shadows, and layered surfaces for broadcast.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "lower-third.js",
   "supportsRealTime": true,

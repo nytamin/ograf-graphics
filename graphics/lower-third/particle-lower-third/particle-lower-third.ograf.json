@@ -5,7 +5,7 @@
   "name": "Particle Lower Third",
   "description": "A particle-based lower third where text forms from individual animated particles with explosive in/out effects.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "lower-third.js",
   "supportsRealTime": true,

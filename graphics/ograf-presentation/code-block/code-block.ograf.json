@@ -1,0 +1,60 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "code-block",
+    "version": "1.0.0",
+    "name": "Code Block",
+    "description": "Displays preformatted multi-line text with JavaScript/TypeScript syntax highlighting, framed like the remote-image graphic on a transparent background.",
+    "author": {
+        "name": "Johans graphics stash"
+    },
+    "main": "code-block.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "text": {
+                "type": "string",
+                "title": "Code / Text",
+                "gddType": "multi-line",
+                "default": "class Greeter {\n  constructor(private name: string) {}\n\n  greet(): string {\n    const message = `Hello, ${this.name}!`;\n    return message;\n  }\n}\n\nconst greeter = new Greeter(\"OGraf\");\nconsole.log(greeter.greet());"
+            },
+            "fontSize": {
+                "type": "integer",
+                "title": "Font Size (px)",
+                "default": 22,
+                "minimum": 10,
+                "maximum": 72
+            },
+            "title": {
+                "type": "string",
+                "title": "Title (optional)",
+                "description": "Shown as a small tab above the frame's top-left corner, like a filename tab. Hidden when empty.",
+                "default": ""
+            }
+        },
+        "required": [
+            "text"
+        ]
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            },
+            "accessToPublicInternet": {
+                "ideal": false
+            }
+        }
+    ]
+}

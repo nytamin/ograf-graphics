@@ -5,7 +5,7 @@
   "name": "Glassmorphism Scorebug",
   "description": "A glassmorphism-style scoreboard overlay for sports broadcasts with team scores and game clock.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "scorebug.js",
   "supportsRealTime": true,

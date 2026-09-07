@@ -5,7 +5,7 @@
   "name": "Analog Clock Top-Left",
   "description": "Top-left graphic that displays the current time as an analog clock.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "top-left.js",
   "supportsRealTime": true,

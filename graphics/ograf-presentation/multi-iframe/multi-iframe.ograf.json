@@ -1,0 +1,107 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "multi-iframe",
+    "version": "1.0.0",
+    "name": "Multi Iframe Layout",
+    "description": "Displays multiple web pages, each loaded from its own URL into an independently positioned and sized iframe, on a transparent background with a soft border and rounded corners.",
+    "author": {
+        "name": "Johans graphics stash"
+    },
+    "main": "multi-iframe.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "iframes": {
+                "type": "array",
+                "title": "Iframes",
+                "default": [],
+                "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "url": {
+                            "type": "string",
+                            "title": "Page URL",
+                            "description": "The full URL of the web page to display.",
+                            "format": "uri"
+                        },
+                        "x": {
+                            "type": "number",
+                            "title": "X Position (%)",
+                            "default": 0,
+                            "minimum": 0,
+                            "maximum": 100
+                        },
+                        "y": {
+                            "type": "number",
+                            "title": "Y Position (%)",
+                            "default": 0,
+                            "minimum": 0,
+                            "maximum": 100
+                        },
+                        "width": {
+                            "type": "number",
+                            "title": "Width (%)",
+                            "default": 50,
+                            "minimum": 1,
+                            "maximum": 100
+                        },
+                        "height": {
+                            "type": "number",
+                            "title": "Height (%)",
+                            "default": 50,
+                            "minimum": 1,
+                            "maximum": 100
+                        },
+                        "scale": {
+                            "type": "number",
+                            "title": "Scale",
+                            "description": "Scales the embedded page's content, without changing the tile's own on-screen width/height: the page is rendered at (100 / scale)% and shrunk/grown back to fit the tile exactly, so a scale of 0.5 zooms out (shows more content, smaller) and a scale of 2 zooms in.",
+                            "default": 1,
+                            "minimum": 0.1,
+                            "maximum": 5
+                        },
+                        "rank": {
+                            "type": "integer",
+                            "title": "Rank (z-index)",
+                            "description": "Stacking order: higher rank is drawn on top of lower rank. When a tile's rank moves it above an overlapping tile, a reveal animation plays.",
+                            "default": 0,
+                            "minimum": 0,
+                            "maximum": 1000
+                        }
+                    },
+                    "required": [
+                        "url",
+                        "x",
+                        "y",
+                        "width",
+                        "height"
+                    ]
+                }
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            },
+            "accessToPublicInternet": {
+                "ideal": true,
+                "required": true
+            }
+        }
+    ]
+}

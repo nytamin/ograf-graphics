@@ -5,7 +5,7 @@
     "name": "OGraf Looping Background",
     "description": "A subtle, toned-down looping background of gray OGraf logos arranged on 30-degree straps, moving in opposing directions.",
     "author": {
-        "name": "OGraf Templates"
+        "name": "Johans graphics stash"
     },
     "main": "looping-background.js",
     "supportsRealTime": true,

@@ -5,7 +5,7 @@
   "name": "Material Design Billboard",
   "description": "A Material Design full-screen billboard with layered surfaces and dramatic elevation for sponsorship and promotional content.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "billboard.js",
   "supportsRealTime": true,

@@ -5,7 +5,7 @@
   "name": "Glassmorphism Locator",
   "description": "A glassmorphism-style geographic locator for broadcast with LIVE indicator support.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "locator.js",
   "supportsRealTime": true,

@@ -5,7 +5,7 @@
   "name": "Material Design Alert Widget",
   "description": "An animated alert widget using Material Design. Triggered by follows, subscriptions, donations, and raids with customizable messages and animations.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "alert-widget.js",
   "supportsRealTime": true,

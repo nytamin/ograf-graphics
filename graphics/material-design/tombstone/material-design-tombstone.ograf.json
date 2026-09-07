@@ -5,7 +5,7 @@
   "name": "Material Design Tombstone",
   "description": "A Material Design fact display card with elevation, centered at the bottom of the screen.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "tombstone.js",
   "supportsRealTime": true,

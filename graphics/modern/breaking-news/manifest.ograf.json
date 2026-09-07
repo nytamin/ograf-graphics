@@ -5,7 +5,7 @@
   "name": "Breaking News Alert",
   "description": "High-impact breaking news graphic with pulsing alert and dual text lines.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "breaking-news.js",
   "supportsRealTime": true,

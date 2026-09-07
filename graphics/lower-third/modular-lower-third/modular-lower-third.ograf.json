@@ -5,7 +5,7 @@
   "name": "Modular Block Lower Third",
   "description": "A lower-third with independently animated blocks. Supports multiple text blocks and mask blocks that animate sequentially during in-animation and in parallel during out-animation.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "lower-third.js",
   "supportsRealTime": true,

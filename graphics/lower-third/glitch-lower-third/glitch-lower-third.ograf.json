@@ -5,7 +5,7 @@
   "name": "Glitch Lower Third",
   "description": "A digital glitch effect lower third with corrupted text layers, RGB distortion, and VHS-style artifacts.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "lower-third.js",
   "supportsRealTime": true,

@@ -5,7 +5,7 @@
     "name": "Boxing Title",
     "description": "High energy boxing title screen for fighter introductions.",
     "author": {
-        "name": "OGraf Templates"
+        "name": "Johans graphics stash"
     },
     "main": "boxing-title.js",
     "supportsRealTime": true,

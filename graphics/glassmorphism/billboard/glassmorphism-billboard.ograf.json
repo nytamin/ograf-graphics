@@ -5,7 +5,7 @@
   "name": "Glassmorphism Billboard",
   "description": "A glassmorphism-style full-screen billboard for sponsor recognition and branding.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "billboard.js",
   "supportsRealTime": true,

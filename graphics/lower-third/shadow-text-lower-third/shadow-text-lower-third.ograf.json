@@ -5,7 +5,7 @@
   "name": "Shadow Text Lower Third",
   "description": "A minimalist lower third with animated text and shadow effects only - no background surfaces.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "lower-third.js",
   "supportsRealTime": true,

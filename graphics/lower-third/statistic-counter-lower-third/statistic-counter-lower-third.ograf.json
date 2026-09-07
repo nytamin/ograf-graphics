@@ -5,7 +5,7 @@
   "name": "Statistic Counter Lower Third",
   "description": "Lower-third that displays a single-number statistic and animates from 0 to the target value on in-animation.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "lower-third.js",
   "supportsRealTime": true,

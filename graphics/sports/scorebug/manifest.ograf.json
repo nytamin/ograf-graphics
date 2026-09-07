@@ -5,7 +5,7 @@
     "name": "Sports Scorebug",
     "description": "Premium scorebug with time, period, and team branding.",
     "author": {
-        "name": "OGraf Templates"
+        "name": "Johans graphics stash"
     },
     "main": "scorebug.js",
     "supportsRealTime": true,

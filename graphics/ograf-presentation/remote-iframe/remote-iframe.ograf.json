@@ -1,13 +1,13 @@
 {
     "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
-    "id": "ograf-presentation-fireworks",
+    "id": "remote-iframe",
     "version": "1.0.0",
-    "name": "OGraf Fireworks",
-    "description": "A transparent-background fireworks show. Realistic rockets launch from the bottom and explode into colorful, physically-simulated sparks.",
+    "name": "Remote Iframe",
+    "description": "Displays a web page loaded from a URL in an iframe, centered on a transparent background with a soft border and rounded corners.",
     "author": {
         "name": "Johans graphics stash"
     },
-    "main": "fireworks.js",
+    "main": "remote-iframe.js",
     "supportsRealTime": true,
     "supportsNonRealTime": false,
     "stepCount": 1,
@@ -15,21 +15,16 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-            "intensity": {
-                "type": "number",
-                "title": "Intensity (launch rate & particle count)",
-                "default": 1.0,
-                "minimum": 0.3,
-                "maximum": 2.5
-            },
-            "size": {
-                "type": "number",
-                "title": "Size (rockets & particles)",
-                "default": 1.0,
-                "minimum": 0.3,
-                "maximum": 30.0
+            "url": {
+                "type": "string",
+                "title": "Page URL",
+                "description": "The full URL of the web page to display.",
+                "format": "uri"
             }
-        }
+        },
+        "required": [
+            "url"
+        ]
     },
     "renderRequirements": [
         {
@@ -45,7 +40,8 @@
                 "ideal": 60
             },
             "accessToPublicInternet": {
-                "ideal": false
+                "ideal": true,
+                "required": true
             }
         }
     ]

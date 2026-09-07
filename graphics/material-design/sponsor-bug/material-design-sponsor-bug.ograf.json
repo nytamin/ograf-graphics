@@ -5,7 +5,7 @@
   "name": "Material Design Sponsor Bug",
   "description": "A rotating sponsor logo display using Material Design. Displays sponsor branding in a corner of the screen with smooth transitions between sponsors.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "sponsor-bug.js",
   "supportsRealTime": true,

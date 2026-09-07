@@ -5,7 +5,7 @@
   "name": "Material Design Offline Screen",
   "description": "A full-screen offline graphic using Material Design. Displays when the stream is not live, featuring countdown to next stream, recent highlights, and social media links.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "offline-screen.js",
   "supportsRealTime": true,

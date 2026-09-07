@@ -5,7 +5,7 @@
     "name": "Pre-Show Countdown",
     "description": "Full-screen countdown graphic for pre-show segments.",
     "author": {
-        "name": "OGraf Templates"
+        "name": "Johans graphics stash"
     },
     "main": "countdown.js",
     "supportsRealTime": true,

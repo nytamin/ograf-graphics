@@ -5,7 +5,7 @@
   "name": "Material Design Event List",
   "description": "A compact list of recent stream events such as follows, subs, and tips.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "event-list.js",
   "supportsRealTime": true,

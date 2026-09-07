@@ -5,7 +5,7 @@
   "name": "Material Design Ticker",
   "description": "A Material Design horizontal scrolling ticker with elevation shadows for breaking news and headlines.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "ticker.js",
   "supportsRealTime": true,

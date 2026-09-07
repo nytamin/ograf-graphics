@@ -5,7 +5,7 @@
   "name": "Glassmorphism Lower Third",
   "description": "A glassmorphism-style lower-third with safe-area awareness and broadcast-friendly legibility.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "lower-third.js",
   "supportsRealTime": true,

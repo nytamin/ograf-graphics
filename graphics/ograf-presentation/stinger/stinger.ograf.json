@@ -5,7 +5,7 @@
     "name": "OGraf Stinger",
     "description": "A transparent stinger/bumper. On Play, a live SVG mask made of vertical panels wipes left to right to reveal a white plate with the OGraf logo, then wipes back out to transparent immediately.",
     "author": {
-        "name": "OGraf Templates"
+        "name": "Johans graphics stash"
     },
     "main": "stinger.js",
     "supportsRealTime": true,

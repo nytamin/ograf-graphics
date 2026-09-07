@@ -5,7 +5,7 @@
  */
 
 const DEFAULT_STATE = {
-  backgroundColor: "#f3f3f4",
+  backgroundColor: "#f0f0ff",
   speed: 1.0,
 };
 
@@ -33,24 +33,35 @@ function buildTileDataUri(color) {
 
 // Each strap: [gray shade, tile width (cqw), band height (cqh), direction (1 or -1), duration (s)]
 const STRAPS = [
-  ["#dcdcde", 30, 11, 1, 26],
-  ["#e6e6e8", 26, 9, -1, 21],
-  ["#d2d2d5", 34, 12, 1, 32],
-  ["#ececee", 24, 8, -1, 18],
-  ["#d8d8da", 32, 10, 1, 28],
-  ["#e2e2e4", 28, 9, -1, 23],
-  ["#cfcfd2", 36, 12, 1, 34],
-  ["#e8e8ea", 25, 8, -1, 19],
-  ["#dadadc", 31, 10, 1, 27],
-  ["#eaeaec", 27, 9, -1, 22],
+  ["#2352C3", 30, 11, 1, 26],
+  ["#87A0DE", 26, 9, -1, 21],
+  ["#2352C3", 34, 12, 1, 32],
+  ["#87A0DE", 24, 8, -1, 18],
+  ["#2352C3", 32, 10, 1, 28],
+  ["#87A0DE", 28, 9, -1, 23],
+  ["#2352C3", 36, 12, 1, 34],
+  ["#87A0DE", 25, 8, -1, 19],
+  ["#2352C3", 31, 10, 1, 27],
+  ["#87A0DE", 27, 9, -1, 22],
 ];
+// const STRAPS = [
+//   ["#d0d0de", 30, 11, 1, 26],
+//   ["#dadae8", 26, 9, -1, 21],
+//   ["#c6c6d5", 34, 12, 1, 32],
+//   ["#e0e0ee", 24, 8, -1, 18],
+//   ["#ccccda", 32, 10, 1, 28],
+//   ["#d6d6e4", 28, 9, -1, 23],
+//   ["#c3c3d2", 36, 12, 1, 34],
+//   ["#dcdcea", 25, 8, -1, 19],
+//   ["#cecedc", 31, 10, 1, 27],
+//   ["#dedeec", 27, 9, -1, 22],
+// ];
 
 const STYLE_TEXT = `
 :host {
   position: absolute;
   inset: 0;
   display: block;
-  pointer-events: none;
   overflow: hidden;
   /* Establishes a query container sized to this element's own box (not the
      viewport), so the cqw/cqh units below scale with the host's actual
@@ -89,6 +100,7 @@ const STYLE_TEXT = `
   left: 50%;
   width: 200cqmax;
   height: 200cqmax;
+  opacity: 0.2;
   transform: translate(-50%, -50%) rotate(-30deg);
   display: flex;
   flex-direction: column;

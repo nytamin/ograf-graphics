@@ -1,13 +1,13 @@
 {
     "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
-    "id": "ograf-presentation-fireworks",
+    "id": "bullet-list",
     "version": "1.0.0",
-    "name": "OGraf Fireworks",
-    "description": "A transparent-background fireworks show. Realistic rockets launch from the bottom and explode into colorful, physically-simulated sparks.",
+    "name": "Bullet List",
+    "description": "Displays a bullet-point list on a transparent background with a soft border and rounded corners, each point revealing in a staggered sequence.",
     "author": {
         "name": "Johans graphics stash"
     },
-    "main": "fireworks.js",
+    "main": "bullet-list.js",
     "supportsRealTime": true,
     "supportsNonRealTime": false,
     "stepCount": 1,
@@ -15,21 +15,26 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
-            "intensity": {
-                "type": "number",
-                "title": "Intensity (launch rate & particle count)",
-                "default": 1.0,
-                "minimum": 0.3,
-                "maximum": 2.5
+            "items": {
+                "type": "array",
+                "title": "Bullet Points",
+                "default": [],
+                "items": {
+                    "type": "string"
+                }
             },
-            "size": {
-                "type": "number",
-                "title": "Size (rockets & particles)",
-                "default": 1.0,
-                "minimum": 0.3,
-                "maximum": 30.0
+            "staggerMs": {
+                "type": "integer",
+                "title": "Stagger Reveal Time (ms)",
+                "description": "Delay between each bullet point's reveal animation.",
+                "default": 150,
+                "minimum": 0,
+                "maximum": 2000
             }
-        }
+        },
+        "required": [
+            "items"
+        ]
     },
     "renderRequirements": [
         {

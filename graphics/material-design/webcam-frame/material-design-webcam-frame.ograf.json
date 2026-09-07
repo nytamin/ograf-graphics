@@ -5,7 +5,7 @@
   "name": "Material Design Webcam Frame",
   "description": "A decorative webcam frame overlay using Material Design. Provides an elevated border and optional label overlay for the streamer camera.",
   "author": {
-    "name": "OGraf Templates"
+    "name": "Johans graphics stash"
   },
   "main": "webcam-frame.js",
   "supportsRealTime": true,

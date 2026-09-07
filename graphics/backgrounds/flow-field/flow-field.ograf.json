@@ -5,7 +5,7 @@
     "name": "Flow Field Background",
     "description": "A mesmerising, continuous flow field animation with configurable colors and speed.",
     "author": {
-        "name": "OGraf Templates"
+        "name": "Johans graphics stash"
     },
     "main": "flow-field.js",
     "supportsRealTime": true,

@@ -5,7 +5,7 @@
     "name": "Digital Circuit Background",
     "description": "A high-tech grid animation with digital signals traveling along circuit paths.",
     "author": {
-        "name": "OGraf Templates"
+        "name": "Johans graphics stash"
     },
     "main": "digital-circuit.js",
     "supportsRealTime": true,
