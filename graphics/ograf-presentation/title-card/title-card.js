@@ -57,7 +57,8 @@ const STYLE_TEXT = `
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: clamp(44px, 8vh, 116px);
   opacity: 0;
   transition: opacity 900ms ease;
   will-change: opacity;
@@ -91,7 +92,7 @@ const STYLE_TEXT = `
 
 .subtitle {
   margin-top: clamp(20px, 3.2vh, 46px);
-  font-size: clamp(20px, 2vw, 32px);
+  font-size: clamp(28px, 2.8vw, 44px);
   font-weight: 600;
   font-style: normal;
   letter-spacing: 0.06em;

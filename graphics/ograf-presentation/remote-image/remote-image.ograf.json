@@ -46,8 +46,7 @@
                 "ideal": 60
             },
             "accessToPublicInternet": {
-                "ideal": true,
-                "required": true
+                "ideal": true
             }
         }
     ],

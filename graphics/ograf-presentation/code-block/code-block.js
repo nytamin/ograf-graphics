@@ -67,12 +67,13 @@ const STYLE_TEXT = `
 }
 
 .stage {
-  pointer-events: none;
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
+
+  padding-top: 10%;
+  align-items: flex-start;
 }
 
 .frame-wrap {
