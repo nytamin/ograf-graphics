@@ -1,0 +1,71 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "ograf-brushed-aluminium-text",
+  "version": "1.0.0",
+  "name": "Brushed Aluminium Text",
+  "description": "A two-line animated 3D text graphic with a transparent canvas.",
+  "author": {
+    "name": "OGraf Three.js example"
+  },
+  "main": "dist/ograf-text-graphic.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "actionDurations": [
+    { "type": "playAction", "duration": 950 },
+    { "type": "updateAction", "duration": 400 },
+    { "type": "stopAction", "duration": 650 }
+  ],
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "exact": 1920 },
+        "height": { "exact": 1080 }
+      }
+    }
+  ],
+  "schema": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Title",
+        "default": "OGRAF GRAPHICS"
+      },
+      "subtitle": {
+        "type": "string",
+        "title": "Subtitle",
+        "default": "CONNECTED MOTION"
+      },
+      "topMaterial": {
+        "type": "string",
+        "title": "Top line material",
+        "default": "brushedAluminium",
+        "enum": ["brushedAluminium", "glossyOrangePlastic", "reflectiveChrome"],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "brushedAluminium": "Brushed aluminium",
+            "glossyOrangePlastic": "Glossy orange plastic",
+            "reflectiveChrome": "Reflective chrome"
+          }
+        }
+      },
+      "bottomMaterial": {
+        "type": "string",
+        "title": "Bottom line material",
+        "default": "brushedAluminium",
+        "enum": ["brushedAluminium", "glossyOrangePlastic", "reflectiveChrome"],
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "brushedAluminium": "Brushed aluminium",
+            "glossyOrangePlastic": "Glossy orange plastic",
+            "reflectiveChrome": "Reflective chrome"
+          }
+        }
+      }
+    },
+    "required": ["title", "subtitle", "topMaterial", "bottomMaterial"]
+  }
+}
