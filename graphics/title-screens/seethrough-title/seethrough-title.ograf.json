@@ -1,0 +1,133 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "ograf-presentation-seethrough-title",
+    "version": "1.0.0",
+    "name": "Seethrough Title",
+    "description": "A dynamic centered big title screen with animated zooming in from the sides, and a see-through mask cutout zoom-out through the middle letter.",
+    "author": {
+        "name": "Johans graphics stash"
+    },
+    "main": "seethrough-title.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "title": {
+                "type": "string",
+                "title": "Title",
+                "default": "SEETHROUGH\nTITLE",
+                "gddType": "multi-line"
+            },
+            "subtitle": {
+                "type": "string",
+                "title": "Subtitle",
+                "default": "CONNECTED MOTION & GRAPHIC REVEAL",
+                "gddType": "multi-line"
+            },
+            "font": {
+                "type": "string",
+                "title": "Font",
+                "default": "Montserrat",
+                "gddType": "select",
+                "enum": [
+                    "Montserrat",
+                    "Anton",
+                    "Bebas Neue",
+                    "Oswald",
+                    "Playfair Display",
+                    "Syne",
+                    "Michroma",
+                    "Berkshire Swash",
+                    "Limelight",
+                    "Smokum"
+                ],
+                "gddOptions": {
+                    "labels": {
+                        "Montserrat": "Montserrat",
+                        "Anton": "Anton",
+                        "Bebas Neue": "Bebas Neue",
+                        "Oswald": "Oswald",
+                        "Playfair Display": "Playfair Display",
+                        "Syne": "Syne",
+                        "Michroma": "Michroma",
+                        "Berkshire Swash": "Berkshire Swash",
+                        "Limelight": "Limelight",
+                        "Smokum": "Smokum"
+                    }
+                }
+            },
+            "fontColor": {
+                "type": "string",
+                "title": "Font Color",
+                "default": "#ffffff",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "backgroundColor": {
+                "type": "string",
+                "title": "Background Color",
+                "default": "#0f172a",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "animationSpeed": {
+                "type": "string",
+                "title": "Animation Speed",
+                "default": "medium",
+                "gddType": "select",
+                "enum": [
+                    "quick",
+                    "medium",
+                    "slow"
+                ],
+                "gddOptions": {
+                    "labels": {
+                        "quick": "Quick",
+                        "medium": "Medium",
+                        "slow": "Slow"
+                    }
+                }
+            }
+        },
+        "required": [
+            "title"
+        ]
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            },
+            "accessToPublicInternet": {
+                "ideal": true
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        }
+    ]
+}
