@@ -62,5 +62,21 @@
         "ideal": false
       }
     }
+  ],
+  "thumbnails": [
+    {
+      "file": "thumbnails/1280x720.png",
+      "resolution": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "file": "thumbnails/1280x720-cropped.png",
+      "resolution": {
+        "width": 840,
+        "height": 263
+      }
+    }
   ]
 }

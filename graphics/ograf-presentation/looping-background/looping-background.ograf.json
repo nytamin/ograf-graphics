@@ -25,9 +25,9 @@
             "speed": {
                 "type": "number",
                 "title": "Scroll Speed",
-                "default": 1.0,
+                "default": 1,
                 "minimum": 0.1,
-                "maximum": 3.0
+                "maximum": 3
             }
         }
     },
@@ -46,6 +46,22 @@
             },
             "accessToPublicInternet": {
                 "ideal": false
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
             }
         }
     ]

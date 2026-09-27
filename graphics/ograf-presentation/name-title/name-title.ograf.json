@@ -37,13 +37,13 @@
                     "bottom-right"
                 ],
                 "gddOptions": {
-                "labels": {
-                    "top-left": "Top left",
-                    "top-right": "Top right",
-                    "bottom-left": "Bottom left",
-                    "bottom-right": "Bottom right"
+                    "labels": {
+                        "top-left": "Top left",
+                        "top-right": "Top right",
+                        "bottom-left": "Bottom left",
+                        "bottom-right": "Bottom right"
+                    }
                 }
-            }
             },
             "color": {
                 "type": "string",
@@ -72,6 +72,22 @@
             },
             "accessToPublicInternet": {
                 "ideal": false
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 358,
+                "height": 95
             }
         }
     ]

@@ -39,9 +39,9 @@
             "speed": {
                 "type": "number",
                 "title": "Flow Speed",
-                "default": 1.0,
+                "default": 1,
                 "minimum": 0.1,
-                "maximum": 5.0
+                "maximum": 5
             },
             "scale": {
                 "type": "number",
@@ -79,6 +79,22 @@
             },
             "accessToPublicInternet": {
                 "ideal": false
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
             }
         }
     ]

@@ -103,5 +103,14 @@
                 "required": true
             }
         }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        }
     ]
 }

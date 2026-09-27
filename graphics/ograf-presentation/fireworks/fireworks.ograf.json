@@ -18,16 +18,16 @@
             "intensity": {
                 "type": "number",
                 "title": "Intensity (launch rate & particle count)",
-                "default": 1.0,
+                "default": 1,
                 "minimum": 0.3,
                 "maximum": 2.5
             },
             "size": {
                 "type": "number",
                 "title": "Size (rockets & particles)",
-                "default": 1.0,
+                "default": 1,
                 "minimum": 0.3,
-                "maximum": 30.0
+                "maximum": 30
             }
         }
     },
@@ -46,6 +46,22 @@
             },
             "accessToPublicInternet": {
                 "ideal": false
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 553,
+                "height": 479
             }
         }
     ]

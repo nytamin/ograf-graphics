@@ -12,15 +12,28 @@
   "supportsNonRealTime": false,
   "stepCount": 1,
   "actionDurations": [
-    { "type": "playAction", "duration": 950 },
-    { "type": "updateAction", "duration": 400 },
-    { "type": "stopAction", "duration": 650 }
+    {
+      "type": "playAction",
+      "duration": 950
+    },
+    {
+      "type": "updateAction",
+      "duration": 400
+    },
+    {
+      "type": "stopAction",
+      "duration": 650
+    }
   ],
   "renderRequirements": [
     {
       "resolution": {
-        "width": { "exact": 1920 },
-        "height": { "exact": 1080 }
+        "width": {
+          "exact": 1920
+        },
+        "height": {
+          "exact": 1080
+        }
       }
     }
   ],
@@ -41,7 +54,11 @@
         "type": "string",
         "title": "Top line material",
         "default": "brushedAluminium",
-        "enum": ["brushedAluminium", "glossyOrangePlastic", "reflectiveChrome"],
+        "enum": [
+          "brushedAluminium",
+          "glossyOrangePlastic",
+          "reflectiveChrome"
+        ],
         "gddType": "select",
         "gddOptions": {
           "labels": {
@@ -55,7 +72,11 @@
         "type": "string",
         "title": "Bottom line material",
         "default": "brushedAluminium",
-        "enum": ["brushedAluminium", "glossyOrangePlastic", "reflectiveChrome"],
+        "enum": [
+          "brushedAluminium",
+          "glossyOrangePlastic",
+          "reflectiveChrome"
+        ],
         "gddType": "select",
         "gddOptions": {
           "labels": {
@@ -66,6 +87,27 @@
         }
       }
     },
-    "required": ["title", "subtitle", "topMaterial", "bottomMaterial"]
-  }
+    "required": [
+      "title",
+      "subtitle",
+      "topMaterial",
+      "bottomMaterial"
+    ]
+  },
+  "thumbnails": [
+    {
+      "file": "thumbnails/1280x720.png",
+      "resolution": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "file": "thumbnails/1280x720-cropped.png",
+      "resolution": {
+        "width": 1039,
+        "height": 179
+      }
+    }
+  ]
 }
