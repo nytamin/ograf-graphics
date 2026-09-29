@@ -9,7 +9,7 @@
     },
     "main": "wave-interference.js",
     "supportsRealTime": true,
-    "supportsNonRealTime": true,
+    "supportsNonRealTime": false,
     "stepCount": 1,
     "schema": {
         "type": "object",

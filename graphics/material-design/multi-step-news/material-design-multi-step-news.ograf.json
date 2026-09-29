@@ -9,7 +9,7 @@
   },
   "main": "multi-step-news.js",
   "supportsRealTime": true,
-  "supportsNonRealTime": true,
+  "supportsNonRealTime": false,
   "stepCount": 4,
   "schema": {
     "type": "object",
