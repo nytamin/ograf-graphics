@@ -1,0 +1,110 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-tennis-scorebug",
+    "version": "1.0.0",
+    "name": "Tennis Scorebug",
+    "description": "Broadcast tennis scorebug with per-set games, current-game points, serve indicator, and tie-break state.",
+    "author": {
+        "name": "Live Tennis API",
+        "url": "https://livetennisapi.com"
+    },
+    "main": "tennis-scorebug.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": true,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "player1Name": {
+                "type": "string",
+                "title": "Player 1 Name",
+                "default": "ALCARAZ"
+            },
+            "player2Name": {
+                "type": "string",
+                "title": "Player 2 Name",
+                "default": "SINNER"
+            },
+            "player1Seed": {
+                "type": "string",
+                "title": "Player 1 Seed (empty = hidden)",
+                "default": "2"
+            },
+            "player2Seed": {
+                "type": "string",
+                "title": "Player 2 Seed (empty = hidden)",
+                "default": "1"
+            },
+            "player1Sets": {
+                "type": "string",
+                "title": "Player 1 set scores (space-separated, current set last)",
+                "default": "6 3"
+            },
+            "player2Sets": {
+                "type": "string",
+                "title": "Player 2 set scores (space-separated, current set last)",
+                "default": "4 2"
+            },
+            "player1Points": {
+                "type": "string",
+                "title": "Player 1 current-game points (0/15/30/40/AD, empty = hidden)",
+                "default": "40"
+            },
+            "player2Points": {
+                "type": "string",
+                "title": "Player 2 current-game points (0/15/30/40/AD, empty = hidden)",
+                "default": "30"
+            },
+            "server": {
+                "type": "string",
+                "title": "Serving player",
+                "enum": [
+                    "player1",
+                    "player2",
+                    "none"
+                ],
+                "gddType": "select",
+                "gddOptions": {
+                    "labels": {
+                        "player1": "Player 1",
+                        "player2": "Player 2",
+                        "none": "None (between games / match over)"
+                    }
+                },
+                "default": "player1"
+            },
+            "tiebreak": {
+                "type": "boolean",
+                "title": "Tie-break in progress (points shown as numerals)",
+                "default": false
+            },
+            "matchInfo": {
+                "type": "string",
+                "title": "Match info line (empty = hidden)",
+                "default": "BEST OF 5"
+            },
+            "accentColor": {
+                "type": "string",
+                "title": "Accent Color",
+                "default": "#c8a24b",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ]
+}
