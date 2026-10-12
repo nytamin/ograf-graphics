@@ -18,6 +18,7 @@
 
 const DEFAULT_STATE = {
   iframes: [],
+  interactive: 0,
 };
 
 const STAGGER_MS = 60;
@@ -48,7 +49,7 @@ const STYLE_TEXT = `
   box-shadow:
     0 1.6vmin 3.2vmin rgba(0, 0, 0, 0.3),
     0 0.3vmin 0.8vmin rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+  overflow: visible;
   opacity: 0;
   transform: scale(0.92) translateY(1.6vmin);
   transition:
@@ -60,6 +61,31 @@ const STYLE_TEXT = `
     height 500ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.tile.expand-enabled {
+  cursor: default;
+}
+
+.tile.expanded {
+  z-index: 10000 !important;
+  cursor: default;
+}
+
+.tile.expanded .page {
+  width: 100% !important;
+  height: 100% !important;
+  transform: none !important;
+  pointer-events: auto;
+}
+
+.tile.expanded-full {
+  border-radius: 0;
+  padding: 0;
+}
+
+.tile.expanded-full .page {
+  border-radius: 0;
+}
+
 .tile.visible {
   opacity: 1;
   transform: scale(1) translateY(0);
@@ -67,6 +93,76 @@ const STYLE_TEXT = `
 
 .tile.no-anim {
   transition: none;
+}
+
+.tile-title {
+  position: absolute;
+  top: 0;
+  left: 2.2vmin;
+  transform: translateY(-100%);
+  padding: 0.7vmin 1.8vmin;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 0.9vmin 0.9vmin 0 0;
+  box-shadow: 0 -0.4vh 0.8vh rgba(0, 0, 0, 0.18);
+  font-family: "Consolas", "Menlo", "Monaco", "Courier New", monospace;
+  font-size: clamp(13px, 1.1vw, 18px);
+  color: #33363d;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.tile-title[hidden] {
+  display: none;
+}
+
+.tile.expanded .tile-title {
+  display: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(15, 18, 32, 0.8);
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.expand-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(15, 18, 32, 0.68);
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.tile.expand-enabled:not(.expanded) .expand-btn {
+  display: inline-flex;
+}
+
+.tile.expanded .close-btn {
+  display: inline-flex;
 }
 
 .page {
@@ -77,6 +173,7 @@ const STYLE_TEXT = `
   border-radius: 1vmin;
   background: #ffffff;
   transform-origin: top left;
+  overflow: hidden;
 
 }
 `;
@@ -88,6 +185,7 @@ class MultiIframe extends HTMLElement {
     this._tiles = [];
     this._prevEntries = [];
     this._visible = false;
+    this._expandedTile = null;
 
     const root = this.attachShadow({ mode: "open" });
     const style = document.createElement("style");
@@ -144,6 +242,7 @@ class MultiIframe extends HTMLElement {
     if (!data) return;
     this._state = { ...this._state, ...data };
     if (data.iframes !== undefined) this._syncTiles(data.iframes);
+    if (data.interactive !== undefined) this._syncInteractivity();
   }
 
   // Reconciles tiles by index instead of rebuilding everything: existing
@@ -169,6 +268,7 @@ class MultiIframe extends HTMLElement {
           requestAnimationFrame(() => newTile.classList.add("visible"));
         }
       } else if (!entry && tile) {
+        if (tile === this._expandedTile) this._expandedTile = null;
         tile.classList.remove("visible");
         tile.addEventListener("transitionend", () => tile.remove(), { once: true });
       }
@@ -183,6 +283,33 @@ class MultiIframe extends HTMLElement {
     const tile = document.createElement("div");
     tile.className = "tile";
 
+    const title = document.createElement("div");
+    title.className = "tile-title";
+    tile.appendChild(title);
+
+    const closeBtn = document.createElement("button");
+    closeBtn.className = "close-btn";
+    closeBtn.type = "button";
+    closeBtn.setAttribute("aria-label", "Close fullscreen");
+    closeBtn.textContent = "x";
+    closeBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      this._collapseExpandedTile();
+    });
+    tile.appendChild(closeBtn);
+
+    const expandBtn = document.createElement("button");
+    expandBtn.className = "expand-btn";
+    expandBtn.type = "button";
+    expandBtn.setAttribute("aria-label", "Expand frame");
+    expandBtn.textContent = "+";
+    expandBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      if (this._getInteractiveSize() <= 0) return;
+      this._expandTile(tile);
+    });
+    tile.appendChild(expandBtn);
+
     const iframe = document.createElement("iframe");
     iframe.className = "page";
     // Restrict what an arbitrary, user-supplied URL is allowed to do.
@@ -193,23 +320,39 @@ class MultiIframe extends HTMLElement {
     tile.appendChild(iframe);
 
     this._applyEntryToTile(tile, entry);
+    this._applyTileInteractivity(tile);
     return tile;
   }
 
   _applyEntryToTile(tile, entry) {
-    tile.style.left = `${entry.x}%`;
-    tile.style.top = `${entry.y}%`;
-    tile.style.width = `${entry.width}%`;
-    tile.style.height = `${entry.height}%`;
-    tile.style.zIndex = `${entry.rank || 0}`;
+    const isExpanded = tile.classList.contains("expanded");
+    if (!isExpanded) {
+      tile.style.left = `${entry.x}%`;
+      tile.style.top = `${entry.y}%`;
+      tile.style.width = `${entry.width}%`;
+      tile.style.height = `${entry.height}%`;
+      tile.style.zIndex = `${entry.rank || 0}`;
+    }
+
+    const title = tile.querySelector(".tile-title");
+    const titleText = entry.title || "";
+    title.textContent = titleText;
+    title.hidden = !titleText;
 
     const scale = entry.scale || 1;
     const iframe = tile.querySelector("iframe");
-    // Render at (100 / scale)% then transform back down/up to 100%, so the
-    // tile's own footprint never changes -- only the content zooms.
-    iframe.style.width = `${100 / scale}%`;
-    iframe.style.height = `${100 / scale}%`;
-    iframe.style.transform = `scale(${scale})`;
+    if (isExpanded) {
+      this._applyExpandedBounds(tile, entry);
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      iframe.style.transform = "none";
+    } else {
+      // Render at (100 / scale)% then transform back down/up to 100%, so the
+      // tile's own footprint never changes -- only the content zooms.
+      iframe.style.width = `${100 / scale}%`;
+      iframe.style.height = `${100 / scale}%`;
+      iframe.style.transform = `scale(${scale})`;
+    }
 
     // Only reload the page if its own url actually changed.
     if (iframe.dataset.srcUrl !== entry.url) {
@@ -353,6 +496,131 @@ class MultiIframe extends HTMLElement {
         apply();
       }
     });
+  }
+
+  _syncInteractivity() {
+    if (this._getInteractiveSize() <= 0) {
+      this._collapseExpandedTile(true);
+    }
+    this._tiles.forEach((tile) => this._applyTileInteractivity(tile));
+  }
+
+  _applyTileInteractivity(tile) {
+    const interactive = this._getInteractiveSize() > 0;
+    tile.classList.toggle("expand-enabled", interactive);
+  }
+
+  _expandTile(tile) {
+    const size = this._getInteractiveSize();
+    if (size <= 0) return;
+
+    if (this._expandedTile && this._expandedTile !== tile) {
+      this._expandedTile.classList.remove("expanded");
+      const prevEntry = this._getEntryForTile(this._expandedTile);
+      if (prevEntry) this._applyEntryToTile(this._expandedTile, prevEntry);
+      this._applyTileInteractivity(this._expandedTile);
+    }
+
+    const entry = this._getEntryForTile(tile);
+    if (!entry) return;
+
+    this._expandedTile = tile;
+    tile.classList.add("expanded");
+    tile.classList.toggle("expanded-full", size >= 100);
+    this._applyExpandedBounds(tile, entry);
+    const iframe = tile.querySelector("iframe");
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.transform = "none";
+    this._applyTileInteractivity(tile);
+  }
+
+  _collapseExpandedTile(skipAnimation) {
+    const tile = this._expandedTile;
+    if (!tile) return;
+    const entry = this._getEntryForTile(tile);
+
+    if (skipAnimation) {
+      tile.classList.add("no-anim");
+      void tile.offsetWidth;
+    }
+
+    tile.classList.remove("expanded");
+    tile.classList.remove("expanded-full");
+    if (entry) {
+      this._applyEntryToTile(tile, entry);
+      if (!skipAnimation) {
+        const targetZ = `${entry.rank || 0}`;
+        tile.style.zIndex = "10000";
+
+        const finalizeZIndex = () => {
+          tile.style.zIndex = targetZ;
+        };
+
+        const onTransitionEnd = (event) => {
+          if (
+            event.propertyName !== "left" &&
+            event.propertyName !== "top" &&
+            event.propertyName !== "width" &&
+            event.propertyName !== "height"
+          ) {
+            return;
+          }
+          tile.removeEventListener("transitionend", onTransitionEnd);
+          finalizeZIndex();
+        };
+
+        tile.addEventListener("transitionend", onTransitionEnd);
+        setTimeout(() => {
+          tile.removeEventListener("transitionend", onTransitionEnd);
+          finalizeZIndex();
+        }, 560);
+      }
+    }
+    this._expandedTile = null;
+    this._applyTileInteractivity(tile);
+
+    if (skipAnimation) {
+      requestAnimationFrame(() => tile.classList.remove("no-anim"));
+    }
+  }
+
+  _getInteractiveSize() {
+    const value = this._state.interactive;
+    if (value === true) return 100;
+    if (!Number.isFinite(value)) return 0;
+    return Math.min(Math.max(value, 0), 100);
+  }
+
+  _getEntryForTile(tile) {
+    const index = this._tiles.indexOf(tile);
+    if (index < 0) return null;
+    return (this._state.iframes || [])[index] || null;
+  }
+
+  _applyExpandedBounds(tile, entry) {
+    const size = this._getInteractiveSize();
+    if (size <= 0) return;
+
+    tile.classList.toggle("expanded-full", size >= 100);
+
+    const width = size;
+    const height = size;
+    const rightGap = 100 - (entry.x + entry.width);
+    const bottomGap = 100 - (entry.y + entry.height);
+
+    // Keep the expanded tile near its original side when possible, while
+    // clamping the result so it always remains fully visible.
+    const preferredLeft = rightGap < entry.x ? 100 - width - rightGap : entry.x;
+    const preferredTop = bottomGap < entry.y ? 100 - height - bottomGap : entry.y;
+    const left = Math.min(Math.max(preferredLeft, 0), 100 - width);
+    const top = Math.min(Math.max(preferredTop, 0), 100 - height);
+
+    tile.style.left = `${left}%`;
+    tile.style.top = `${top}%`;
+    tile.style.width = `${width}%`;
+    tile.style.height = `${height}%`;
+    tile.style.zIndex = "10000";
   }
 }
 
