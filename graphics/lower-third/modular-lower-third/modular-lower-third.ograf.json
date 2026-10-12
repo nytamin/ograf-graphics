@@ -17,42 +17,49 @@
     "properties": {
       "mainTitle": {
         "type": "string",
+        "title": "Main Title",
         "description": "Main text",
         "default": "Biscuit"
       },
       "mainTitleColor": {
         "type": "string",
+        "title": "Main Title Color",
         "description": "Color for main title text (hex format)",
-        "default": "#FFFFFF",
+        "default": "#ffffff",
         "gddType": "color-rrggbb",
         "pattern": "^#[0-9a-f]{6}$"
       },
       "subtitle": {
         "type": "string",
+        "title": "Subtitle",
         "description": "Text2",
         "default": "Skateboard Pup"
       },
       "subtitleColor": {
         "type": "string",
+        "title": "Subtitle Color",
         "description": "Color for subtitle text (hex format)",
-        "default": "#FFFFFF",
+        "default": "#ffffff",
         "gddType": "color-rrggbb",
         "pattern": "^#[0-9a-f]{6}$"
       },
       "tertiaryText": {
         "type": "string",
+        "title": "Tertiary Text",
         "description": "Optional text for block 3",
         "default": "Dog News"
       },
       "tertiaryColor": {
         "type": "string",
+        "title": "Tertiary Color",
         "description": "Color for tertiary text (hex format)",
-        "default": "#FFFFFF",
+        "default": "#ffffff",
         "gddType": "color-rrggbb",
         "pattern": "^#[0-9a-f]{6}$"
       },
       "accentColor": {
         "type": "string",
+        "title": "Accent Color",
         "description": "Primary accent color for blocks (hex format)",
         "default": "#ff8c00",
         "gddType": "color-rrggbb",
@@ -60,8 +67,9 @@
       },
       "backgroundColor": {
         "type": "string",
+        "title": "Background Color",
         "description": "Background color for blocks (hex format)",
-        "default": "#0A0E27",
+        "default": "#0a0e27",
         "gddType": "color-rrggbb",
         "pattern": "^#[0-9a-f]{6}$"
       }

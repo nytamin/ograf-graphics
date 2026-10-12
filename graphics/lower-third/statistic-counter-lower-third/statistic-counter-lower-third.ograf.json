@@ -33,7 +33,7 @@
       "accentColor": {
         "type": "string",
         "title": "Accent Color",
-        "default": "#00C2FF",
+        "default": "#00c2ff",
         "gddType": "color-rrggbb",
         "pattern": "^#[0-9a-f]{6}$"
       },
