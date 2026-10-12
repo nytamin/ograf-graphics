@@ -1,0 +1,162 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "race-start-list",
+    "version": "1.0.0",
+    "name": "Race Start List Board",
+    "description": "Multi-page broadcast start list board with interval departure times, bib numbers, team affiliations, and page stepping.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "start-list.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": -1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "title": {
+                "type": "string",
+                "title": "Board Title",
+                "default": "START LIST — ORDER OF DEPARTURE"
+            },
+            "subtitle": {
+                "type": "string",
+                "title": "Race / Event Name",
+                "default": "MEN'S 15KM INTERVAL START FREE"
+            },
+            "stageInfo": {
+                "type": "string",
+                "title": "Stage / Track Information",
+                "default": "Interval Start: 1 min gap • Holmenkollen Arena"
+            },
+            "accentColor": {
+                "type": "string",
+                "title": "Theme Accent Color",
+                "default": "#00e5ff",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "pageSize": {
+                "type": "integer",
+                "title": "Starters Per Page",
+                "default": 6,
+                "minimum": 3,
+                "maximum": 10
+            },
+            "starters": {
+                "type": "array",
+                "title": "Competitors List",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "bib": {
+                            "type": "string",
+                            "title": "Bib"
+                        },
+                        "name": {
+                            "type": "string",
+                            "title": "Competitor Name"
+                        },
+                        "country": {
+                            "type": "string",
+                            "title": "Country Code"
+                        },
+                        "flag": {
+                            "type": "string",
+                            "title": "Flag"
+                        },
+                        "team": {
+                            "type": "string",
+                            "title": "Team / Club"
+                        },
+                        "startTime": {
+                            "type": "string",
+                            "title": "Start Time"
+                        }
+                    }
+                },
+                "default": [
+                    {
+                        "bib": "01",
+                        "name": "Tadej POGAČAR",
+                        "country": "SLO",
+                        "flag": "🇸🇮",
+                        "team": "UAE Team Emirates",
+                        "startTime": "14:30:00"
+                    },
+                    {
+                        "bib": "02",
+                        "name": "Jonas VINGEGAARD",
+                        "country": "DEN",
+                        "flag": "🇩🇰",
+                        "team": "Team Visma-Lease a Bike",
+                        "startTime": "14:31:00"
+                    },
+                    {
+                        "bib": "03",
+                        "name": "Remco EVENEPOEL",
+                        "country": "BEL",
+                        "flag": "🇧🇪",
+                        "team": "Soudal Quick-Step",
+                        "startTime": "14:32:00"
+                    },
+                    {
+                        "bib": "04",
+                        "name": "Primož ROGLIČ",
+                        "country": "SLO",
+                        "flag": "🇸🇮",
+                        "team": "Red Bull-BORA-hansgrohe",
+                        "startTime": "14:33:00"
+                    },
+                    {
+                        "bib": "05",
+                        "name": "Carlos RODRÍGUEZ",
+                        "country": "ESP",
+                        "flag": "🇪🇸",
+                        "team": "INEOS Grenadiers",
+                        "startTime": "14:34:00"
+                    },
+                    {
+                        "bib": "06",
+                        "name": "Adam YATES",
+                        "country": "GBR",
+                        "flag": "🇬🇧",
+                        "team": "UAE Team Emirates",
+                        "startTime": "14:35:00"
+                    }
+                ]
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 1280,
+                "height": 697
+            }
+        }
+    ]
+}

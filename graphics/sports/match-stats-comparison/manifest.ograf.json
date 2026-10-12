@@ -1,0 +1,148 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-match-stats-comparison",
+    "version": "1.0.0",
+    "name": "Match Stats Comparison",
+    "description": "Dual-sided statistical comparison board with animated meters comparing possession, shots, xG, and fouls.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "match-stats-comparison.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "title": {
+                "type": "string",
+                "title": "Board Title",
+                "default": "MATCH STATISTICS • FULL TIME"
+            },
+            "teamAName": {
+                "type": "string",
+                "title": "Team A Name",
+                "default": "ARSENAL"
+            },
+            "teamAColor": {
+                "type": "string",
+                "title": "Team A Color",
+                "default": "#db0007",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "teamBName": {
+                "type": "string",
+                "title": "Team B Name",
+                "default": "CHELSEA"
+            },
+            "teamBColor": {
+                "type": "string",
+                "title": "Team B Color",
+                "default": "#034694",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "stats": {
+                "type": "array",
+                "title": "Match Statistics",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "label": {
+                            "type": "string",
+                            "title": "Statistic Name"
+                        },
+                        "valA": {
+                            "type": "string",
+                            "title": "Team A Value"
+                        },
+                        "valB": {
+                            "type": "string",
+                            "title": "Team B Value"
+                        },
+                        "pctA": {
+                            "type": "number",
+                            "title": "Team A Bar % (0-100)",
+                            "default": 50
+                        }
+                    },
+                    "required": [
+                        "label",
+                        "valA",
+                        "valB"
+                    ]
+                },
+                "default": [
+                    {
+                        "label": "POSSESSION",
+                        "valA": "58%",
+                        "valB": "42%",
+                        "pctA": 58
+                    },
+                    {
+                        "label": "TOTAL SHOTS",
+                        "valA": "16",
+                        "valB": "9",
+                        "pctA": 64
+                    },
+                    {
+                        "label": "SHOTS ON TARGET",
+                        "valA": "7",
+                        "valB": "3",
+                        "pctA": 70
+                    },
+                    {
+                        "label": "EXPECTED GOALS (xG)",
+                        "valA": "2.41",
+                        "valB": "0.85",
+                        "pctA": 74
+                    },
+                    {
+                        "label": "PASS ACCURACY",
+                        "valA": "88%",
+                        "valB": "79%",
+                        "pctA": 53
+                    },
+                    {
+                        "label": "FOULS COMMITTED",
+                        "valA": "9",
+                        "valB": "14",
+                        "pctA": 39
+                    }
+                ]
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 696,
+                "height": 494
+            }
+        }
+    ]
+}

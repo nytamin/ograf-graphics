@@ -1,0 +1,134 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-roster-slab",
+    "version": "1.0.0",
+    "name": "Roster Slab",
+    "description": "Vertical sidebar slab displaying team bench, reserve squad, or roster entries with staggered animation.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "roster-slab.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "title": {
+                "type": "string",
+                "title": "Header Title",
+                "default": "BENCH & RESERVES"
+            },
+            "teamName": {
+                "type": "string",
+                "title": "Team Name",
+                "default": "ARSENAL"
+            },
+            "teamColor": {
+                "type": "string",
+                "title": "Team Color",
+                "default": "#db0007",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "players": {
+                "type": "array",
+                "title": "Player Roster",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "number": {
+                            "type": "string",
+                            "title": "Squad Number"
+                        },
+                        "name": {
+                            "type": "string",
+                            "title": "Player Name"
+                        },
+                        "position": {
+                            "type": "string",
+                            "title": "Position / Role"
+                        }
+                    },
+                    "required": [
+                        "number",
+                        "name"
+                    ]
+                },
+                "default": [
+                    {
+                        "number": "1",
+                        "name": "RAMSDALE",
+                        "position": "GK"
+                    },
+                    {
+                        "number": "15",
+                        "name": "KIWIOR",
+                        "position": "DEF"
+                    },
+                    {
+                        "number": "18",
+                        "name": "TOMIYASU",
+                        "position": "DEF"
+                    },
+                    {
+                        "number": "20",
+                        "name": "JORGINHO",
+                        "position": "MID"
+                    },
+                    {
+                        "number": "21",
+                        "name": "VIEIRA",
+                        "position": "MID"
+                    },
+                    {
+                        "number": "19",
+                        "name": "TROSSARD",
+                        "position": "FWD"
+                    },
+                    {
+                        "number": "14",
+                        "name": "NKETIAH",
+                        "position": "FWD"
+                    },
+                    {
+                        "number": "24",
+                        "name": "NELSON",
+                        "position": "FWD"
+                    }
+                ]
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 197,
+                "height": 565
+            }
+        }
+    ]
+}

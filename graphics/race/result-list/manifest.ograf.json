@@ -1,0 +1,175 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "race-result-list",
+    "version": "1.0.0",
+    "name": "Race Results & Leaderboard",
+    "description": "Leaderboard and final classification board with podium gold/silver/bronze badges, time deltas, status tags, and stepped multi-page support.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "result-list.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": -1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "title": {
+                "type": "string",
+                "title": "Board Title",
+                "default": "FINAL STANDINGS"
+            },
+            "subtitle": {
+                "type": "string",
+                "title": "Race / Event Name",
+                "default": "MEN'S 50KM MASS START CLASSIC"
+            },
+            "status": {
+                "type": "string",
+                "title": "Classification Status",
+                "default": "OFFICIAL RESULTS"
+            },
+            "accentColor": {
+                "type": "string",
+                "title": "Theme Accent Color",
+                "default": "#ffb800",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "pageSize": {
+                "type": "integer",
+                "title": "Results Per Page",
+                "default": 6,
+                "minimum": 3,
+                "maximum": 10
+            },
+            "results": {
+                "type": "array",
+                "title": "Results List",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "rank": {
+                            "type": "string",
+                            "title": "Rank"
+                        },
+                        "bib": {
+                            "type": "string",
+                            "title": "Bib"
+                        },
+                        "name": {
+                            "type": "string",
+                            "title": "Competitor Name"
+                        },
+                        "country": {
+                            "type": "string",
+                            "title": "Country Code"
+                        },
+                        "flag": {
+                            "type": "string",
+                            "title": "Flag"
+                        },
+                        "team": {
+                            "type": "string",
+                            "title": "Team / Club"
+                        },
+                        "time": {
+                            "type": "string",
+                            "title": "Time / Diff"
+                        },
+                        "statusTag": {
+                            "type": "string",
+                            "title": "Status Tag"
+                        }
+                    }
+                },
+                "default": [
+                    {
+                        "rank": "1",
+                        "bib": "12",
+                        "name": "Johannes Høsflot KLÆBO",
+                        "country": "NOR",
+                        "flag": "🇳🇴",
+                        "team": "Norway",
+                        "time": "1:58:32.4",
+                        "statusTag": "WINNER"
+                    },
+                    {
+                        "rank": "2",
+                        "bib": "04",
+                        "name": "William POROMAA",
+                        "country": "SWE",
+                        "flag": "🇸🇪",
+                        "team": "Sweden",
+                        "time": "+0:03.2",
+                        "statusTag": "DIFF"
+                    },
+                    {
+                        "rank": "3",
+                        "bib": "09",
+                        "name": "Iivo NISKANEN",
+                        "country": "FIN",
+                        "flag": "🇫🇮",
+                        "team": "Finland",
+                        "time": "+0:11.8",
+                        "statusTag": "DIFF"
+                    },
+                    {
+                        "rank": "4",
+                        "bib": "18",
+                        "name": "Richard JOUVE",
+                        "country": "FRA",
+                        "flag": "🇫🇷",
+                        "team": "France",
+                        "time": "+0:35.4",
+                        "statusTag": "DIFF"
+                    },
+                    {
+                        "rank": "5",
+                        "bib": "07",
+                        "name": "Federico PELLEGRINO",
+                        "country": "ITA",
+                        "flag": "🇮🇹",
+                        "team": "Italy",
+                        "time": "+0:44.1",
+                        "statusTag": "DIFF"
+                    },
+                    {
+                        "rank": "6",
+                        "bib": "15",
+                        "name": "Calle HALFWANSSON",
+                        "country": "SWE",
+                        "flag": "🇸🇪",
+                        "team": "Sweden",
+                        "time": "+1:02.5",
+                        "statusTag": "DIFF"
+                    }
+                ]
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        }
+    ]
+}

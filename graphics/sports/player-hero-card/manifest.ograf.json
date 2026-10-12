@@ -1,0 +1,130 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-player-hero-card",
+    "version": "1.0.0",
+    "name": "Player Hero Card",
+    "description": "Premium full-height profile card presenting star athletes with photo, vitals, and graphical stat meters.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "player-hero-card.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "title": "Player Full Name",
+                "default": "JUDE BELLINGHAM"
+            },
+            "playerNumber": {
+                "type": "string",
+                "title": "Squad Number",
+                "default": "5"
+            },
+            "position": {
+                "type": "string",
+                "title": "Position",
+                "default": "ATTACKING MIDFIELDER"
+            },
+            "teamName": {
+                "type": "string",
+                "title": "Team / Club",
+                "default": "REAL MADRID"
+            },
+            "vitals": {
+                "type": "string",
+                "title": "Vitals (Age / Height / Nation)",
+                "default": "22 YRS • 1.86M • ENGLAND"
+            },
+            "photoUrl": {
+                "type": "string",
+                "title": "Headshot / Cutout Photo URL",
+                "default": ""
+            },
+            "stats": {
+                "type": "array",
+                "title": "Featured Stats",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "label": {
+                            "type": "string",
+                            "title": "Stat Label"
+                        },
+                        "value": {
+                            "type": "string",
+                            "title": "Stat Value"
+                        },
+                        "percentage": {
+                            "type": "number",
+                            "title": "Progress % (0-100)",
+                            "default": 50
+                        }
+                    },
+                    "required": [
+                        "label",
+                        "value"
+                    ]
+                },
+                "default": [
+                    {
+                        "label": "GOALS",
+                        "value": "21",
+                        "percentage": 85
+                    },
+                    {
+                        "label": "ASSISTS",
+                        "value": "12",
+                        "percentage": 65
+                    },
+                    {
+                        "label": "CHANCES CREATED",
+                        "value": "68",
+                        "percentage": 90
+                    }
+                ]
+            },
+            "teamColor": {
+                "type": "string",
+                "title": "Theme Color",
+                "default": "#eeb111",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 213,
+                "height": 565
+            }
+        }
+    ]
+}

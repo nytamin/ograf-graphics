@@ -1,0 +1,126 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-scorebug-master",
+    "version": "1.0.0",
+    "name": "Master Scorebug",
+    "description": "Broadcast-grade sports scorebug with team colors, logos, live clock, stoppage time, and status pills.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "scorebug-master.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "homeTeam": {
+                "type": "string",
+                "title": "Home Team Name",
+                "default": "ARSENAL"
+            },
+            "homeAbbr": {
+                "type": "string",
+                "title": "Home Team Code",
+                "default": "ARS",
+                "maxLength": 4
+            },
+            "homeScore": {
+                "type": "number",
+                "title": "Home Score",
+                "default": 2
+            },
+            "homeColor": {
+                "type": "string",
+                "title": "Home Color",
+                "default": "#db0007",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "homeLogo": {
+                "type": "string",
+                "title": "Home Logo URL",
+                "default": ""
+            },
+            "awayTeam": {
+                "type": "string",
+                "title": "Away Team Name",
+                "default": "CHELSEA"
+            },
+            "awayAbbr": {
+                "type": "string",
+                "title": "Away Team Code",
+                "default": "CHE",
+                "maxLength": 4
+            },
+            "awayScore": {
+                "type": "number",
+                "title": "Away Score",
+                "default": 1
+            },
+            "awayColor": {
+                "type": "string",
+                "title": "Away Color",
+                "default": "#034694",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "awayLogo": {
+                "type": "string",
+                "title": "Away Logo URL",
+                "default": ""
+            },
+            "clock": {
+                "type": "string",
+                "title": "Match Clock",
+                "default": "78:24"
+            },
+            "period": {
+                "type": "string",
+                "title": "Period / Half",
+                "default": "2ND HALF"
+            },
+            "extraTime": {
+                "type": "string",
+                "title": "Extra / Stoppage Time",
+                "default": "+4'"
+            },
+            "statusPill": {
+                "type": "string",
+                "title": "Status Pill",
+                "default": "LIVE"
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 632,
+                "height": 111
+            }
+        }
+    ]
+}

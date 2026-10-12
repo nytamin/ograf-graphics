@@ -1,0 +1,109 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "lower-third-glowing-gradient-border",
+  "version": "1.0.0",
+  "name": "Glowing Gradient Border Lower Third",
+  "description": "Broadcast news lower-third featuring dual glowing neon gradient border rails, semi-transparent plate, floating badge, and frame-accurate playback.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "lower-third.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "default": "Dr. Sarah Chen",
+        "gddType": "single-line"
+      },
+      "title": {
+        "type": "string",
+        "title": "Title / Subtitle",
+        "default": "Head of Artificial Intelligence",
+        "gddType": "single-line"
+      },
+      "badgeText": {
+        "type": "string",
+        "title": "Badge Text",
+        "default": "EXCLUSIVE COVERAGE",
+        "gddType": "single-line"
+      },
+      "showBadge": {
+        "type": "boolean",
+        "title": "Show Badge",
+        "default": true
+      },
+      "glowColorStart": {
+        "type": "string",
+        "title": "Glow Start Color",
+        "default": "#10b981",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "glowColorEnd": {
+        "type": "string",
+        "title": "Glow End Color",
+        "default": "#06b6d4",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      }
+    },
+    "required": [
+      "name",
+      "title"
+    ]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
+      },
+      "frameRate": {
+        "ideal": 50
+      },
+      "accessToPublicInternet": {
+        "ideal": false
+      }
+    }
+  ],
+  "thumbnails": [
+    {
+      "file": "thumbnails/1280x720.png",
+      "resolution": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "file": "thumbnails/1280x720-cropped.png",
+      "resolution": {
+        "width": 906,
+        "height": 323
+      }
+    },
+    {
+      "file": "thumbnails/animated.webp",
+      "resolution": {
+        "width": 640,
+        "height": 360
+      }
+    },
+    {
+      "file": "thumbnails/animated.gif",
+      "resolution": {
+        "width": 640,
+        "height": 360
+      }
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-league-standings",
+    "version": "1.0.0",
+    "name": "League Standings",
+    "description": "Comprehensive league table standings with played, won, drawn, lost, goal difference, and qualification zones.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "league-standings.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "title": {
+                "type": "string",
+                "title": "League Table Title",
+                "default": "PREMIER LEAGUE • TABLE STANDINGS"
+            },
+            "accentColor": {
+                "type": "string",
+                "title": "Accent Color",
+                "default": "#38003c",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "rows": {
+                "type": "array",
+                "title": "Standings Rows",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "pos": {
+                            "type": "number",
+                            "title": "Position"
+                        },
+                        "team": {
+                            "type": "string",
+                            "title": "Team Name"
+                        },
+                        "played": {
+                            "type": "number",
+                            "title": "Matches Played"
+                        },
+                        "won": {
+                            "type": "number",
+                            "title": "Won"
+                        },
+                        "drawn": {
+                            "type": "number",
+                            "title": "Drawn"
+                        },
+                        "lost": {
+                            "type": "number",
+                            "title": "Lost"
+                        },
+                        "gd": {
+                            "type": "string",
+                            "title": "Goal Difference"
+                        },
+                        "points": {
+                            "type": "number",
+                            "title": "Points"
+                        },
+                        "zone": {
+                            "type": "string",
+                            "title": "Qualification Zone",
+                            "enum": [
+                                "ucl",
+                                "uel",
+                                "rel",
+                                "none"
+                            ],
+                            "default": "none"
+                        }
+                    },
+                    "required": [
+                        "pos",
+                        "team",
+                        "points"
+                    ]
+                },
+                "default": [
+                    {
+                        "pos": 1,
+                        "team": "LIVERPOOL",
+                        "played": 28,
+                        "won": 20,
+                        "drawn": 7,
+                        "lost": 1,
+                        "gd": "+39",
+                        "points": 67,
+                        "zone": "ucl"
+                    },
+                    {
+                        "pos": 2,
+                        "team": "MAN CITY",
+                        "played": 28,
+                        "won": 19,
+                        "drawn": 6,
+                        "lost": 3,
+                        "gd": "+35",
+                        "points": 63,
+                        "zone": "ucl"
+                    },
+                    {
+                        "pos": 3,
+                        "team": "ARSENAL",
+                        "played": 28,
+                        "won": 18,
+                        "drawn": 7,
+                        "lost": 3,
+                        "gd": "+38",
+                        "points": 61,
+                        "zone": "ucl"
+                    },
+                    {
+                        "pos": 4,
+                        "team": "ASTON VILLA",
+                        "played": 28,
+                        "won": 17,
+                        "drawn": 4,
+                        "lost": 7,
+                        "gd": "+18",
+                        "points": 55,
+                        "zone": "ucl"
+                    },
+                    {
+                        "pos": 5,
+                        "team": "TOTTENHAM",
+                        "played": 28,
+                        "won": 16,
+                        "drawn": 5,
+                        "lost": 7,
+                        "gd": "+16",
+                        "points": 53,
+                        "zone": "uel"
+                    },
+                    {
+                        "pos": 18,
+                        "team": "LUTON TOWN",
+                        "played": 28,
+                        "won": 5,
+                        "drawn": 6,
+                        "lost": 17,
+                        "gd": "-18",
+                        "points": 21,
+                        "zone": "rel"
+                    },
+                    {
+                        "pos": 19,
+                        "team": "BURNLEY",
+                        "played": 28,
+                        "won": 4,
+                        "drawn": 5,
+                        "lost": 19,
+                        "gd": "-31",
+                        "points": 17,
+                        "zone": "rel"
+                    },
+                    {
+                        "pos": 20,
+                        "team": "SHEFFIELD UTD",
+                        "played": 28,
+                        "won": 3,
+                        "drawn": 5,
+                        "lost": 20,
+                        "gd": "-50",
+                        "points": 14,
+                        "zone": "rel"
+                    }
+                ]
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 820,
+                "height": 393
+            }
+        }
+    ]
+}

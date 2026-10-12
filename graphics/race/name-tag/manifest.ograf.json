@@ -1,0 +1,108 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "race-name-tag",
+    "version": "1.0.0",
+    "name": "Race Competitor Name Tag",
+    "description": "Broadcast lower-third and intro tag for racers with bib badge, nation flag, team affiliation, and telemetry sub-tag.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "name-tag.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "bib": {
+                "type": "string",
+                "title": "Bib / Race Number",
+                "default": "42"
+            },
+            "firstName": {
+                "type": "string",
+                "title": "First Name",
+                "default": "Johannes Høsflot"
+            },
+            "lastName": {
+                "type": "string",
+                "title": "Last Name",
+                "default": "KLÆBO"
+            },
+            "countryCode": {
+                "type": "string",
+                "title": "Country Code (ISO 3)",
+                "default": "NOR"
+            },
+            "countryFlag": {
+                "type": "string",
+                "title": "Country Flag (Emoji or URL)",
+                "default": "🇳🇴"
+            },
+            "team": {
+                "type": "string",
+                "title": "Team / Club Affiliation",
+                "default": "Norway National Team"
+            },
+            "infoTag": {
+                "type": "string",
+                "title": "Highlight / Status Tag",
+                "default": "Overall World Cup Leader • 24 Victories"
+            },
+            "accentColor": {
+                "type": "string",
+                "title": "Theme Accent Color",
+                "default": "#00e5ff",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "position": {
+                "type": "string",
+                "title": "Screen Position",
+                "enum": [
+                    "bottom-left",
+                    "bottom-right"
+                ],
+                "default": "bottom-left",
+                "gddType": "select",
+                "gddOptions": {
+                    "labels": {
+                        "bottom-left": "Bottom Left",
+                        "bottom-right": "Bottom Right"
+                    }
+                }
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 779,
+                "height": 232
+            }
+        }
+    ]
+}

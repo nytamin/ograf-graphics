@@ -1,0 +1,72 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-goal-breakout",
+    "version": "1.0.0",
+    "name": "Goal Celebration Breakout",
+    "description": "High-impact celebratory breakout banner triggered on goals, touchdowns, or key milestones with shot telemetry.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "goal-breakout.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "eventHeadline": {
+                "type": "string",
+                "title": "Event Headline",
+                "default": "GOAL!"
+            },
+            "scorerName": {
+                "type": "string",
+                "title": "Scorer Name",
+                "default": "DECLAN RICE 90+7'"
+            },
+            "telemetry": {
+                "type": "string",
+                "title": "Telemetry / Shot Info",
+                "default": "SHOT SPEED: 98.4 KM/H • DISTANCE: 26.2 METERS"
+            },
+            "teamColor": {
+                "type": "string",
+                "title": "Team Color",
+                "default": "#db0007",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 728,
+                "height": 140
+            }
+        }
+    ]
+}

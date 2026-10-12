@@ -1,0 +1,154 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-lineup-pitch-board",
+    "version": "1.0.0",
+    "name": "Tactical Pitch Lineup",
+    "description": "Tactical pitch formation graphic placing 11 players on a stylized pitch with team branding and manager title.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "lineup-pitch-board.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "teamName": {
+                "type": "string",
+                "title": "Team Name",
+                "default": "ARSENAL"
+            },
+            "formation": {
+                "type": "string",
+                "title": "Formation",
+                "default": "4 - 3 - 3"
+            },
+            "manager": {
+                "type": "string",
+                "title": "Manager",
+                "default": "MIKEL ARTETA"
+            },
+            "teamColor": {
+                "type": "string",
+                "title": "Team Primary Color",
+                "default": "#db0007",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "players": {
+                "type": "array",
+                "title": "Starting 11 Players (GK, 4 DEF, 3 MID, 3 ATT)",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "number": {
+                            "type": "string",
+                            "title": "Squad Number"
+                        },
+                        "name": {
+                            "type": "string",
+                            "title": "Player Name"
+                        },
+                        "position": {
+                            "type": "string",
+                            "title": "Position"
+                        }
+                    },
+                    "required": [
+                        "number",
+                        "name"
+                    ]
+                },
+                "default": [
+                    {
+                        "number": "22",
+                        "name": "RAYA",
+                        "position": "GK"
+                    },
+                    {
+                        "number": "4",
+                        "name": "WHITE",
+                        "position": "RB"
+                    },
+                    {
+                        "number": "2",
+                        "name": "SALIBA",
+                        "position": "CB"
+                    },
+                    {
+                        "number": "6",
+                        "name": "GABRIEL",
+                        "position": "CB"
+                    },
+                    {
+                        "number": "17",
+                        "name": "ZINCHENKO",
+                        "position": "LB"
+                    },
+                    {
+                        "number": "8",
+                        "name": "ØDEGAARD",
+                        "position": "RCM"
+                    },
+                    {
+                        "number": "41",
+                        "name": "RICE",
+                        "position": "CDM"
+                    },
+                    {
+                        "number": "29",
+                        "name": "HAVERTZ",
+                        "position": "LCM"
+                    },
+                    {
+                        "number": "7",
+                        "name": "SAKA",
+                        "position": "RW"
+                    },
+                    {
+                        "number": "9",
+                        "name": "JESUS",
+                        "position": "ST"
+                    },
+                    {
+                        "number": "11",
+                        "name": "MARTINELLI",
+                        "position": "LW"
+                    }
+                ]
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 820,
+                "height": 677
+            }
+        }
+    ]
+}

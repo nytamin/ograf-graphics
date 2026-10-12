@@ -1,0 +1,117 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "race-split-time",
+    "version": "1.0.0",
+    "name": "Race Split-Time / Intermediate Telemetry",
+    "description": "Precision intermediate checkpoint timing graphic with beam flash trigger, delta comparison badge, and leader reference.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "split-time.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "checkpoint": {
+                "type": "string",
+                "title": "Checkpoint Label",
+                "default": "SPLIT 2 • 7.5 KM"
+            },
+            "sectorNote": {
+                "type": "string",
+                "title": "Sector Subtitle",
+                "default": "FASTEST SECTOR"
+            },
+            "bib": {
+                "type": "string",
+                "title": "Bib Number",
+                "default": "18"
+            },
+            "athleteName": {
+                "type": "string",
+                "title": "Athlete Name",
+                "default": "Johannes Høsflot KLÆBO"
+            },
+            "countryCode": {
+                "type": "string",
+                "title": "Country Code",
+                "default": "NOR"
+            },
+            "countryFlag": {
+                "type": "string",
+                "title": "Country Flag (Emoji or URL)",
+                "default": "🇳🇴"
+            },
+            "rank": {
+                "type": "string",
+                "title": "Rank at Split",
+                "default": "1st"
+            },
+            "splitTime": {
+                "type": "string",
+                "title": "Elapsed Split Time",
+                "default": "18:42.30"
+            },
+            "delta": {
+                "type": "string",
+                "title": "Delta vs. Leader",
+                "default": "-0.45"
+            },
+            "isAhead": {
+                "type": "boolean",
+                "title": "Is Ahead of Leader (Green)",
+                "default": true
+            },
+            "leaderRef": {
+                "type": "string",
+                "title": "Leader Reference",
+                "default": "Leader: J. H. Klæbo (NOR) 18:42.30"
+            },
+            "beamSpeed": {
+                "type": "string",
+                "title": "Trap Speed / Note",
+                "default": "28.4 km/h"
+            },
+            "accentColor": {
+                "type": "string",
+                "title": "Theme Accent Color",
+                "default": "#00e5ff",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 1187,
+                "height": 90
+            }
+        }
+    ]
+}

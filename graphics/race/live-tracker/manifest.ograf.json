@@ -1,0 +1,147 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "race-live-tracker",
+    "version": "1.0.0",
+    "name": "Live Active Racer Telemetry Bug",
+    "description": "Persistent top-corner telemetry bug for active on-course competitors with live chrono, sector progress meters, speed/pace readout, and delta comparison.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "live-tracker.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "bib": {
+                "type": "string",
+                "title": "Bib Number",
+                "default": "7"
+            },
+            "athleteName": {
+                "type": "string",
+                "title": "Athlete Name",
+                "default": "ELIUD KIPCHOGE"
+            },
+            "countryCode": {
+                "type": "string",
+                "title": "Country Code",
+                "default": "KEN"
+            },
+            "countryFlag": {
+                "type": "string",
+                "title": "Country Flag (Emoji or URL)",
+                "default": "🇰🇪"
+            },
+            "statusNote": {
+                "type": "string",
+                "title": "Status Note",
+                "default": "ON COURSE • FINAL SECTOR"
+            },
+            "distanceNote": {
+                "type": "string",
+                "title": "Distance / Sector Note",
+                "default": "KM 38.2 / 42.2"
+            },
+            "runningTime": {
+                "type": "string",
+                "title": "Chrono / Elapsed Time",
+                "default": "01:54:12.4"
+            },
+            "isTimerRunning": {
+                "type": "boolean",
+                "title": "Enable Live Clock Ticking",
+                "default": false
+            },
+            "paceOrSpeed": {
+                "type": "string",
+                "title": "Pace or Speed",
+                "default": "2:52 /km"
+            },
+            "deltaReference": {
+                "type": "string",
+                "title": "Delta vs. Reference",
+                "default": "-0:14 vs WR"
+            },
+            "isAhead": {
+                "type": "boolean",
+                "title": "Is Ahead (Green Delta)",
+                "default": true
+            },
+            "sectorStates": {
+                "type": "array",
+                "title": "Sector States (ahead/behind/active/pending)",
+                "items": {
+                    "type": "string",
+                    "enum": [
+                        "ahead",
+                        "behind",
+                        "active",
+                        "pending"
+                    ]
+                },
+                "default": [
+                    "ahead",
+                    "ahead",
+                    "ahead",
+                    "active"
+                ]
+            },
+            "accentColor": {
+                "type": "string",
+                "title": "Theme Accent Color",
+                "default": "#00e5ff",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "position": {
+                "type": "string",
+                "title": "Screen Position",
+                "enum": [
+                    "top-left",
+                    "top-right"
+                ],
+                "default": "top-left",
+                "gddType": "select",
+                "gddOptions": {
+                    "labels": {
+                        "top-left": "Top Left",
+                        "top-right": "Top Right"
+                    }
+                }
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 583,
+                "height": 257
+            }
+        }
+    ]
+}

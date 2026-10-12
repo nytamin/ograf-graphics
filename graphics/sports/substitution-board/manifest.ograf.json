@@ -1,0 +1,87 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-substitution-board",
+    "version": "1.0.0",
+    "name": "Substitution Board",
+    "description": "Dual-pane substitution board showing players entering and exiting with minute indicator and team branding.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "substitution-board.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "teamName": {
+                "type": "string",
+                "title": "Team Name",
+                "default": "ARSENAL"
+            },
+            "minute": {
+                "type": "string",
+                "title": "Match Minute",
+                "default": "65'"
+            },
+            "playerInName": {
+                "type": "string",
+                "title": "Player IN - Name",
+                "default": "GABRIEL JESUS"
+            },
+            "playerInNumber": {
+                "type": "string",
+                "title": "Player IN - Squad #",
+                "default": "9"
+            },
+            "playerOutName": {
+                "type": "string",
+                "title": "Player OUT - Name",
+                "default": "KAI HAVERTZ"
+            },
+            "playerOutNumber": {
+                "type": "string",
+                "title": "Player OUT - Squad #",
+                "default": "29"
+            },
+            "teamColor": {
+                "type": "string",
+                "title": "Team Color",
+                "default": "#db0007",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 858,
+                "height": 183
+            }
+        }
+    ]
+}

@@ -1,0 +1,137 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-matchup-clash-card",
+    "version": "1.0.0",
+    "name": "Matchup Clash Card",
+    "description": "High-impact head-to-head confrontation card displaying teams, form guides, venue, and kickoff info.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "matchup-clash-card.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "competition": {
+                "type": "string",
+                "title": "Competition Title",
+                "default": "PREMIER LEAGUE • MATCHDAY 28"
+            },
+            "teamAName": {
+                "type": "string",
+                "title": "Team A Name",
+                "default": "ARSENAL"
+            },
+            "teamAColor": {
+                "type": "string",
+                "title": "Team A Color",
+                "default": "#db0007",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "teamALogo": {
+                "type": "string",
+                "title": "Team A Logo URL",
+                "default": ""
+            },
+            "teamAForm": {
+                "type": "array",
+                "title": "Team A Recent Form",
+                "items": {
+                    "type": "string",
+                    "enum": [
+                        "W",
+                        "D",
+                        "L"
+                    ]
+                },
+                "default": [
+                    "W",
+                    "W",
+                    "D",
+                    "W",
+                    "L"
+                ]
+            },
+            "teamBName": {
+                "type": "string",
+                "title": "Team B Name",
+                "default": "CHELSEA"
+            },
+            "teamBColor": {
+                "type": "string",
+                "title": "Team B Color",
+                "default": "#034694",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "teamBLogo": {
+                "type": "string",
+                "title": "Team B Logo URL",
+                "default": ""
+            },
+            "teamBForm": {
+                "type": "array",
+                "title": "Team B Recent Form",
+                "items": {
+                    "type": "string",
+                    "enum": [
+                        "W",
+                        "D",
+                        "L"
+                    ]
+                },
+                "default": [
+                    "W",
+                    "L",
+                    "W",
+                    "D",
+                    "W"
+                ]
+            },
+            "venue": {
+                "type": "string",
+                "title": "Match Venue",
+                "default": "EMIRATES STADIUM, LONDON"
+            },
+            "kickoff": {
+                "type": "string",
+                "title": "Kickoff / Broadcast Time",
+                "default": "TODAY • 20:00 BST"
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 756,
+                "height": 254
+            }
+        }
+    ]
+}

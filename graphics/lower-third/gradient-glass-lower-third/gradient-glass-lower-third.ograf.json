@@ -1,0 +1,109 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "lower-third-gradient-glass",
+  "version": "1.0.0",
+  "name": "Gradient Glass Lower Third",
+  "description": "Modern frosted glass lower-third graphic with vibrant fluid linear gradients, multi-tier depth shadows, category tag badge, and customizable colors.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "lower-third.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "default": "Elena Rostova",
+        "gddType": "single-line"
+      },
+      "title": {
+        "type": "string",
+        "title": "Title / Subtitle",
+        "default": "Senior Technology Editor",
+        "gddType": "single-line"
+      },
+      "category": {
+        "type": "string",
+        "title": "Category / Tag",
+        "default": "SPECIAL REPORT",
+        "gddType": "single-line"
+      },
+      "showCategory": {
+        "type": "boolean",
+        "title": "Show Category Tag",
+        "default": true
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Gradient Start Color",
+        "default": "#7c3aed",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "secondaryColor": {
+        "type": "string",
+        "title": "Gradient End Color",
+        "default": "#06b6d4",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      }
+    },
+    "required": [
+      "name",
+      "title"
+    ]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
+      },
+      "frameRate": {
+        "ideal": 50
+      },
+      "accessToPublicInternet": {
+        "ideal": false
+      }
+    }
+  ],
+  "thumbnails": [
+    {
+      "file": "thumbnails/1280x720.png",
+      "resolution": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "file": "thumbnails/1280x720-cropped.png",
+      "resolution": {
+        "width": 811,
+        "height": 250
+      }
+    },
+    {
+      "file": "thumbnails/animated.webp",
+      "resolution": {
+        "width": 640,
+        "height": 360
+      }
+    },
+    {
+      "file": "thumbnails/animated.gif",
+      "resolution": {
+        "width": 640,
+        "height": 360
+      }
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "lower-third-curved-gradient-ribbon",
+  "version": "1.0.0",
+  "name": "Curved Gradient Ribbon Lower Third",
+  "description": "Dynamic interlocking curved ribbon lower-third with multi-stop sweeping color gradients, deep elevation drop shadows, and responsive typography.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "lower-third.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "default": "Marcus Vance",
+        "gddType": "single-line"
+      },
+      "title": {
+        "type": "string",
+        "title": "Title / Subtitle",
+        "default": "Chief Global Strategist",
+        "gddType": "single-line"
+      },
+      "location": {
+        "type": "string",
+        "title": "Location Badge",
+        "default": "LONDON STUDIO",
+        "gddType": "single-line"
+      },
+      "showLocation": {
+        "type": "boolean",
+        "title": "Show Location",
+        "default": true
+      },
+      "primaryGradientStart": {
+        "type": "string",
+        "title": "Primary Start Color",
+        "default": "#0f172a",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "primaryGradientEnd": {
+        "type": "string",
+        "title": "Primary End Color",
+        "default": "#1e3a8a",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "accentGradientStart": {
+        "type": "string",
+        "title": "Accent Start Color",
+        "default": "#f59e0b",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      },
+      "accentGradientEnd": {
+        "type": "string",
+        "title": "Accent End Color",
+        "default": "#ef4444",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$"
+      }
+    },
+    "required": [
+      "name",
+      "title"
+    ]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
+      },
+      "frameRate": {
+        "ideal": 50
+      },
+      "accessToPublicInternet": {
+        "ideal": false
+      }
+    }
+  ],
+  "thumbnails": [
+    {
+      "file": "thumbnails/1280x720.png",
+      "resolution": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "file": "thumbnails/1280x720-cropped.png",
+      "resolution": {
+        "width": 821,
+        "height": 213
+      }
+    },
+    {
+      "file": "thumbnails/animated.webp",
+      "resolution": {
+        "width": 640,
+        "height": 360
+      }
+    },
+    {
+      "file": "thumbnails/animated.gif",
+      "resolution": {
+        "width": 640,
+        "height": 360
+      }
+    }
+  ],
+  "actionDurations": [
+    {
+      "type": "playAction",
+      "duration": 951
+    },
+    {
+      "type": "updateAction",
+      "duration": 0
+    },
+    {
+      "type": "stopAction",
+      "duration": 565
+    }
+  ]
+}

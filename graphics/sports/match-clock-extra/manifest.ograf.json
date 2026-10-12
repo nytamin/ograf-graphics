@@ -1,0 +1,91 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-match-clock-extra",
+    "version": "1.0.0",
+    "name": "Match Clock & Stoppage",
+    "description": "Standalone precision broadcast match clock with period status, stoppage time badge, and shootout/penalty dots.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "match-clock-extra.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "clock": {
+                "type": "string",
+                "title": "Match Clock Time",
+                "default": "90:00"
+            },
+            "period": {
+                "type": "string",
+                "title": "Period / Segment",
+                "default": "2ND HALF"
+            },
+            "stoppageTime": {
+                "type": "string",
+                "title": "Stoppage / Injury Time",
+                "default": "+5'"
+            },
+            "accentColor": {
+                "type": "string",
+                "title": "Accent Theme Color",
+                "default": "#00d2ff",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "penaltyDots": {
+                "type": "array",
+                "title": "Penalty Shootout Tracker",
+                "items": {
+                    "type": "string",
+                    "enum": [
+                        "goal",
+                        "miss",
+                        "pending"
+                    ]
+                },
+                "default": [
+                    "goal",
+                    "goal",
+                    "miss",
+                    "pending",
+                    "pending"
+                ]
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 412,
+                "height": 96
+            }
+        }
+    ]
+}

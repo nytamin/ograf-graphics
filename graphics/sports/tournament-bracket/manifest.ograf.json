@@ -1,0 +1,168 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-tournament-bracket",
+    "version": "1.0.0",
+    "name": "Tournament Bracket",
+    "description": "Visual knockout tournament tree showing semifinals, grand final, match scores, and advancing winners.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "tournament-bracket.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "title": {
+                "type": "string",
+                "title": "Tournament Title",
+                "default": "CHAMPIONS LEAGUE • SEMIFINALS & FINAL"
+            },
+            "semi1": {
+                "type": "object",
+                "title": "Semifinal 1",
+                "properties": {
+                    "teamA": {
+                        "type": "string",
+                        "title": "Team A",
+                        "default": "REAL MADRID"
+                    },
+                    "scoreA": {
+                        "type": "string",
+                        "title": "Score A",
+                        "default": "2"
+                    },
+                    "teamB": {
+                        "type": "string",
+                        "title": "Team B",
+                        "default": "BAYERN MUNICH"
+                    },
+                    "scoreB": {
+                        "type": "string",
+                        "title": "Score B",
+                        "default": "1"
+                    },
+                    "winner": {
+                        "type": "string",
+                        "title": "Winner (A or B)",
+                        "enum": [
+                            "A",
+                            "B"
+                        ],
+                        "default": "A"
+                    }
+                }
+            },
+            "semi2": {
+                "type": "object",
+                "title": "Semifinal 2",
+                "properties": {
+                    "teamA": {
+                        "type": "string",
+                        "title": "Team A",
+                        "default": "BORUSSIA DORTMUND"
+                    },
+                    "scoreA": {
+                        "type": "string",
+                        "title": "Score A",
+                        "default": "2"
+                    },
+                    "teamB": {
+                        "type": "string",
+                        "title": "Team B",
+                        "default": "PARIS SG"
+                    },
+                    "scoreB": {
+                        "type": "string",
+                        "title": "Score B",
+                        "default": "0"
+                    },
+                    "winner": {
+                        "type": "string",
+                        "title": "Winner (A or B)",
+                        "enum": [
+                            "A",
+                            "B"
+                        ],
+                        "default": "A"
+                    }
+                }
+            },
+            "final": {
+                "type": "object",
+                "title": "Championship Final",
+                "properties": {
+                    "teamA": {
+                        "type": "string",
+                        "title": "Team A",
+                        "default": "REAL MADRID"
+                    },
+                    "scoreA": {
+                        "type": "string",
+                        "title": "Score A",
+                        "default": "2"
+                    },
+                    "teamB": {
+                        "type": "string",
+                        "title": "Team B",
+                        "default": "BORUSSIA DORTMUND"
+                    },
+                    "scoreB": {
+                        "type": "string",
+                        "title": "Score B",
+                        "default": "0"
+                    },
+                    "winner": {
+                        "type": "string",
+                        "title": "Winner (A, B, or none)",
+                        "enum": [
+                            "A",
+                            "B",
+                            "none"
+                        ],
+                        "default": "A"
+                    }
+                }
+            },
+            "accentColor": {
+                "type": "string",
+                "title": "Accent Color",
+                "default": "#00d2ff",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 884,
+                "height": 289
+            }
+        }
+    ]
+}

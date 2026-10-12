@@ -1,0 +1,82 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-coach-official-tag",
+    "version": "1.0.0",
+    "name": "Coach & Official Tag",
+    "description": "Lower-third identity tag tailored for coaches, referees, umpires, and broadcast talent.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "coach-official-tag.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "title": "Full Name",
+                "default": "MIKEL ARTETA"
+            },
+            "role": {
+                "type": "string",
+                "title": "Role / Title",
+                "default": "HEAD COACH"
+            },
+            "organization": {
+                "type": "string",
+                "title": "Club / Federation",
+                "default": "ARSENAL FC"
+            },
+            "recordNote": {
+                "type": "string",
+                "title": "Career Note / Record",
+                "default": "5TH SEASON IN CHARGE • 62% WIN RATE"
+            },
+            "accentColor": {
+                "type": "string",
+                "title": "Accent Color",
+                "default": "#db0007",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "logoUrl": {
+                "type": "string",
+                "title": "Logo / Crest URL",
+                "default": ""
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 700,
+                "height": 137
+            }
+        }
+    ]
+}

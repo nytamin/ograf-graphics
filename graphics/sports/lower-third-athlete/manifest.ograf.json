@@ -1,0 +1,87 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-lower-third-athlete",
+    "version": "1.0.0",
+    "name": "Athlete Lower Third",
+    "description": "Two-tier broadcast identity lower third for athletes with squad numbers, positions, and seasonal statistics.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "lower-third-athlete.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "firstName": {
+                "type": "string",
+                "title": "First Name",
+                "default": "ERLING"
+            },
+            "lastName": {
+                "type": "string",
+                "title": "Last Name",
+                "default": "HAALAND"
+            },
+            "playerNumber": {
+                "type": "string",
+                "title": "Squad Number",
+                "default": "9"
+            },
+            "position": {
+                "type": "string",
+                "title": "Position",
+                "default": "STRIKER"
+            },
+            "statHighlight": {
+                "type": "string",
+                "title": "Stat Highlight / Subtitle",
+                "default": "27 GOALS IN 24 APPEARANCES THIS SEASON"
+            },
+            "teamColor": {
+                "type": "string",
+                "title": "Team Color",
+                "default": "#6cabdd",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "teamLogo": {
+                "type": "string",
+                "title": "Team Logo URL",
+                "default": ""
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 584,
+                "height": 139
+            }
+        }
+    ]
+}

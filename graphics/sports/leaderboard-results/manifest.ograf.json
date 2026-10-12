@@ -1,0 +1,132 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-leaderboard-results",
+    "version": "1.0.0",
+    "name": "Results Leaderboard",
+    "description": "Ranked leaderboard for racing, golf, athletics, and tournament results with podium badges and time gaps.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "leaderboard-results.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "title": {
+                "type": "string",
+                "title": "Leaderboard Title",
+                "default": "GRAND PRIX • PROVISIONAL CLASSIFICATION"
+            },
+            "accentColor": {
+                "type": "string",
+                "title": "Accent Color",
+                "default": "#e10600",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "results": {
+                "type": "array",
+                "title": "Classification Rows",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "rank": {
+                            "type": "string",
+                            "title": "Rank"
+                        },
+                        "name": {
+                            "type": "string",
+                            "title": "Competitor Name"
+                        },
+                        "team": {
+                            "type": "string",
+                            "title": "Team / Constructor"
+                        },
+                        "gap": {
+                            "type": "string",
+                            "title": "Gap / Time"
+                        },
+                        "delta": {
+                            "type": "string",
+                            "title": "Delta (e.g. ▲1, ▼2, -)"
+                        }
+                    },
+                    "required": [
+                        "rank",
+                        "name"
+                    ]
+                },
+                "default": [
+                    {
+                        "rank": "1",
+                        "name": "VERSTAPPEN",
+                        "team": "RED BULL RACING",
+                        "gap": "LEADER",
+                        "delta": "-"
+                    },
+                    {
+                        "rank": "2",
+                        "name": "NORRIS",
+                        "team": "MCLAREN",
+                        "gap": "+1.428",
+                        "delta": "▲1"
+                    },
+                    {
+                        "rank": "3",
+                        "name": "LECLERC",
+                        "team": "FERRARI",
+                        "gap": "+4.195",
+                        "delta": "▼1"
+                    },
+                    {
+                        "rank": "4",
+                        "name": "HAMILTON",
+                        "team": "MERCEDES",
+                        "gap": "+8.902",
+                        "delta": "-"
+                    },
+                    {
+                        "rank": "5",
+                        "name": "PIASTRI",
+                        "team": "MCLAREN",
+                        "gap": "+12.341",
+                        "delta": "▲2"
+                    }
+                ]
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 696,
+                "height": 309
+            }
+        }
+    ]
+}

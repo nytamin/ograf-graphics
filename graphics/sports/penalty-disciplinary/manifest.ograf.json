@@ -1,0 +1,87 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-penalty-disciplinary",
+    "version": "1.0.0",
+    "name": "Disciplinary Card",
+    "description": "Animated disciplinary card popup indicating bookings, fouls, sin-bin timers, and penalties.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "penalty-disciplinary.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "cardType": {
+                "type": "string",
+                "title": "Card / Penalty Type",
+                "default": "YELLOW CARD"
+            },
+            "playerName": {
+                "type": "string",
+                "title": "Player Name",
+                "default": "DECLAN RICE"
+            },
+            "playerNumber": {
+                "type": "string",
+                "title": "Squad Number",
+                "default": "41"
+            },
+            "teamName": {
+                "type": "string",
+                "title": "Team Name",
+                "default": "ARSENAL"
+            },
+            "infraction": {
+                "type": "string",
+                "title": "Infraction / Reason",
+                "default": "Tactical Foul"
+            },
+            "timeText": {
+                "type": "string",
+                "title": "Time / Minute / Countdown",
+                "default": "42'"
+            },
+            "cardColor": {
+                "type": "string",
+                "title": "Card Color (#ffd600 for Yellow, #e53935 for Red)",
+                "default": "#ffd600",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 348,
+                "height": 142
+            }
+        }
+    ]
+}

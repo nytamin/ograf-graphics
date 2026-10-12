@@ -1,0 +1,82 @@
+{
+    "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+    "id": "sports-game-pulse-banner",
+    "version": "1.0.0",
+    "name": "Game Pulse Banner",
+    "description": "Cinematic lower banner highlighting key in-game events like goals, assists, wickets, or disciplinary calls.",
+    "author": {
+        "name": "Johan's Graphics Stash"
+    },
+    "main": "game-pulse-banner.js",
+    "supportsRealTime": true,
+    "supportsNonRealTime": false,
+    "stepCount": 1,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "eventType": {
+                "type": "string",
+                "title": "Event Type",
+                "default": "GOAL"
+            },
+            "headline": {
+                "type": "string",
+                "title": "Primary Headline / Scorer",
+                "default": "BUKAYO SAKA  68'"
+            },
+            "subtext": {
+                "type": "string",
+                "title": "Subtext / Assist / Note",
+                "default": "Assist: Martin Ødegaard • 14th goal of the season"
+            },
+            "teamColor": {
+                "type": "string",
+                "title": "Team Color",
+                "default": "#db0007",
+                "gddType": "color-rrggbb",
+                "pattern": "^#[0-9a-f]{6}$"
+            },
+            "teamLogo": {
+                "type": "string",
+                "title": "Team Logo URL",
+                "default": ""
+            },
+            "badgeText": {
+                "type": "string",
+                "title": "Badge / Squad Number",
+                "default": "#7"
+            }
+        }
+    },
+    "renderRequirements": [
+        {
+            "resolution": {
+                "width": {
+                    "ideal": 1920
+                },
+                "height": {
+                    "ideal": 1080
+                }
+            },
+            "frameRate": {
+                "ideal": 60
+            }
+        }
+    ],
+    "thumbnails": [
+        {
+            "file": "thumbnails/1280x720.png",
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            }
+        },
+        {
+            "file": "thumbnails/1280x720-cropped.png",
+            "resolution": {
+                "width": 926,
+                "height": 164
+            }
+        }
+    ]
+}
