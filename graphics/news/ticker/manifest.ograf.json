@@ -1,0 +1,86 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "news-ticker",
+  "version": "1.0.0",
+  "name": "News Lower Ticker",
+  "description": "Broadcast news ticker. Used to display scrolling news updates at the bottom of the screen.",
+  "author": {
+    "name": "Johan's Graphics Stash"
+  },
+  "main": "ticker.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "label": {
+        "type": "string",
+        "title": "Category Label",
+        "gddType": "single-line",
+        "default": "LATEST NEWS"
+      },
+      "text": {
+        "type": "string",
+        "title": "Ticker Text",
+        "gddType": "single-line",
+        "default": "GLOBAL MARKETS RALLY AFTER CENTRAL BANK RATE DECISION • PARLIAMENTARY VOTE SCHEDULED FOR 20:00 CET • SEVERE WEATHER ADVISORY ISSUED FOR COASTAL DISTRICTS"
+      },
+      "infiniteScroll": {
+        "type": "boolean",
+        "title": "Infinite Scroll (Uncheck to Animate Out on End-of-Text)",
+        "default": true
+      },
+      "speed": {
+        "type": "number",
+        "title": "Scroll Speed (px/sec)",
+        "default": 160,
+        "minimum": 40,
+        "maximum": 600
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Label Box Color",
+        "gddType": "color-rrggbb",
+        "hidden": true,
+        "pattern": "^#[0-9a-f]{6}$",
+        "default": "#0f2b5b"
+      },
+      "secondaryColor": {
+        "type": "string",
+        "title": "Ticker Track Color",
+        "gddType": "color-rrggbb",
+        "hidden": true,
+        "pattern": "^#[0-9a-f]{6}$",
+        "default": "#162032"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "gddType": "color-rrggbb",
+        "hidden": true,
+        "pattern": "^#[0-9a-f]{6}$",
+        "default": "#d32f2f"
+      }
+    },
+    "required": [
+      "text"
+    ]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
+      },
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ]
+}

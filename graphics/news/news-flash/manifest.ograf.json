@@ -1,0 +1,85 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "news-flash",
+  "version": "1.0.0",
+  "name": "News Flash",
+  "description": "Big, centered broadcast news-flash graphic with title and optional subtitle.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "news-flash.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ],
+  "schema": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Flash Headline",
+        "description": "Primary large headline displayed in the centered news-flash box",
+        "default": "BREAKING NEWS",
+        "gddType": "single-line"
+      },
+      "subtitle": {
+        "type": "string",
+        "title": "Subtitle (Optional)",
+        "description": "Optional secondary bar below the main headline (leave empty for single-bar flash)",
+        "default": "DEVELOPING STORY • LIVE COVERAGE",
+        "gddType": "single-line"
+      },
+      "autoOut": {
+        "type": "boolean",
+        "title": "Auto-Animate Out",
+        "description": "When enabled, the news-flash automatically animates out after Hold Duration seconds",
+        "default": false
+      },
+      "holdDuration": {
+        "type": "number",
+        "title": "Hold Duration (Seconds)",
+        "description": "Seconds to remain on screen before automatically animating out (when Auto-Animate Out is enabled)",
+        "default": 4,
+        "minimum": 0.5,
+        "maximum": 60
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Primary Box Color",
+        "description": "Base hex color for the main headline box gradient",
+        "default": "#0f2b5b",
+        "pattern": "^#[0-9a-f]{6}$",
+        "gddType": "color-rrggbb",
+        "hidden": true
+      },
+      "secondaryColor": {
+        "type": "string",
+        "title": "Subtitle Box Color",
+        "description": "Base hex color for the subtitle box gradient",
+        "default": "#162032",
+        "pattern": "^#[0-9a-f]{6}$",
+        "gddType": "color-rrggbb",
+        "hidden": true
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Swipe Color",
+        "description": "Base hex color for the left accent bar and swipe wipers",
+        "default": "#d32f2f",
+        "pattern": "^#[0-9a-f]{6}$",
+        "gddType": "color-rrggbb",
+        "hidden": true
+      }
+    },
+    "required": ["title"]
+  }
+}

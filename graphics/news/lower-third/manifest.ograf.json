@@ -1,0 +1,92 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "news-lower-third",
+  "version": "1.0.0",
+  "name": "News Name Lower Third",
+  "description": "Broadcast news speaker identification lower-third with name and optional title.",
+  "author": {
+    "name": "Johan's Graphics Stash"
+  },
+  "main": "lower-third.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "gddType": "single-line",
+        "default": "SARAH JENKINS"
+      },
+      "title": {
+        "type": "string",
+        "title": "Title / Role (Optional)",
+        "gddType": "single-line",
+        "default": "CHIEF POLITICAL CORRESPONDENT"
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Name Box Color",
+        "gddType": "color-rrggbb",
+        "hidden": true,
+        "pattern": "^#[0-9a-f]{6}$",
+        "default": "#0f2b5b"
+      },
+      "secondaryColor": {
+        "type": "string",
+        "title": "Title Box Color",
+        "gddType": "color-rrggbb",
+        "hidden": true,
+        "pattern": "^#[0-9a-f]{6}$",
+        "default": "#162032"
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Color",
+        "gddType": "color-rrggbb",
+        "hidden": true,
+        "pattern": "^#[0-9a-f]{6}$",
+        "default": "#d32f2f"
+      },
+      "position": {
+        "type": "string",
+        "title": "Screen Position",
+        "enum": [
+          "bottom-left",
+          "bottom-center",
+          "bottom-right"
+        ],
+        "default": "bottom-left",
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "bottom-left": "Bottom Left",
+            "bottom-center": "Bottom Center",
+            "bottom-right": "Bottom Right"
+          }
+        }
+      }
+    },
+    "required": [
+      "name"
+    ]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
+      },
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ]
+}

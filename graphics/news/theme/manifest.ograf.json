@@ -1,0 +1,104 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "news-theme",
+  "version": "1.0.0",
+  "name": "News Theme Lower Third",
+  "description": "Large broadcast news theme lower-third. Used to display the main title and subtitle for news segments.",
+  "author": {
+    "name": "Johan's Graphics Stash"
+  },
+  "main": "theme.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": false,
+  "stepCount": 1,
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Theme Title",
+        "gddType": "single-line",
+        "default": "ELECTION NIGHT 2026"
+      },
+      "subtitle": {
+        "type": "string",
+        "title": "Sub-title",
+        "gddType": "single-line",
+        "default": "LIVE COVERAGE & POLLING ANALYSIS ACROSS ALL DISTRICTS"
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Title Box Color",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$",
+        "default": "#0f2b5b",
+        "hidden": true
+      },
+      "secondaryColor": {
+        "type": "string",
+        "title": "Sub-title Box Color",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$",
+        "default": "#162032",
+        "hidden": true
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Box Color",
+        "gddType": "color-rrggbb",
+        "pattern": "^#[0-9a-f]{6}$",
+        "default": "#d32f2f",
+        "hidden": true
+      },
+      "position": {
+        "type": "string",
+        "title": "Screen Position",
+        "enum": [
+          "bottom-left",
+          "bottom-center"
+        ],
+        "default": "bottom-left",
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "bottom-left": "Bottom Left",
+            "bottom-center": "Bottom Center"
+          }
+        }
+      }
+    },
+    "required": [
+      "title"
+    ]
+  },
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
+      },
+      "frameRate": {
+        "ideal": 60
+      }
+    }
+  ],
+  "actionDurations": [
+    {
+      "type": "playAction",
+      "duration": 1000
+    },
+    {
+      "type": "updateAction",
+      "duration": 1000
+    },
+    {
+      "type": "stopAction",
+      "duration": 816
+    }
+  ]
+}

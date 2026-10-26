@@ -1,0 +1,98 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "news-locator",
+  "version": "1.0.0",
+  "name": "News Locator",
+  "description": "Top-corner news locator graphic.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "locator.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": {
+          "ideal": 1920
+        },
+        "height": {
+          "ideal": 1080
+        }
+      },
+      "frameRate": {
+        "ideal": 50
+      },
+      "accessToPublicInternet": {
+        "ideal": false
+      }
+    }
+  ],
+  "schema": {
+    "type": "object",
+    "properties": {
+      "location": {
+        "type": "string",
+        "title": "Location",
+        "description": "Primary city, region, or venue name displayed in the locator bar",
+        "default": "STOCKHOLM, SWEDEN",
+        "gddType": "single-line"
+      },
+      "title": {
+        "type": "string",
+        "title": "Title / Context (Optional)",
+        "description": "Optional secondary context line below the location (leave empty for single-bar locator)",
+        "default": "LIVE COVERAGE",
+        "gddType": "single-line"
+      },
+      "position": {
+        "type": "string",
+        "title": "Corner Position",
+        "description": "Top-left or top-right screen placement",
+        "enum": [
+          "top-left",
+          "top-right"
+        ],
+        "default": "top-left",
+        "gddType": "select",
+        "gddOptions": {
+          "labels": {
+            "top-left": "Top Left",
+            "top-right": "Top Right"
+          }
+        }
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Location Box Color",
+        "description": "Base hex color for the primary location box gradient",
+        "default": "#0f2b5b",
+        "pattern": "^#[0-9a-f]{6}$",
+        "gddType": "color-rrggbb",
+        "hidden": true
+      },
+      "secondaryColor": {
+        "type": "string",
+        "title": "Title Box Color",
+        "description": "Base hex color for the secondary title box gradient",
+        "default": "#162032",
+        "pattern": "^#[0-9a-f]{6}$",
+        "gddType": "color-rrggbb",
+        "hidden": true
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Swipe Color",
+        "description": "Base hex color for the left accent bar and swipe wipers",
+        "default": "#d32f2f",
+        "pattern": "^#[0-9a-f]{6}$",
+        "gddType": "color-rrggbb",
+        "hidden": true
+      }
+    },
+    "required": [
+      "location"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "https://ograf.ebu.io/v1/specification/json-schemas/graphics/schema.json",
+  "id": "news-text-box",
+  "version": "1.0.0",
+  "name": "News Text Box",
+  "description": "Centered multiline text box graphic. Used to display a longer, multiline message or statement.",
+  "author": {
+    "name": "OGraf Templates"
+  },
+  "main": "text-box.js",
+  "supportsRealTime": true,
+  "supportsNonRealTime": true,
+  "stepCount": 1,
+  "renderRequirements": [
+    {
+      "resolution": {
+        "width": { "ideal": 1920 },
+        "height": { "ideal": 1080 }
+      },
+      "frameRate": { "ideal": 50 },
+      "accessToPublicInternet": { "ideal": false }
+    }
+  ],
+  "schema": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Header Title",
+        "description": "Headline displayed in the top header bar",
+        "default": "OFFICIAL STATEMENT",
+        "gddType": "single-line"
+      },
+      "content": {
+        "type": "string",
+        "title": "Content Text",
+        "description": "Multiline body text displayed inside the main content panel",
+        "default": "We are closely monitoring developments across the region and coordinating with international partners to ensure full transparency and immediate response measures.\n\nFurther updates will be provided at the top of the hour.",
+        "gddType": "multi-line"
+      },
+      "primaryColor": {
+        "type": "string",
+        "title": "Header Box Color",
+        "description": "Base hex color for the top title bar gradient",
+        "default": "#0f2b5b",
+        "pattern": "^#[0-9a-f]{6}$",
+        "gddType": "color-rrggbb",
+        "hidden": true
+      },
+      "secondaryColor": {
+        "type": "string",
+        "title": "Content Box Color",
+        "description": "Base hex color for the multiline content box gradient",
+        "default": "#162032",
+        "pattern": "^#[0-9a-f]{6}$",
+        "gddType": "color-rrggbb",
+        "hidden": true
+      },
+      "accentColor": {
+        "type": "string",
+        "title": "Accent Swipe Color",
+        "description": "Base hex color for the left accent bar and swipe wipers",
+        "default": "#d32f2f",
+        "pattern": "^#[0-9a-f]{6}$",
+        "gddType": "color-rrggbb",
+        "hidden": true
+      }
+    },
+    "required": ["title", "content"]
+  }
+}
