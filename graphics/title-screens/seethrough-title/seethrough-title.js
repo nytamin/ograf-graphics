@@ -1305,7 +1305,5 @@ class OgrafSeethroughTitle extends HTMLElement {
   }
 }
 
-customElements.get("ograf-seethrough-title") ||
-  customElements.define("ograf-seethrough-title", OgrafSeethroughTitle);
 
 export default OgrafSeethroughTitle;
